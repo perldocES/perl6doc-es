@@ -118,6 +118,30 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg># C prototype is void my_version(int *major, int *minor)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175623Z" creationid="ramiroencinas" creationdate="20161125T175623Z">
+        <seg># El prototipo en C es void mi_versión(int *mayor, int *menor)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg># C prototype is void set_foo(const char *)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175007Z" creationid="ramiroencinas" creationdate="20161125T175007Z">
+        <seg># El prototipo en C es void set_foo(const char *)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg># C prototype is void use_foo(void)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175106Z" creationid="ramiroencinas" creationdate="20161125T175106Z">
+        <seg># El prototipo de C es void use_foo(void)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg># Continuously loop and poll the channel, until it's closed</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161117T141728Z" creationid="Ram" creationdate="20161117T141728Z">
@@ -3168,6 +3192,14 @@ unless 1 { } else { };</seg>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T215228Z" creationid="explorer" creationdate="20161101T215228Z">
         <seg>=for code :skip-test
 unless 1 { } else { };</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=head1 Basic use of Pointers</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175424Z" creationid="ramiroencinas" creationdate="20161125T175424Z">
+        <seg>=head1 Uso básico de Punteros</seg>
       </tuv>
     </tu>
     <tu>
@@ -8112,6 +8144,15 @@ to be kept.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Sometimes you need to get a pointer (for example, a library handle) back from a
+C library.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175941Z" creationid="ramiroencinas" creationdate="20161125T175941Z">
+        <seg>A veces necesitas un puntero devuelto de una librería en C como por ejemplo un manipulador de una librería.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Sometimes you want the name of your Perl subroutine to be different from the name
 used in the library you're loading.</seg>
       </tuv>
@@ -9266,6 +9307,15 @@ types).</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>When the signature of your native function needs a pointer to some native type
+(C&lt;int32&gt;, C&lt;uint32&gt;, etc.)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175510Z" creationid="ramiroencinas" creationdate="20161125T175510Z">
+        <seg>Cuando la signatura de la función nativa necesita un puntero hacia algún tipo nativo (C&lt;int32&gt;, C&lt;uint32&gt;, etc.)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>When you call C&lt;start&gt; twice on the same L&lt;Proc::Async|/type/Proc::Async&gt;
 object, the second invocation will die with an
 C&lt;X::Proc::Async::AlreadyStarted&gt; exception.</seg>
@@ -9514,6 +9564,15 @@ a given object is a type object or not:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>You don't care about what it points to - you just need to keep hold
+of it.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T180132Z" creationid="ramiroencinas" creationdate="20161125T180132Z">
+        <seg>No es necesario saber a donde apunta, solo saber donde guardarlo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>You may, for example, want to create a dependent Promise
 that will examine each of the original promises:</seg>
       </tuv>
@@ -9620,6 +9679,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T214245Z" creationid="explorer" creationdate="20161102T214245Z">
         <seg>un enlace, en este sitio, por favor, informe sobre este fallo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>all you need to do is declare the argument C&lt;is rw&gt; :</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175538Z" creationid="ramiroencinas" creationdate="20161125T175538Z">
+        <seg>lo que necesitas es declarar el argumento C&lt;is rw&gt; :</seg>
       </tuv>
     </tu>
     <tu>
@@ -10810,6 +10877,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $array = CArray[uint8].new($string.encode.list);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175221Z" creationid="ramiroencinas" creationdate="20161125T175221Z">
+        <seg>my $array = CArray[uint8].new($string.encode.list);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $b = Buf.new(1, 2, 3);</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210628Z" creationid="explorer" creationdate="20161101T210628Z">
@@ -11162,6 +11237,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $string = "FOO";</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175140Z" creationid="ramiroencinas" creationdate="20161125T175140Z">
+        <seg>my $string = "FOO";</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $supplier = Supplier.new;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160507T155936Z" creationid="ramiroencinas" creationdate="20160507T155936Z">
@@ -11310,6 +11393,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170609Z" creationid="explorer" creationdate="20161106T170609Z">
         <seg>my class X::Signature::NameClash does X::Comp { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my_version(my int32 $major, my int32 $minor); # Pass a pointer to</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175706Z" creationid="ramiroencinas" creationdate="20161125T175706Z">
+        <seg>mi_versión(my int32 $mayor, my int32 $menor); # Pasa el puntero a</seg>
       </tuv>
     </tu>
     <tu>
@@ -11802,6 +11893,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>set_foo($array);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175228Z" creationid="ramiroencinas" creationdate="20161125T175228Z">
+        <seg>set_foo($array);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>should only output 0 to 5,</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T183811Z" creationid="ramiroencinas" creationdate="20160527T183811Z">
@@ -11970,6 +12069,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>sub my_version(int32 is rw, int32 is rw) is native('foo') { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175641Z" creationid="ramiroencinas" creationdate="20161125T175641Z">
+        <seg>sub mi_versión(int32 is rw, int32 is rw) is native('foo') { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>sub replenish-cache {</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161117T142751Z" creationid="Ram" creationdate="20161117T142751Z">
@@ -11978,10 +12085,26 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>sub set_foo(CArray[uint8]) is native('foo') { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175049Z" creationid="ramiroencinas" creationdate="20161125T175049Z">
+        <seg>sub set_foo(CArray[uint8]) is native('foo') { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>sub some_argless_function() is native('something') { * }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T091931Z" creationid="Ram" creationdate="20161120T091931Z">
         <seg>sub función_sin_argumentos() is native('algo') { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub use_foo() is native('foo') { * } # will use pointer stored by set_foo()</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175135Z" creationid="ramiroencinas" creationdate="20161125T175135Z">
+        <seg>sub use_foo() is native('foo') { * } # utilizará el puntero guardado por set_foo()</seg>
       </tuv>
     </tu>
     <tu>
@@ -12126,6 +12249,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T091531Z" creationid="Ram" creationdate="20161120T091531Z">
         <seg>use NativeCall;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>use_foo();</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175340Z" creationid="ramiroencinas" creationdate="20161125T175340Z">
+        <seg>use_foo();</seg>
       </tuv>
     </tu>
     <tu>
