@@ -6148,6 +6148,15 @@ the calling location.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>C libraries can expose pointers to C functions as return values of functions and as
+members of Structures like, e.g., structs and unions.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T104848Z" creationid="ramiroencinas" creationdate="20161126T104848Z">
+        <seg>Las librerías de C pueden tener funciones que devuelven punteros a funciones así como funciones que son miembros de alguna estructura, como por ejemplo los tipos struct y union. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>C&lt;Channel&gt; will return a different L&lt;Channel&gt; fed with the same data
 each time it is called.</seg>
       </tuv>
