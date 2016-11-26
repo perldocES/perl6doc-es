@@ -174,6 +174,22 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg># Here are the actual NativeCall functions.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090741Z" creationid="ramiroencinas" creationdate="20161126T090741Z">
+        <seg># Las funciones de llamada nativa actuales.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg># Here are the methods we use to expose it to the outside world.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090842Z" creationid="ramiroencinas" creationdate="20161126T090842Z">
+        <seg># Los métodos disponibles externamente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg># Normally doesn't need to be written</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164505Z" creationid="ramiroencinas" creationdate="20160528T164505Z">
@@ -362,6 +378,14 @@
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164735Z" creationid="ramiroencinas" creationdate="20160528T164735Z">
         <seg>$!realizado = True;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$!initialized = True;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090904Z" creationid="ramiroencinas" creationdate="20161126T090904Z">
+        <seg>$!inicializado = True;</seg>
       </tuv>
     </tu>
     <tu>
@@ -6521,6 +6545,14 @@ without an explicit closure, and the sequence cannot be deduced.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Foo_init();</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090851Z" creationid="ramiroencinas" creationdate="20161126T090851Z">
+        <seg>Foo_init();</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>For
 example, in this code:</seg>
       </tuv>
@@ -7121,6 +7153,15 @@ of signatures.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164231Z" creationid="ramiroencinas" creationdate="20160528T164231Z">
         <seg>Podemos ver constructores personalizados, atributos privados y públicos, métodos y varios tipos de signaturas.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It turns out that any class with the representation "CPointer"
+can serve this role.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090527Z" creationid="ramiroencinas" creationdate="20161126T090527Z">
+        <seg>Esto hace que cualquier clase con la representación "CPointer" pueda utilizar este rol.</seg>
       </tuv>
     </tu>
     <tu>
@@ -8473,6 +8514,14 @@ for that:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The Pointer type provides for this.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T084604Z" creationid="ramiroencinas" creationdate="20161126T084604Z">
+        <seg>Y conociendo el tipo de Puntero es suficiente.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The actual L&lt;Exception&gt; object will then be available from
 C&lt;cause&gt;.</seg>
       </tuv>
@@ -8993,6 +9042,15 @@ finished executing.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>This means you can expose libraries that work on handles
+by writing a class like this:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090627Z" creationid="ramiroencinas" creationdate="20161126T090627Z">
+        <seg>En esta situación puedes crear librerías orientadas a manipuladores con una clase como la siguiente:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>This role does not provide any additional methods.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T204236Z" creationid="explorer" creationdate="20161101T204236Z">
@@ -9033,6 +9091,15 @@ the execution scheme as implemented by the scheduler.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T183015Z" creationid="ramiroencinas" creationdate="20160527T183015Z">
         <seg>Este método ejecutará C&lt;&amp;code&gt; en forma de L&lt;Callable&gt; según determine el resto de parámetros (como indica la documentación de L&lt;Scheduler&gt;) utilizando el esquema de ejecución que implemente el programador.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This works out OK, but you may fancy working with a type named something better
+than Pointer.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T085002Z" creationid="ramiroencinas" creationdate="20161126T085002Z">
+        <seg>Lo anterior está bien pero estaría mejor con un tipo con nombre en lugar de un Puntero.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9795,6 +9862,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>class FooHandle is repr('CPointer') {</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090635Z" creationid="ramiroencinas" creationdate="20161126T090635Z">
+        <seg>class FooHandle is repr('CPointer') {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>class IO::Spec { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T220645Z" creationid="explorer" creationdate="20161102T220645Z">
@@ -10323,6 +10398,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>has $!initialized;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090651Z" creationid="ramiroencinas" creationdate="20161126T090651Z">
+        <seg>has $!inicializado;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>has Bool $.done;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164435Z" creationid="ramiroencinas" creationdate="20160528T164435Z">
@@ -10713,6 +10796,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164539Z" creationid="ramiroencinas" creationdate="20160528T164539Z">
         <seg>method new(&amp;callback, *@dependencias) {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method new() {</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090847Z" creationid="ramiroencinas" creationdate="20161126T090847Z">
+        <seg>method new() {</seg>
       </tuv>
     </tu>
     <tu>
@@ -12017,6 +12108,38 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T205412Z" creationid="ramiroencinas" creationdate="20160520T205412Z">
         <seg>start {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub Foo_free(FooHandle) is native("foo") { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090804Z" creationid="ramiroencinas" creationdate="20161126T090804Z">
+        <seg>sub Foo_free(FooHandle) is native("foo") { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub Foo_free(Pointer) is native("foo") { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T084621Z" creationid="ramiroencinas" creationdate="20161126T084621Z">
+        <seg>sub Foo_free(Pointer) is native("foo") { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub Foo_init() returns FooHandle is native("foo") { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T090754Z" creationid="ramiroencinas" creationdate="20161126T090754Z">
+        <seg>sub Foo_init() returns FooHandle is native("foo") { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub Foo_init() returns Pointer is native("foo") { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T084614Z" creationid="ramiroencinas" creationdate="20161126T084614Z">
+        <seg>sub Foo_init() returns Pointer is native("foo") { * }</seg>
       </tuv>
     </tu>
     <tu>
