@@ -3236,6 +3236,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Arrays</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115848Z" creationid="ramiroencinas" creationdate="20161126T115848Z">
+        <seg>=head1 Arrays</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Basic use of Pointers</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175424Z" creationid="ramiroencinas" creationdate="20161125T175424Z">
@@ -6558,6 +6566,15 @@ the following:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T204830Z" creationid="explorer" creationdate="20161101T204830Z">
         <seg>Clase de error para cuando la ejecución falla al determinar el directorio actual.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Example of invoking a function pointer "$fptr" returned by a function "f", using a
+signature defining the desired function parameters and return value:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115749Z" creationid="ramiroencinas" creationdate="20161126T115749Z">
+        <seg>Veamos un ejemplo de la invocación de un puntero a una función "$fptr" como retorno de la función "f" y utilizando una signatura con los parámetros de la función y el valor de retorno:</seg>
       </tuv>
     </tu>
     <tu>
@@ -11171,6 +11188,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $fptr    = f();</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115817Z" creationid="ramiroencinas" creationdate="20161126T115817Z">
+        <seg>my $fptr    = f();</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $half_supply = $supply.map({ $_ / 2 });</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160519T184029Z" creationid="ramiroencinas" creationdate="20160519T184029Z">
@@ -11543,6 +11568,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20151221T054737Z" creationid="explorer" creationdate="20151221T054737Z">
         <seg>my $x;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my &amp;newfunc = nativecast(:(Str, size_t --&gt; int32), $fptr);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115831Z" creationid="ramiroencinas" creationdate="20161126T115831Z">
+        <seg>my &amp;nuevafunc = nativecast(:(Str, size_t --&gt; int32), $fptr);</seg>
       </tuv>
     </tu>
     <tu>
@@ -12107,6 +12140,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>say newfunc("test", 4);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115841Z" creationid="ramiroencinas" creationdate="20161126T115841Z">
+        <seg>say nuevafunc("test", 4);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>self.free;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T100734Z" creationid="ramiroencinas" creationdate="20161126T100734Z">
@@ -12287,6 +12328,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155441Z" creationid="explorer" creationdate="20161111T155441Z">
         <seg>sub f() returns Int { "foo" }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub f() returns Pointer is native('mylib') { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115813Z" creationid="ramiroencinas" creationdate="20161126T115813Z">
+        <seg>sub f() returns Pointer is native('lib') { * }</seg>
       </tuv>
     </tu>
     <tu>
