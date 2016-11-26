@@ -3268,6 +3268,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Function Pointers</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101732Z" creationid="ramiroencinas" creationdate="20161126T101732Z">
+        <seg>=head1 Punteros a Funciones</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Getting Started</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T091452Z" creationid="Ram" creationdate="20161120T090736Z">
@@ -5950,6 +5958,15 @@ original promises is kept or broken:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>And just use the class as you would use Pointer, but with potential for
+better type safety and more readable code.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101603Z" creationid="ramiroencinas" creationdate="20161126T101603Z">
+        <seg>Y utilizarla como un Puntero, pero con la ventaja del tipado fuerte y un código más legible.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Arguments are usually formatted to be only as wide as required to
 display the given value.</seg>
       </tuv>
@@ -6860,6 +6877,15 @@ part of the work on macros.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>However, for simple
+libraries this may be a neat way to expose an object oriented interface to it.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101351Z" creationid="ramiroencinas" creationdate="20161126T101351Z">
+        <seg>Sin embargo y en caso de librerías nativas simples, esta es una forma elegante de utilizarlas mediante una interfaz orientada a objetos.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>I'm not quite clear which specific features should be included below</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T203901Z" creationid="ramiroencinas" creationdate="20160520T203901Z">
@@ -7528,6 +7554,14 @@ L&lt;Supplier&gt; and new values are emitted on the L&lt;Supplier&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Note that the CPointer representation can do nothing more than hold a C pointer.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101012Z" creationid="ramiroencinas" creationdate="20161126T101012Z">
+        <seg>Ten en cuenta que la representación de un CPointer solo puede alojar un puntero de C.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Note that the lack of a C&lt;returns&gt; trait is used to indicate void return type.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T172925Z" creationid="Ram" creationdate="20161120T172841Z">
@@ -7574,11 +7608,27 @@ trait.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Of course, you can always have an empty class:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101411Z" creationid="ramiroencinas" creationdate="20161126T101411Z">
+        <seg>También puedes utilizar una clase vacía:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>On object of this type is available via the variable C&lt;$*SPEC&gt; if the perl is
 running on a Unix-like platform.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T192557Z" creationid="explorer" creationdate="20161101T192557Z">
         <seg>Un objeto de este tipo está disponible a través de la variable C&lt;$*SPEC&gt; si el perl está ejecutándose sobre una plataforma estilo Unix.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Once again, type objects are used to represent nulls.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101659Z" creationid="ramiroencinas" creationdate="20161126T101659Z">
+        <seg>Por último recuerda que los tipos de objeto se utilizan para representar nulls.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9066,6 +9116,14 @@ finished executing.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>This means that your class cannot have extra attributes.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101031Z" creationid="ramiroencinas" creationdate="20161126T101031Z">
+        <seg>Esto significa que tu clase no puede tener más atributos.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>This means you can expose libraries that work on handles
 by writing a class like this:</seg>
       </tuv>
@@ -9874,6 +9932,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T202843Z" creationid="explorer" creationdate="20161101T202843Z">
         <seg>class Cursor { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>class DoorHandle is repr('CPointer') { }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101509Z" creationid="ramiroencinas" creationdate="20161126T101509Z">
+        <seg>class PomoPuerta is repr('CPointer') { }</seg>
       </tuv>
     </tu>
     <tu>
