@@ -5531,6 +5531,38 @@ X&lt;|operador postcircunfijo&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>@titles[2]  = 'Hagrid';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201652Z" creationid="Ram" creationdate="20161201T201652Z">
+        <seg>@títulos[2]  = 'Él';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>@values[0]  = 59.5e0;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201706Z" creationid="Ram" creationdate="20161201T201706Z">
+        <seg>@valores[0]  = 59.5e0;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>@values[1]  = 61.2e0;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201711Z" creationid="Ram" creationdate="20161201T201711Z">
+        <seg>@valores[1]  = 61.2e0;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>@values[2]  = 180.7e0;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201716Z" creationid="Ram" creationdate="20161201T201716Z">
+        <seg>@valores[2]  = 180.7e0;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>A</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20120728T084235Z">
@@ -8001,6 +8033,14 @@ the program is started.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T185455Z" creationid="ramiroencinas" creationdate="20160527T185455Z">
         <seg>Rakudo establece este máximo en la variable de entorno C&lt;RAKUDO_MAX_THREADS&gt; en el momento que inicia el programa.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>RenderBarChart('Weights (kg)', 3, @titles, @values);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201754Z" creationid="Ram" creationdate="20161201T201754Z">
+        <seg>DibujaGrafBarras('Pesos (kg)', 3, @títulos, @valores);</seg>
       </tuv>
     </tu>
     <tu>
@@ -11700,6 +11740,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201603Z" creationid="Ram" creationdate="20161201T201603Z">
         <seg>my @títulos := CArray[Str].new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my @values := CArray[num].new;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201659Z" creationid="Ram" creationdate="20161201T201659Z">
+        <seg>my @valores := CArray[num].new;</seg>
       </tuv>
     </tu>
     <tu>
