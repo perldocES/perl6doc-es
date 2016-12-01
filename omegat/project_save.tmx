@@ -7075,6 +7075,15 @@ messages from the tapped supply:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>If you assign, you
+are putting the values into a Perl 6 array, and it will not work out.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202207Z" creationid="Ram" creationdate="20161201T202207Z">
+        <seg>Si realizas una asignación estás colocando los valores dentro de un array de Perl 6 y no funcionará.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>If you got here by following</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T214217Z" creationid="explorer" creationdate="20161102T214217Z">
@@ -7632,6 +7641,14 @@ return will also be represented by the type object.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T175034Z" creationid="Ram" creationdate="20161120T175034Z">
         <seg>Ten en cuenta que si pasas solo el objeto tipo Str puedes estar pasando un texto null, y de la misma forma pero al revés, una devolución de null también puede representarse como el objeto tipo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Note that binding was used to C&lt;@titles&gt;, I&lt;not&gt; assignment!</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202133Z" creationid="Ram" creationdate="20161201T202133Z">
+        <seg>¡Ten en cuenta que en C&lt;@titles&gt; I&lt;no&gt; se ha utilizado una asignación!</seg>
       </tuv>
     </tu>
     <tu>
