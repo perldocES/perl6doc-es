@@ -862,6 +862,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>$titles[2] = 'Hagrid';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202903Z" creationid="Ram" creationdate="20161201T202903Z">
+        <seg>$títulos[2] = 'Él';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>$x++;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20151218T170348Z" creationid="explorer" creationdate="20151218T170348Z">
@@ -6826,6 +6834,14 @@ can be kept or broken.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T152627Z" creationid="explorer" creationdate="20161113T152627Z">
         <seg>Para operadores unarios, esto se interpreta como:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Getting return values for arrays works out just the same.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202930Z" creationid="Ram" creationdate="20161201T202930Z">
+        <seg>El retorno de valores con arrays funciona de la misma forma.</seg>
       </tuv>
     </tu>
     <tu>
