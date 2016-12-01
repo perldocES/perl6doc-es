@@ -7503,6 +7503,14 @@ same way as functions can take functions as parameters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>NativeCall has some support for arrays.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T200344Z" creationid="Ram" creationdate="20161201T200344Z">
+        <seg>Pueden utilizarse arrays en las LLamadas Nativas.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>NativeCall provides a "symbol" trait for you to specify the name of the native
 routine in your library that may be different from your Perl subroutine name.</seg>
       </tuv>
