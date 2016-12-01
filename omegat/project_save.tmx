@@ -7202,6 +7202,16 @@ which is fed by a C&lt;tap&gt; on the L&lt;Supply&gt;:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>It is constrained to work with machine-size
+integers, doubles and strings, sized numeric types, arrays of pointers, arrays of
+structs, and arrays of arrays.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T200921Z" creationid="Ram" creationdate="20161201T200833Z">
+        <seg>Y tienen que ajustarse al tamaño proporcionado por el sistema en los siguientes tipos: enteros, doubles and strings, tipos de tamaño numérico, arrays de punteros, arrays de estructuras y arrays de arrays.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>It provides much of the functionality that user code needs to operate
 in a concurrent or asynchronous manner.</seg>
       </tuv>
