@@ -7046,6 +7046,16 @@ L&lt;X::Promise::CauseOnlyValidOnBroken&gt; exception.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>If this
+all freaks you out, forget you ever knew anything about the C&lt;@&gt; sigil and just
+use C&lt;$&gt; all the way when using NativeCall.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202314Z" creationid="Ram" creationdate="20161201T202314Z">
+        <seg>Si esto te resulta raro, olvídate del sigil C&lt;@&gt; y utiliza C&lt;$&gt; mientras utilizas Llamadas Nativas.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>If two objects compare equally via C&lt;===&gt;, their C&lt;.WHICH&gt; methods return
 the same ObjAt object.</seg>
       </tuv>
