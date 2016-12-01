@@ -590,6 +590,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>$ints[$number_of_ints - 1] = 0; # extend the array to 10 items</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204804Z" creationid="Ram" creationdate="20161201T204804Z">
+        <seg>$ints[$número_de_enteros - 1] = 0; # el array se amplía a 10 elementos</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>$lock.protect({</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T211900Z" creationid="ramiroencinas" creationdate="20160527T211900Z">
@@ -7234,6 +7242,17 @@ is assumed.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>In these cases it is important that the CArray has at least the number of
+elements that are going to be populated before passing it to the native
+subroutine, otherwise the C function may stomp all over Perl's memory
+leading to possibly unpredictable behaviour:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204542Z" creationid="Ram" creationdate="20161201T204542Z">
+        <seg>En estos casos es importante que el tamaño del CArray sea lo suficientemente grande como para alojar los elementos que retornará la función de C. En caso contrario puede ocurrir cualquier cosa:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>In this case the code in the supply block is executed every time the
 L&lt;Supply&gt; returned by C&lt;supply&gt; is tapped, as demonstrated by:</seg>
       </tuv>
@@ -11380,6 +11399,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $ints = CArray[int32].new;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204546Z" creationid="Ram" creationdate="20161201T204546Z">
+        <seg>my $ints = CArray[int32].new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $is-closed = $c.closed;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161117T141741Z" creationid="Ram" creationdate="20161117T141741Z">
@@ -11392,6 +11419,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T211835Z" creationid="ramiroencinas" creationdate="20160527T211835Z">
         <seg>my $bloqueo = Lock.new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my $number_of_ints = 10;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204605Z" creationid="Ram" creationdate="20161201T204605Z">
+        <seg>my $número_de_enteros = 10;</seg>
       </tuv>
     </tu>
     <tu>
