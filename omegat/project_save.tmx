@@ -5515,6 +5515,22 @@ X&lt;|operador postcircunfijo&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>@titles[0]  = 'Me';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201614Z" creationid="Ram" creationdate="20161201T201614Z">
+        <seg>@títulos[0]  = 'Yo';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>@titles[1]  = 'You';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201626Z" creationid="Ram" creationdate="20161201T201626Z">
+        <seg>@títulos[1]  = 'Tú';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>A</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20120728T084235Z">
@@ -6805,6 +6821,14 @@ an example.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T170251Z" creationid="Ram" creationdate="20161120T170251Z">
         <seg>Aquí tenemos un ejemplo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Here is an example of passing a C array.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201443Z" creationid="Ram" creationdate="20161201T201443Z">
+        <seg>Este es un ejemplo pasando un array de C como parámetro.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11672,6 +11696,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my @titles := CArray[Str].new;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201603Z" creationid="Ram" creationdate="20161201T201603Z">
+        <seg>my @títulos := CArray[Str].new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my class X::Signature::NameClash does X::Comp { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170609Z" creationid="explorer" creationdate="20161106T170609Z">
@@ -12348,6 +12380,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T084614Z" creationid="ramiroencinas" creationdate="20161126T084614Z">
         <seg>sub Foo_init() returns Pointer is native("foo") { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub RenderBarChart(Str, int32, CArray[Str], CArray[num]) is native("chart") { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201553Z" creationid="Ram" creationdate="20161201T201553Z">
+        <seg>sub DibujaGrafBarra(Str, int32, CArray[Str], CArray[num]) is native("grafbarra") { * }</seg>
       </tuv>
     </tu>
     <tu>
