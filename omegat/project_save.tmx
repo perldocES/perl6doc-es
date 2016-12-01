@@ -9002,6 +9002,14 @@ allow you to explicitly supply a scheduler.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The memory management of arrays is important to understand.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204853Z" creationid="Ram" creationdate="20161201T204853Z">
+        <seg>Es importante conocer la gestión de la memoria del array.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The method C&lt;interval&gt; returns a new C&lt;on-demand&gt; supply which periodically
 emits a new event at the specified interval.</seg>
       </tuv>
@@ -9684,6 +9692,16 @@ C&lt;X::Proc::Async::AlreadyStarted&gt; exception.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170353Z" creationid="explorer" creationdate="20161106T170353Z">
         <seg>Cuando llama a C&lt;start&gt; dos veces sobre el mismo objeto L&lt;Proc::Async|/type/Proc::Async&gt;, la segunda invocación morirá con una excepción C&lt;X::Proc::Async::AlreadyStarted&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>When you create an
+array yourself, then you can add elements to it as you wish and it will be
+expanded for you as required.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204959Z" creationid="Ram" creationdate="20161201T204959Z">
+        <seg>Cuando creas un array puedes añadirle elementos y ampliarlo de esa forma todo lo que necesites.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11419,6 +11437,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T211835Z" creationid="ramiroencinas" creationdate="20160527T211835Z">
         <seg>my $bloqueo = Lock.new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my $n = get_n_ints($ints, $number_of_ints);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204823Z" creationid="Ram" creationdate="20161201T204823Z">
+        <seg>my $n = get_n_ints($ints, $número_de_enteros);</seg>
       </tuv>
     </tu>
     <tu>
