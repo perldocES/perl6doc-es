@@ -846,6 +846,22 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>$titles[0] = 'Me';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202842Z" creationid="Ram" creationdate="20161201T202842Z">
+        <seg>$títulos[0] = 'Yo';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$titles[1] = 'You';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202852Z" creationid="Ram" creationdate="20161201T202852Z">
+        <seg>$títulos[1] = 'Tú';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>$x++;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20151218T170348Z" creationid="explorer" creationdate="20151218T170348Z">
@@ -11671,6 +11687,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160523T174851Z" creationid="ramiroencinas" creationdate="20160523T174851Z">
         <seg>my $hilo = Thread.start({ for  1 ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my $titles = CArray[Str].new;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202832Z" creationid="Ram" creationdate="20161201T202832Z">
+        <seg>my $títulos = CArray[Str].new;</seg>
       </tuv>
     </tu>
     <tu>
