@@ -7782,6 +7782,15 @@ new class.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Perl 6 arrays, which support amongst other things laziness, are laid out in memory
+in a radically different way to C arrays.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201129Z" creationid="Ram" creationdate="20161201T201129Z">
+        <seg>Los arrays en Perl 6 son perezosos y en memoria son radicalmente distintos a los arrays de C.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Perl 6 will generate the actual
 combined operator in the background, allowing the mechanism to be applied to
 user defined operators.</seg>
@@ -9068,6 +9077,15 @@ channel must be checked to determine whether it is closed:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T005503Z" creationid="explorer" creationdate="20161102T005503Z">
         <seg>Todavía no existe una API definida para los AST.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Therefore, the NativeCall library offers
+a much more primitive CArray type, which you must use if working with C arrays.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201317Z" creationid="Ram" creationdate="20161201T201317Z">
+        <seg>Por tanto, la librería de Llamadas Nativas proporciona un tipo mucho más primitivo denominado CArray y es el que debe utilizarse con los arrays de C.</seg>
       </tuv>
     </tu>
     <tu>
