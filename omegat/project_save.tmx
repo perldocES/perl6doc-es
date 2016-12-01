@@ -9266,6 +9266,16 @@ a much more primitive CArray type, which you must use if working with C arrays.<
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>This
+means you'd best know what you're doing if you twiddle with an array after passing
+it to a C library.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T205627Z" creationid="Ram" creationdate="20161201T205627Z">
+        <seg>Esto te sirve para jugar con conocimiento con un array después de pasarlo a una librería de C.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>This could also be written using the C&lt;react&gt; keyword:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160507T163028Z" creationid="ramiroencinas" creationdate="20160507T163028Z">
