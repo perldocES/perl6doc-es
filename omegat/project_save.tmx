@@ -8415,6 +8415,15 @@ pathologically large numerators and denominators.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Some library APIs may take an array as a buffer that will be populated by the
+C function and, for instance, return the actual number of items populated:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204027Z" creationid="Ram" creationdate="20161201T204027Z">
+        <seg>Algunas APIs utilizan un array como buffer. Los elementos de este array son introducidos mediante una función de C y pueden por ejemplo devolver el número de elementos del array:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Some programs (such as C&lt;grep&gt; without a file argument in this
 example, ) won't exit until their standard input is closed so
 L&lt;close-stdin|/type/Proc::Async#method_close-stdin&gt; can be called when
@@ -12535,6 +12544,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161117T142633Z" creationid="Ram" creationdate="20161117T142633Z">
         <seg>sub traer-dato {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub get_n_ints(CArray[int32], int32) returns int32 is native('ints') { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204038Z" creationid="Ram" creationdate="20161201T204038Z">
+        <seg>sub get_n_ints(CArray[int32], int32) returns int32 is native('ints') { * }</seg>
       </tuv>
     </tu>
     <tu>
