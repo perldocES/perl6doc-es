@@ -7008,6 +7008,15 @@ libraries this may be a neat way to expose an object oriented interface to it.</
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>However, this may result in it being moved in
+memory (assignments to existing elements will never cause this, however).</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161201T205303Z" creationid="Ram" creationdate="20161201T205303Z">
+        <seg>Esta situación hace que el array tome más memoria (cosa que no ocurre cuando se asigna un valor a un elemento existente del array).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>I'm not quite clear which specific features should be included below</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T203901Z" creationid="ramiroencinas" creationdate="20160520T203901Z">
