@@ -6353,6 +6353,15 @@ exception based on the value passed to C&lt;break&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>CStruct objects are passed to native functions by reference and native functions
+must also return CStruct objects by reference.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T203943Z" creationid="ramiroencinas" creationdate="20161202T203943Z">
+        <seg>Los objetos CStruct se pasan por referencia a las funciones nativas y éstas también deben devolver objetos CStruct por referencia.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Calling C&lt;done&gt; on the supply object calls the C&lt;done&gt; callback that
 may be specified for any taps, but does not prevent any further events
 being emitted to the stream, or taps receiving them.</seg>
@@ -6501,6 +6510,16 @@ potentially through aliases.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T193950Z" creationid="explorer" creationdate="20160428T193950Z">
         <seg>Cs          Surrogate (sustituto)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Currently, structs can contain machine-sized integers, doubles,
+strings, and other NativeCall objects (CArrays, and those using the CPointer and
+CStruct reprs).</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T202656Z" creationid="ramiroencinas" creationdate="20161202T202656Z">
+        <seg>De momento, las estructuras pueden contener enteros (con el tamaño proporcionado del sistema), doubles, strings y otros objetos de Llamadas Nativas (CArrays y los que utilizan las representaciones de CPointer y CStruct).</seg>
       </tuv>
     </tu>
     <tu>
@@ -6876,6 +6895,14 @@ can be kept or broken.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202930Z" creationid="Ram" creationdate="20161201T202930Z">
         <seg>El retorno de valores con arrays funciona de la misma forma.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Go wild!</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T203201Z" creationid="ramiroencinas" creationdate="20161202T203201Z">
+        <seg>¡Desátate!</seg>
       </tuv>
     </tu>
     <tu>
@@ -7828,6 +7855,14 @@ objects, and identify an object uniquely.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Of course, methods are completely fine too.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T203111Z" creationid="ramiroencinas" creationdate="20161202T203111Z">
+        <seg>Por supuesto, los métodos se comportarán como tiene que ser.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Of course, most functions take arguments or return values - but everything else
 that you can do is just adding to this simple pattern of declaring a Perl 6
 sub, naming it after the symbol you want to call and marking it with the "native"
@@ -7904,6 +7939,16 @@ L&lt;#prefix ...&gt; etc. stub operators.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161116T060852Z" creationid="explorer" creationdate="20161116T060852Z">
         <seg>Otros casos incluyen operadores infijos de meta-reducción (C&lt;[+] 1, 2, 3&gt;) y los operadores de resguardo L&lt;#prefix ...&gt;, etc.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Other than that, you can do the usual set of things you would with
+a class; you could even have some of the attributes come from roles or have them
+inherited from another class.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T203000Z" creationid="ramiroencinas" creationdate="20161202T203000Z">
+        <seg>A parte de esto, puedes utilizar la clase como otra cualquiera; incluso puedes utilizar atributos que vengan de roles o heredados de otra clase.</seg>
       </tuv>
     </tu>
     <tu>
@@ -8901,6 +8946,15 @@ facilities as described below.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The attributes can only be of the types that NativeCall knows how to marshal into
+struct fields.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T202155Z" creationid="ramiroencinas" creationdate="20161202T202155Z">
+        <seg>Las Llamadas Nativas solo pueden utilizar determinados tipos en los campos de la estructura y éstos son los que pueden utilizarse en los atributos correspondientes.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The behavior here is the same as setting C&lt;done&gt; and C&lt;quit&gt; on C&lt;tap&gt;.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T213547Z" creationid="ramiroencinas" creationdate="20160520T213547Z">
@@ -9079,6 +9133,16 @@ allow you to explicitly supply a scheduler.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160523T200635Z" creationid="ramiroencinas" creationdate="20160523T200635Z">
         <seg>La mayor parte de las APIs de alto nivel incluidas en la concurrencia se basan en un programador y no tienen por qué ser necesarias en absoluto, si bien algunos métodos como los encontrados en L&lt;Proc::Async&gt;, L&lt;Promise&gt; y L&lt;Supply&gt; te permiten suministrar un programador de forma explícita.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>The memory management
+rules for these references are very much like the rules for arrays, though simpler
+since a struct is never resized.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T204230Z" creationid="ramiroencinas" creationdate="20161202T204230Z">
+        <seg>Las reglas de la gestión de la memoria para estas referencias son muy parecidas a las reglas para los arrays, aunque son más simples pues una estructura nunca se redimensiona.</seg>
       </tuv>
     </tu>
     <tu>
