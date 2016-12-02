@@ -5963,6 +5963,15 @@ user code should, where possible, avoid the lower level concurrency APIs
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>All it takes is a
+quick use of the "repr" trait:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192511Z" creationid="ramiroencinas" creationdate="20161202T192511Z">
+        <seg>Solo hay que utilizar la característica "repr":</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>All standard QuantHash containers have a default value that is false
 (such as C&lt;0&gt; or C&lt;''&gt; or C&lt;Nil&gt; or C&lt;Bool::False&gt;), and keep around only those
 entries with non-default values, automatically deleting any entry if its
@@ -8708,6 +8717,16 @@ first parameter.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Thanks to representation polymorphism, it's possible to declare a normal looking
+Perl 6 class that, under the hood, stores its attributes in the same way a C
+compiler would lay them out in a similar struct definition.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192445Z" creationid="ramiroencinas" creationdate="20161202T192445Z">
+        <seg>Gracias a la representación polimórfica es posible declarar una clase normal de Perl 6 que por debajo guarde sus atributos como lo haría un compilador de C a la hora de definir una estructura similar.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The
 following code outputs 0 ..</seg>
       </tuv>
@@ -10384,6 +10403,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>class Point is repr('CStruct') {</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192527Z" creationid="ramiroencinas" creationdate="20161202T192527Z">
+        <seg>class Punto is repr('CStruct') {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>class Point {</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20160528T125437Z" creationid="Ram" creationdate="20160528T125437Z">
@@ -10852,6 +10879,22 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164424Z" creationid="ramiroencinas" creationdate="20160528T164424Z">
         <seg>has Tarea @!dependencias;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>has num64 $.x;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192532Z" creationid="ramiroencinas" creationdate="20161202T192532Z">
+        <seg>has num64 $.x;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>has num64 $.y;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192537Z" creationid="ramiroencinas" creationdate="20161202T192537Z">
+        <seg>has num64 $.y;</seg>
       </tuv>
     </tu>
     <tu>
