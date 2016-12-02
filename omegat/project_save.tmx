@@ -3451,6 +3451,14 @@ X&lt;|operador postcircunfijo&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Structs</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192108Z" creationid="ramiroencinas" creationdate="20161202T192108Z">
+        <seg>=head1 Estructuras</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Substitution Operators</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161116T061342Z" creationid="explorer" creationdate="20161116T061342Z">
@@ -6203,6 +6211,15 @@ L&lt;.subst method|/routine/subst&gt;, which go between the `s`/`S` and the open
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>By contrast, when a C library returns an array to you, then the memory can not
+be managed by NativeCall, and it doesn't know where the array ends.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T191150Z" creationid="ramiroencinas" creationdate="20161202T191150Z">
+        <seg>En contraste, cuando una librería de C devuelve un array, las Llamadas Nativas no pueden gestionar su memoria y por tanto no pueden saber donde finaliza el array.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>By returning an L&lt;AST&gt;, a macro can inject code into
 the calling location.</seg>
       </tuv>
@@ -6973,6 +6990,14 @@ para crear un tap en el L&lt;Suministro&gt; del bloque proporcionado.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Here, have a hug.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192057Z" creationid="ramiroencinas" creationdate="20161202T192057Z">
+        <seg>Venga un abrazo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Here, we have declared that the function takes two 32-bit integers and returns
 a 32-bit integer.</seg>
       </tuv>
@@ -7706,6 +7731,16 @@ the type of arguments a native function expects and what it returns.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Note that NativeCall can
+offer you no protection whatsoever here - do the wrong thing, and you will get a
+segfault or cause memory corruption.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T191811Z" creationid="ramiroencinas" creationdate="20161202T191811Z">
+        <seg>Ten en cuenta que las Llamadas Nativas no te ofrecen protección alguna en esta situación, de forma que si haces las cosas mal podrás tener un fallo de segmentación o corromper la memoria.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Note that a null string can be passed by passing the Str type object; a null
 return will also be represented by the type object.</seg>
       </tuv>
@@ -7980,6 +8015,16 @@ user defined operators.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T172436Z" creationid="Ram" creationdate="20161120T172436Z">
         <seg>Pointer[void]  (void* en C, puede apuntar a cualquier otro tipo)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Presumably,
+something in the library API tells you this (for example, you know that when
+you see a null element, you should read no further).</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T191546Z" creationid="ramiroencinas" creationdate="20161202T191546Z">
+        <seg>Podemos esperar que la API de la librería nos lo diga (por ejemplo, el array finaliza con un elemento null y no seguimos leyendo a partir de ahí).</seg>
       </tuv>
     </tu>
     <tu>
@@ -8337,6 +8382,14 @@ was provided.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T193803Z" creationid="explorer" creationdate="20160428T193803Z">
         <seg>Sc          Currency_Symbol (símbolo monetario)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Scared?</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192023Z" creationid="ramiroencinas" creationdate="20161202T192023Z">
+        <seg>¿Asustado?</seg>
       </tuv>
     </tu>
     <tu>
@@ -9333,6 +9386,15 @@ also provided as subroutines:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160503T194136Z" creationid="ramiroencinas" creationdate="20160503T194136Z">
         <seg>El siguiente código es considerado como un patrón común que también es presentado como una subrutina:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This isn't a shortcoming of NativeCall, it's
+the way the big bad native world works.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192012Z" creationid="ramiroencinas" creationdate="20161202T192012Z">
+        <seg>Todo esto no supone un defecto en las Llamadas Nativas, simplemente así es cómo funciona el gran y malvado mundo nativo.</seg>
       </tuv>
     </tu>
     <tu>
