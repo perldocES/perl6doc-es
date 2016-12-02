@@ -3491,6 +3491,14 @@ X&lt;|operador postcircunfijo&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head2 CUnions</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T205733Z" creationid="ramiroencinas" creationdate="20161202T205733Z">
+        <seg>=head2 CUnions</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head2 Channels</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160519T190634Z" creationid="ramiroencinas" creationdate="20160519T190634Z">
@@ -6099,6 +6107,15 @@ term or as a prefix.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>As you may have predicted by now, a null is represented by the type object of the
+struct type.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T205728Z" creationid="ramiroencinas" creationdate="20161202T205728Z">
+        <seg>Como puedes suponer, el tipo del objeto del tipo de la estructura representa null.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Associative does not provide any methods.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210440Z" creationid="explorer" creationdate="20161101T210440Z">
@@ -7378,6 +7395,15 @@ and call the subroutine whatever we want ("init" in this case).</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Instead, you have to bind new values to the private
+members: C&lt;$!struct-member := StructObj.new;&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T205545Z" creationid="ramiroencinas" creationdate="20161202T205545Z">
+        <seg>En lugar de eso tienes que enlazar valores nuevos en miembros privados: C&lt;$!miembro-de-la-estructura := ObjEstruct.new;&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>It is also possible to obtain a L&lt;Channel&gt; from a L&lt;Supply&gt; using the
 L&lt;Channel method|/type/Supply#method_Channel&gt; which returns a L&lt;Channel&gt;
 which is fed by a C&lt;tap&gt; on the L&lt;Supply&gt;:</seg>
@@ -7705,6 +7731,15 @@ same way as functions can take functions as parameters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T165258Z" creationid="ramiroencinas" creationdate="20160528T165258Z">
         <seg>¡ÑAM!' },</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>NativeCall currently doesn't put object members in containers, so assigning new values
+to them (with =) doesn't work.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T205252Z" creationid="ramiroencinas" creationdate="20161202T205252Z">
+        <seg>De momento las Llamadas Nativas no colocan objetos miembros en contenedores, por lo que no funcionará la asignación de valores nuevos con = en los objetos.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9822,6 +9857,15 @@ native library.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>When a CStruct-based type is used as the return
+type of a native function, the memory is not managed for you by the GC.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T204935Z" creationid="ramiroencinas" creationdate="20161202T204935Z">
+        <seg>Cuando el tipo de una devolución nativa está basado en un CStruct, la memoria no se libera de forma automática.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>When an L&lt;Array&gt; or a L&lt;Hash&gt; entry is initially assigned the
 underlying structure is altered and that operation is not async safe.</seg>
       </tuv>
@@ -9856,6 +9900,16 @@ C&lt;X::Proc::Async::AlreadyStarted&gt; exception.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170353Z" creationid="explorer" creationdate="20161106T170353Z">
         <seg>Cuando llama a C&lt;start&gt; dos veces sobre el mismo objeto L&lt;Proc::Async|/type/Proc::Async&gt;, la segunda invocación morirá con una excepción C&lt;X::Proc::Async::AlreadyStarted&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>When you create a struct, the memory is managed for
+you and when the variable(s) pointing to the instance of a CStruct go away, the memory
+will be freed when the GC gets to it.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T204541Z" creationid="ramiroencinas" creationdate="20161202T204541Z">
+        <seg>Cuando creas una nueva estructura la gestión de la memoria es automática y cuando la/s variable/s que apuntan a la instancia de un CStruct desaparece/n, la memoria correspondiente se libera.</seg>
       </tuv>
     </tu>
     <tu>
