@@ -3276,6 +3276,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Assignment Operators</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161204T230111Z" creationid="explorer" creationdate="20161204T230111Z">
+        <seg>=head1 Operadores de asignación</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Basic use of Pointers</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175424Z" creationid="ramiroencinas" creationdate="20161125T175424Z">
@@ -7380,6 +7388,15 @@ execution before normal completion:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T215457Z" creationid="explorer" creationdate="20161102T215457Z">
         <seg>Índice de los módulos que forman parte de la distribución principal oficial.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Infix operators can be combined with the assignment operator to modify a
+value and apply the result to a container in one go.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161204T230200Z" creationid="explorer" creationdate="20161204T230200Z">
+        <seg>Los operadores infijos se pueden combinar con el operador de asignación para modificar un valor y aplicar el resultado a un contenedor, todo al mismo tiempo.</seg>
       </tuv>
     </tu>
     <tu>
