@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaTN" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.5.4_0_r8496:8556M" segtype="sentence" srclang="EN-US"/>
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.1.9_4" segtype="sentence" srclang="EN-US"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -7632,6 +7632,16 @@ an external program asynchronously:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161019T050652Z" creationid="explorer" creationdate="20161019T050652Z">
         <seg>Manipula @INC en tiempo de compilación</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Matching
+characters, like braces, require an extra step where you use an
+assignment operator to assign the replacement to the match part.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161204T103007Z" creationid="explorer" creationdate="20161204T103007Z">
+        <seg>Hacer coincidir caracteres, como las llaves, requiere de un paso adicional donde usa un operador de asignación para asignar el reemplazo a la parte coincidente.</seg>
       </tuv>
     </tu>
     <tu>
