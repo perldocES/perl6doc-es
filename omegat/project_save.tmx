@@ -414,10 +414,26 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>$a .= round; # 3</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193249Z" creationid="explorer" creationdate="20161208T193249Z">
+        <seg>$a .= round; # 3</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>$a = 1;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110628T184404Z">
         <seg>$a = 1;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$a = 3.14;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193244Z" creationid="explorer" creationdate="20161208T193244Z">
+        <seg>$a = 3.14;</seg>
       </tuv>
     </tu>
     <tu>
@@ -442,6 +458,14 @@
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190644Z" creationid="explorer" creationdate="20161208T190644Z">
         <seg>$a min= 5; # también 3</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$a space-concat= 'word2'; # 'word1 word2'</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193047Z" creationid="explorer" creationdate="20161208T193047Z">
+        <seg>$a space-concat= 'word2'; # 'word1 word2'</seg>
       </tuv>
     </tu>
     <tu>
@@ -3420,6 +3444,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Negated Relational Operators</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T194042Z" creationid="explorer" creationdate="20161208T194042Z">
+        <seg>=head1 Operadores relacionales de negación</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Operator Precedence</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T113901Z" creationid="explorer" creationdate="20161113T113901Z">
@@ -6051,6 +6083,14 @@ value goes to that (false) default value.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T162330Z" creationid="explorer" creationdate="20161106T162330Z">
         <seg>Todos los contenedores QuantHash estándares tienen un valor por defecto que es falso (tal como C&lt;0&gt; o C&lt;''&gt; o C&lt;Nil&gt; o C&lt;Bool::False&gt;), y solo mantiene las entradas con valores no por defecto, borrando automáticamente cualquier entrada si su valor llega a ese valor (falso) por defecto.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Although not strictly operators, methods can be used in the same fashion.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193237Z" creationid="explorer" creationdate="20161208T193237Z">
+        <seg>Aunque no son, estrictamente, operadores, los métodos se pueden utilizar de la misma manera.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11749,6 +11789,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $a = 'word1';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193044Z" creationid="explorer" creationdate="20161208T193044Z">
+        <seg>my $a = 'word1';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $a = 0;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T211840Z" creationid="ramiroencinas" creationdate="20160527T211840Z">
@@ -12369,6 +12417,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144850Z" creationid="ramiroencinas" creationdate="20161208T144850Z">
         <seg>my Pointer[int32] $p; #Para un puntero de tipo int32;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my Real $a = 1/2;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193241Z" creationid="explorer" creationdate="20161208T193241Z">
+        <seg>my Real $a = 1/2;</seg>
       </tuv>
     </tu>
     <tu>
@@ -13121,6 +13177,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160506T165242Z" creationid="ramiroencinas" creationdate="20160506T165242Z">
         <seg>sub get_promesa {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub infix:&lt;space-concat&gt; ($a, $b) { $a ~ " " ~ $b };</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T193032Z" creationid="explorer" creationdate="20161208T193032Z">
+        <seg>sub infix:&lt;space-concat&gt; ($a, $b) { $a ~ " " ~ $b };</seg>
       </tuv>
     </tu>
     <tu>
