@@ -9526,6 +9526,15 @@ as well as any customary prefixes (e.g., 'lib') will be added for you.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The pointy part of C&lt;«&gt; or C&lt;»&gt; has to
+point to the shorter list.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T220208Z" creationid="explorer" creationdate="20161208T220208Z">
+        <seg>La parte que apunta, de C&lt;«&gt; o C&lt;»&gt;, debe apuntar a la lista más corta.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The primary interface of a scheduler (indeed the only method required
 by the L&lt;Scheduler&gt; interface) is the C&lt;cue&gt; method:</seg>
       </tuv>
