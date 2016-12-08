@@ -3292,6 +3292,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Buffers and Blobs</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144931Z" creationid="ramiroencinas" creationdate="20161208T144931Z">
+        <seg>=head1 Buffers y Blobs</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Changing names</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T095817Z" creationid="Ram" creationdate="20161120T095817Z">
@@ -3320,6 +3328,14 @@ unless 1 { } else { };</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101732Z" creationid="ramiroencinas" creationdate="20161126T101732Z">
         <seg>=head1 Punteros a Funciones</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=head1 Function arguments</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T145104Z" creationid="ramiroencinas" creationdate="20161208T145104Z">
+        <seg>=head1 Funciones como argumentos</seg>
       </tuv>
     </tu>
     <tu>
@@ -3479,6 +3495,14 @@ X&lt;|operador postcircunfijo&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20121113T002808Z">
         <seg>=head1 Sintaxis</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=head1 Typed Pointers</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T143539Z" creationid="ramiroencinas" creationdate="20161208T143539Z">
+        <seg>=head1 Tipos de Punteros</seg>
       </tuv>
     </tu>
     <tu>
@@ -7491,6 +7515,24 @@ can serve this role.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>It works with the native type
+but also with C&lt;CArray&gt; and C&lt;CStruct&gt; defined types.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T143822Z" creationid="ramiroencinas" creationdate="20161208T143822Z">
+        <seg>Esto funciona con los tipos nativos y también con los tipos C&lt;CArray&gt; y C&lt;CStruct&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It's mostly useful in the case of a C routine returning a pointer, or if it's a pointer
+embedded in a C&lt;CStruct&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144600Z" creationid="ramiroencinas" creationdate="20161208T144600Z">
+        <seg>Los tipos de punteros son más útiles para alojar el retorno de un puntero de una rutina en C, o si se trata de un puntero alojado en un C&lt;CStruct&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>It's not very much code, and yet the result is interesting
 and, at times, useful.</seg>
       </tuv>
@@ -7772,6 +7814,14 @@ same way as functions can take functions as parameters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>NativeCall also supports native functions that take functions as arguments.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T145217Z" creationid="ramiroencinas" creationdate="20161208T145217Z">
+        <seg>Las Llamadas Nativas también pueden utilizar funciones nativas que toman funciones como argumentos.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>NativeCall currently doesn't put object members in containers, so assigning new values
 to them (with =) doesn't work.</seg>
       </tuv>
@@ -7794,6 +7844,15 @@ routine in your library that may be different from your Perl subroutine name.</s
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T164907Z" creationid="Ram" creationdate="20161120T164907Z">
         <seg>Las Llamadas Nativas proporcionan la característica "symbol" para especificar el nombre de la rutina nativa que puede ser distinto del nombre de la rutina en Perl.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>NativeCall will not implicitly allocate the memory for it
+even when calling new on them.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144318Z" creationid="ramiroencinas" creationdate="20161208T144318Z">
+        <seg>La Llamada Nativa no realiza la asignación de memoria de forma implícita ni tan siquiera en la primera llamada.</seg>
       </tuv>
     </tu>
     <tu>
@@ -7967,6 +8026,15 @@ running on a Unix-like platform.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T101659Z" creationid="ramiroencinas" creationdate="20161126T101659Z">
         <seg>Por último recuerda que los tipos de objeto se utilizan para representar nulls.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>One example
+of this is using function pointers as callbacks in an event-driven system.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T145437Z" creationid="ramiroencinas" creationdate="20161208T145437Z">
+        <seg>Como ejemplo, pueden utilizarse punteros a funciones como devolución de llamada en un sistema orientado a eventos.</seg>
       </tuv>
     </tu>
     <tu>
@@ -10190,6 +10258,14 @@ implementation.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>You can type your C&lt;Pointer&gt; by passing the type as a parameter.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T143629Z" creationid="ramiroencinas" creationdate="20161208T143629Z">
+        <seg>Puedes asignar un tipo a un C&lt;Puntero&gt; pasando el tipo como parámetro.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>You can use this method to find out if
 a given object is a type object or not:</seg>
       </tuv>
@@ -10204,6 +10280,14 @@ of it.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T180132Z" creationid="ramiroencinas" creationdate="20161125T180132Z">
         <seg>No es necesario saber a donde apunta, solo saber donde guardarlo.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>You have to call C&lt;.deref&gt; on it to access the embedded type.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144827Z" creationid="ramiroencinas" creationdate="20161208T144827Z">
+        <seg>Para acceder al tipo en cuestión necesitas hacer una llamada a C&lt;.deref&gt; en el puntero en cuestión.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11264,6 +11348,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>max(sizeof(MyUnion.flags32), sizeof(MyUnion.flags64))</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T143045Z" creationid="ramiroencinas" creationdate="20161208T143045Z">
+        <seg>max(sizeof(MyUnion.flags32), sizeof(MyUnion.flags64))</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method DESTROY() {</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T100723Z" creationid="ramiroencinas" creationdate="20161126T100723Z">
@@ -12192,6 +12284,30 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my MyCstruct $mc = $p2.deref;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144911Z" creationid="ramiroencinas" creationdate="20161208T144911Z">
+        <seg>my MyCstruct $mc = $p2.deref;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my Pointer[MyCstruct] $p2 = some_c_routine();</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144905Z" creationid="ramiroencinas" creationdate="20161208T144905Z">
+        <seg>my Pointer[MyCstruct] $p2 = some_c_routine();</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my Pointer[int32] $p; #For a pointer on int32;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144850Z" creationid="ramiroencinas" creationdate="20161208T144850Z">
+        <seg>my Pointer[int32] $p; #Para un puntero de tipo int32;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my class X::Signature::NameClash does X::Comp { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170609Z" creationid="explorer" creationdate="20161106T170609Z">
@@ -12568,6 +12684,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>say $mc.field1;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T144923Z" creationid="ramiroencinas" creationdate="20161208T144923Z">
+        <seg>say $mc.campo1;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>say $promise.cause;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160503T193820Z" creationid="ramiroencinas" creationdate="20160503T193820Z">
@@ -12692,6 +12816,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160506T161526Z" creationid="ramiroencinas" creationdate="20160506T161526Z">
         <seg>say await Promise.allof(@promesas).then({ so all(@promesas&gt;&gt;.result) });</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>say nativesizeof(MyUnion.new);  # 8, ie.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T143039Z" creationid="ramiroencinas" creationdate="20161208T143039Z">
+        <seg>say nativesizeof(MyUnion.new);  # 8, ie.</seg>
       </tuv>
     </tu>
     <tu>
