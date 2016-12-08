@@ -5968,6 +5968,14 @@ described below should suffice for most user code.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>A list with just one element is fine too.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T220607Z" creationid="explorer" creationdate="20161208T220607Z">
+        <seg>También es correcto tener una lista con solo un elemento.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>A macro is a Routine whose invocation typically happens during
 parsing.</seg>
       </tuv>
