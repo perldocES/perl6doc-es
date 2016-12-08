@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.1.9_4" segtype="sentence" srclang="EN-US"/>
+  <header creationtool="OmegaTN" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.5.4_0_r8496:8556M" segtype="sentence" srclang="EN-US"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -7597,6 +7597,16 @@ an external program asynchronously:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Likewise, it is possible to declare a Perl 6 class that stores its
+attributes the same way a C compiler would lay them out in a similar
+C&lt;union&gt; definition; using the C&lt;CUnion&gt; representation:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T141941Z" creationid="ramiroencinas" creationdate="20161208T141941Z">
+        <seg>Igualmente es posible declarar una clase en Perl 6 que guarde sus atributos de la misma forma que una C&lt;union&gt; en C, mediante la representación C&lt;CUnion&gt;:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Ll          Lowercase_Letter</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T193349Z" creationid="explorer" creationdate="20160428T193349Z">
@@ -10476,6 +10486,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>class MyUnion is repr('CUnion') {</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T141949Z" creationid="ramiroencinas" creationdate="20161208T141949Z">
+        <seg>class MyUnion is repr('CUnion') {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>class NFC is Uni { ... }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T135557Z" creationid="explorer" creationdate="20161101T135557Z">
@@ -11024,6 +11042,22 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164424Z" creationid="ramiroencinas" creationdate="20160528T164424Z">
         <seg>has Tarea @!dependencias;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>has int32 $.flags32;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T142000Z" creationid="ramiroencinas" creationdate="20161208T142000Z">
+        <seg>has int32 $.flags32;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>has int64 $.flags64;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161208T142004Z" creationid="ramiroencinas" creationdate="20161208T142004Z">
+        <seg>has int64 $.flags64;</seg>
       </tuv>
     </tu>
     <tu>
