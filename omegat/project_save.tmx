@@ -9593,6 +9593,14 @@ it to a C library.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>This behavior is automatically extended to include custom-defined infix operators.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T191540Z" creationid="explorer" creationdate="20161208T191540Z">
+        <seg>Este comportamiento se extiende automáticamente para incluir operadores infijos personalizados.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>This could also be written using the C&lt;react&gt; keyword:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160507T163028Z" creationid="ramiroencinas" creationdate="20160507T163028Z">
@@ -10367,6 +10375,14 @@ these in previous chapters.</seg>
         <seg>Z&lt;&lt;
 &lt;dt&gt;&lt;a href="/module.html"&gt;Referencia de módulos&lt;/a&gt;&lt;/dt&gt;
 &lt;dd&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Z&lt;blocked by #63642 my @a = 1,2; @a ,= 3,4;&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T191424Z" creationid="explorer" creationdate="20161208T191424Z">
+        <seg>Z&lt;bloqueado por #63642 my @a = 1,2; @a ,= 3,4;&gt;</seg>
       </tuv>
     </tu>
     <tu>
