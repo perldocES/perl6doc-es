@@ -3589,6 +3589,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 X&lt;&lt;&lt;Hyper Operators|hyper,&lt;&lt;;hyper,&gt;&gt;;hyper,«;hyper,»&gt;&gt;&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201757Z" creationid="explorer" creationdate="20161208T201757Z">
+        <seg>=head1 X&lt;&lt;&lt;Hiper operador|hyper,&lt;&lt;;hyper,&gt;&gt;;hyper,«;hyper,»&gt;&gt;&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head2 Attributes</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20120625T193918Z">
@@ -7231,6 +7239,15 @@ memory (assignments to existing elements will never cause this, however).</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T205303Z" creationid="Ram" creationdate="20161201T205303Z">
         <seg>Esta situación hace que el array tome más memoria (cosa que no ocurre cuando se asigna un valor a un elemento existente del array).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Hyper operators apply a given operator enclosed by C&lt;«&gt; and C&lt;»&gt; to one or two
+lists, returning the resulting list.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201902Z" creationid="explorer" creationdate="20161208T201902Z">
+        <seg>Los hiper operadores se aplican a un operador encerrado entre C&lt;«&gt; y C&lt;»&gt; a una o dos listas, devolviendo una lista resultado.</seg>
       </tuv>
     </tu>
     <tu>
@@ -12986,6 +13003,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>say 4 R/ 12; # 3</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201725Z" creationid="explorer" creationdate="20161208T201725Z">
+        <seg>say 4 R/ 12; # 3</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>say @result;            # 55 -55</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160503T194554Z" creationid="ramiroencinas" creationdate="20160503T194554Z">
@@ -13014,6 +13039,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161119T200155Z" creationid="explorer" creationdate="20161119T200155Z">
         <seg>say S{foo} = {} given 'foobar';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>say [R/] 2, 4, 16; # 2</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201732Z" creationid="explorer" creationdate="20161208T201732Z">
+        <seg>say [R/] 2, 4, 16; # 2</seg>
       </tuv>
     </tu>
     <tu>
