@@ -3499,6 +3499,16 @@ X&lt;|operador postcircunfijo&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Reversed Operators
+X&lt;|R,reverse meta operator&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201314Z" creationid="explorer" creationdate="20161208T201314Z">
+        <seg>=head1 Operadores de reversión
+X&lt;|R,meta operador de reversión&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 SPECIAL VARIABLES</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110719T095924Z">
@@ -6184,6 +6194,15 @@ better type safety and more readable code.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Any infix operator may be called with its two arguments reversed by prefixing
+with C&lt;R&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201410Z" creationid="explorer" creationdate="20161208T201410Z">
+        <seg>Cualquier operador infijo se puede llamar con sus dos argumentos intercambiados prefijan el operador con C&lt;R&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Arguments are usually formatted to be only as wide as required to
 display the given value.</seg>
       </tuv>
@@ -6224,6 +6243,14 @@ struct type.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210440Z" creationid="explorer" creationdate="20161101T210440Z">
         <seg>Associative no proporciona ningún método.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Associativity of operands is reversed as well.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201534Z" creationid="explorer" creationdate="20161208T201534Z">
+        <seg>La asociatividad de los operandos también se invierte.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9502,6 +9529,15 @@ at a time:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The result of a relational operator returning C&lt;Bool&gt; can be negated by
+prefixing with C&lt;!&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201004Z" creationid="explorer" creationdate="20161208T201004Z">
+        <seg>El resultado de un operador relacional que devuelve C&lt;Bool&gt; se puede negar poniéndoles el prefijo C&lt;!&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The simplest fix is to use a &lt;Lock&gt; to protect the critical section .</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T215439Z" creationid="ramiroencinas" creationdate="20160527T215439Z">
@@ -9561,6 +9597,14 @@ semantics, as explained in detail as follows.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161116T061327Z" creationid="explorer" creationdate="20161116T061327Z">
         <seg>Existen bastantes Meta operadores con diferente semántica, como se explica a continuación.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>There are shortcuts for C&lt;!==&gt; and C&lt;!eq&gt;, namely C&lt;!=&gt; and C&lt;ne&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201153Z" creationid="explorer" creationdate="20161208T201153Z">
+        <seg>Existen atajos para C&lt;!==&gt; y C&lt;!eq&gt;, que son C&lt;!=&gt; y C&lt;ne&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9895,6 +9939,15 @@ signature (for example C&lt;class A { $^foo }&gt;.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20130101T235217Z">
         <seg>Por lo tanto,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>To avoid visual confusion with the C&lt;!!&gt; operator,
+you may not modify any operator already beginning with C&lt;!&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201107Z" creationid="explorer" creationdate="20161208T201107Z">
+        <seg>Para evitar confusión visual con el operador C&lt;!!&gt;, no puede modificar ningún operador que comience con C&lt;!&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11813,6 +11866,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $a = True;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201155Z" creationid="explorer" creationdate="20161208T201155Z">
+        <seg>my $a = True;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $answer = 42;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110129T230806Z">
@@ -11921,6 +11982,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110719T161138Z">
         <seg>my $i = 0;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my $i = 10;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201209Z" creationid="explorer" creationdate="20161208T201209Z">
+        <seg>my $i = 10;</seg>
       </tuv>
     </tu>
     <tu>
@@ -12181,6 +12250,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $release = Date.new(:2015year, :12month, :24day);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201228Z" creationid="explorer" creationdate="20161208T201228Z">
+        <seg>my $lanzamiento = Date.new(:2015year, :12month, :24day);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $result = await $promise;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160503T194212Z" creationid="ramiroencinas" creationdate="20160503T194212Z">
@@ -12289,6 +12366,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T202832Z" creationid="Ram" creationdate="20161201T202832Z">
         <seg>my $títulos = CArray[Str].new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my $today = Date.today;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201234Z" creationid="explorer" creationdate="20161208T201234Z">
+        <seg>my $hoy = Date.today;</seg>
       </tuv>
     </tu>
     <tu>
@@ -12953,6 +13038,22 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115841Z" creationid="ramiroencinas" creationdate="20161126T115841Z">
         <seg>say nuevafunc("test", 4);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>say so $a != True; # False</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201206Z" creationid="explorer" creationdate="20161208T201206Z">
+        <seg>say so $a != True; # False</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>say so $release !before $today; # False</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201246Z" creationid="explorer" creationdate="20161208T201246Z">
+        <seg>say so $lanzamiento !before $hoy; # False</seg>
       </tuv>
     </tu>
     <tu>
