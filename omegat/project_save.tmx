@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tmx SYSTEM "tmx11.dtd">
 <tmx version="1.1">
-  <header creationtool="OmegaTN" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.5.4_0_r8496:8556M" segtype="sentence" srclang="EN-US"/>
+  <header creationtool="OmegaTN" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.6.0_4_r9334:9343" segtype="sentence" srclang="EN-US"/>
   <body>
 <!-- Default translations -->
     <tu>
@@ -406,10 +406,42 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>$a += 10;  # 42</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190551Z" creationid="explorer" creationdate="20161208T190551Z">
+        <seg>$a += 10;  # 42</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>$a = 1;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110628T184404Z">
         <seg>$a = 1;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$a = 3;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190554Z" creationid="explorer" creationdate="20161208T190554Z">
+        <seg>$a = 3;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$a min= 2; # 2</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190646Z" creationid="explorer" creationdate="20161208T190646Z">
+        <seg>$a min= 2; # 2</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>$a min= 5; # still 3</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190644Z" creationid="explorer" creationdate="20161208T190644Z">
+        <seg>$a min= 5; # también 3</seg>
       </tuv>
     </tu>
     <tu>
@@ -6555,6 +6587,15 @@ potentially through aliases.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Containers will be
+autovivified if possible.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190545Z" creationid="explorer" creationdate="20161208T190545Z">
+        <seg>Los Containers se autovivificarán si es posible</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Cs          Surrogate</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T193950Z" creationid="explorer" creationdate="20160428T193950Z">
@@ -11696,6 +11737,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160527T211840Z" creationid="ramiroencinas" creationdate="20160527T211840Z">
         <seg>my $a = 0;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my $a = 32;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20161208T190547Z" creationid="explorer" creationdate="20161208T190547Z">
+        <seg>my $a = 32;</seg>
       </tuv>
     </tu>
     <tu>
