@@ -318,6 +318,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg># and later</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114646Z" creationid="Ram" creationdate="20161210T114646Z">
+        <seg># y después</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg># or</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120526T212316Z">
@@ -994,6 +1002,14 @@
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20111008T200612Z">
         <seg>)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>) returns int32 is native(LIBMYSQL);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114655Z" creationid="Ram" creationdate="20161210T114655Z">
+        <seg>) returns int32 is native(LIBMYSQL);</seg>
       </tuv>
     </tu>
     <tu>
@@ -6315,6 +6331,14 @@ placed with C&lt;emit&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>BE CAREFUL: the C&lt;native&gt; trait and C&lt;constant&gt; are evaluated at compile time.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114903Z" creationid="Ram" creationdate="20161210T114903Z">
+        <seg>TEN CUIDADO: las características C&lt;native&gt; y C&lt;constant&gt; se evalúan en tiempo de compilación.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Because C&lt;protect&gt; will block any threads that are waiting to execute
 the critical section the code should be as quick as possible.</seg>
       </tuv>
@@ -10478,6 +10502,15 @@ implementation.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>You can also put an incomplete path like './foo' and NativeCall will automatically put
+the right extension according to the platform specification.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114823Z" creationid="Ram" creationdate="20161210T114823Z">
+        <seg>También puedes indicar una ruta incompleta como por ejemplo './foo' y la Llamada Nativa pondrá automáticamente la extensión dependiendo de la especificación de la plataforma.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>You can also use a different delimiter:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161119T200104Z" creationid="explorer" creationdate="20161119T200104Z">
@@ -13368,6 +13401,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>sub bar is native(LIBFOO);</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114659Z" creationid="Ram" creationdate="20161210T114659Z">
+        <seg>sub bar is native(LIBFOO);</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>sub f() returns Int { "foo" }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155441Z" creationid="explorer" creationdate="20161111T155441Z">
@@ -13436,6 +13477,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161125T175641Z" creationid="ramiroencinas" creationdate="20161125T175641Z">
         <seg>sub mi_versión(int32 is rw, int32 is rw) is native('foo') { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub mysql_affected_rows( ..</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114651Z" creationid="Ram" creationdate="20161210T114651Z">
+        <seg>sub mysql_affected_rows( ..</seg>
       </tuv>
     </tu>
     <tu>
