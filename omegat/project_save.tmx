@@ -3420,6 +3420,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Library Paths and Names</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114416Z" creationid="Ram" creationdate="20161210T114416Z">
+        <seg>=head1 Nombres y Rutas de Librerías</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Low-level APIs</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160523T173709Z" creationid="ramiroencinas" creationdate="20160523T173709Z">
@@ -9106,6 +9114,14 @@ more values need to be fetched and loaded into the channel:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The C&lt;native&gt; trait accepts the library name or the full path.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114559Z" creationid="Ram" creationdate="20161210T114559Z">
+        <seg>La característica C&lt;native&gt; acepta el nombre de la librería o su ruta completa.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The C&lt;quit&gt; block works very similar to a C&lt;CATCH&gt;.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T212144Z" creationid="ramiroencinas" creationdate="20160520T212144Z">
@@ -11106,6 +11122,22 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T214845Z" creationid="explorer" creationdate="20161102T214845Z">
         <seg>partes conceptuales del language.Z&lt;&lt; Si Perl 6 es nuevo para usted,</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>constant LIBFOO = '/usr/lib/libfoo.so.1';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114615Z" creationid="Ram" creationdate="20161210T114615Z">
+        <seg>constant LIBFOO = '/usr/lib/libfoo.so.1';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>constant LIBMYSQL = 'mysqlclient';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114604Z" creationid="Ram" creationdate="20161210T114604Z">
+        <seg>constant LIBMYSQL = 'mysqlclient';</seg>
       </tuv>
     </tu>
     <tu>
