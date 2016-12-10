@@ -358,6 +358,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg># void SetCallback(int (*callback)(const char *))</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T112154Z" creationid="Ram" creationdate="20161210T112154Z">
+        <seg># void SetCallback(int (*callback)(const char *))</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>#!/usr/bin/perl -s</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110718T233947Z">
@@ -10138,6 +10146,16 @@ native library.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>When
+binding these functions via NativeCall, one need only provide the equivalent signature
+as a constraint on the code parameter:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T112149Z" creationid="Ram" creationdate="20161210T112149Z">
+        <seg>Al utilizar estas funciones mediante las Llamadas Nativas solo es necesario proporcionar la signatura equivalente:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>When a CStruct-based type is used as the return
 type of a native function, the memory is not managed for you by the GC.</seg>
       </tuv>
@@ -12552,6 +12570,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170609Z" creationid="explorer" creationdate="20161106T170609Z">
         <seg>my class X::Signature::NameClash does X::Comp { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my sub SetCallback(&amp;callback (Str --&gt; int32)) is native('mylib') { * }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T112158Z" creationid="Ram" creationdate="20161210T112158Z">
+        <seg>my sub SetCallback(&amp;callback (Str --&gt; int32)) is native('mylib') { * }</seg>
       </tuv>
     </tu>
     <tu>
