@@ -6794,6 +6794,15 @@ C's C&lt;int&gt; is only 4 bytes).</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Don't write a constant
+that depends on a dynamic variable like:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T115020Z" creationid="Ram" creationdate="20161210T115020Z">
+        <seg>No definas una constante que dependa de una variable dinámica. Por ejemplo:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>END</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120906T223846Z">
@@ -9925,6 +9934,14 @@ C&lt;$*SPEC&gt; variable for a perl running on C&lt;Cygwin&gt; .</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>This will keep the value given at compile time.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T115118Z" creationid="Ram" creationdate="20161210T115118Z">
+        <seg>Esto hace que el valor se guarde en tiempo de compilación.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>This will schedule the L&lt;Callable&gt; in C&lt;&amp;code&gt; to be executed in the
 manner determined by the adverbs (as documented in L&lt;Scheduler&gt;) using
 the execution scheme as implemented by the scheduler.</seg>
@@ -11163,6 +11180,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114615Z" creationid="Ram" creationdate="20161210T114615Z">
         <seg>constant LIBFOO = '/usr/lib/libfoo.so.1';</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>constant LIBMYSQL = %*ENV&lt;P6LIB_MYSQLCLIENT&gt; || 'mysqlclient';</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T115027Z" creationid="Ram" creationdate="20161210T115027Z">
+        <seg>constant LIBMYSQL = %*ENV&lt;P6LIB_MYSQLCLIENT&gt; || 'mysqlclient';</seg>
       </tuv>
     </tu>
     <tu>
