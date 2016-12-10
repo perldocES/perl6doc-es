@@ -8100,6 +8100,15 @@ L&lt;Supplier&gt; and new values are emitted on the L&lt;Supplier&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Note: the native code is responsible for memory management of values passed to
+Perl 6 callbacks this way.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T113848Z" creationid="Ram" creationdate="20161210T113848Z">
+        <seg>Nota: de esta forma el código nativo es el responsable de la gestión de la memoria de los valors pasados a las devoluciones de llamada de Perl 6.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Notes:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120722T232419Z">
