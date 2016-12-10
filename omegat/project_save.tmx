@@ -7493,6 +7493,15 @@ asynchronously to the program flow).</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>In other words, NativeCall will not free() strings passed
+to callbacks.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114242Z" creationid="Ram" creationdate="20161210T114242Z">
+        <seg>Dicho de otro modo, las Llamadas Nativas no hacen un free() con los strings pasados a las devoluciones de llamada.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>In the operator descriptions below, a default associativity of I&lt;left&gt;
 is assumed.</seg>
       </tuv>
