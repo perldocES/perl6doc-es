@@ -3629,6 +3629,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head2 ABI/API Version</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="Ram" changedate="20161210T115646Z" creationid="Ram" creationdate="20161210T115646Z">
+        <seg>=head2 Versiones ABI/API</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head2 Attributes</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20120625T193918Z">
