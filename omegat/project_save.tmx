@@ -54,6 +54,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>#</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110608T172506Z">
+        <seg>#</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>#       ensure the leading "0" for any octal,</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20140716T163222Z" creationid="explorer" creationdate="20140716T163222Z">
@@ -3741,6 +3749,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head2 Slices</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20111008T153355Z">
+        <seg>=head2 Porciones</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head2 Smartmatch Operator</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20121226T000419Z">
@@ -3769,6 +3785,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160523T173716Z" creationid="ramiroencinas" creationdate="20160523T173716Z">
         <seg>=head2 Hilos</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=head2 Unicode</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110717T233937Z">
+        <seg>=head2 Unicode</seg>
       </tuv>
     </tu>
     <tu>
@@ -10323,6 +10347,14 @@ otherwise.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Why?</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="mgomez" changedate="20120415T190254Z">
+        <seg>¿Por qué?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>X</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110718T232557Z">
@@ -12130,6 +12162,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $foo;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20120527T012139Z">
+        <seg>my $foo;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $fptr    = f();</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115817Z" creationid="ramiroencinas" creationdate="20161126T115817Z">
@@ -13242,6 +13282,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>say so $release !before $today;     # OUTPUT: «False␤»</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20170607T113744Z" creationid="explorer" creationdate="20170607T113744Z">
+        <seg>say so $lanzamiento !before $hoy;     # OUTPUT: «False␤»</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>say so $release !before $today; # False</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161208T201246Z" creationid="explorer" creationdate="20161208T201246Z">
@@ -13818,6 +13866,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>})</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110717T235817Z">
+        <seg>})</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>});</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110719T080041Z">
@@ -13838,6 +13894,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110608T180410Z">
         <seg>};</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>}}</seg>
+      </tuv>
+      <tuv lang="ES-ES">
+        <seg>}}</seg>
       </tuv>
     </tu>
 <!-- Alternative translations -->
