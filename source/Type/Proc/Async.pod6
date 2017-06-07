@@ -18,7 +18,7 @@ standard output and error handles, and optionally write to its standard input.
     my $proc = Proc::Async.new('echo', 'foo', 'bar');
 
     # subscribe to new output from out and err handles:
-    $proc.stdout.tap(-> $v { print "Output: $v" });
+    $proc.stdout.tap(-> $v { print "Output: $v" }, quit => { say 'caught exception ' ~ .^name });
     $proc.stderr.tap(-> $v { print "Error:  $v" });
 
     say "Starting...";
@@ -38,7 +38,7 @@ Done.
 
 An example that opens an external program for writing:
 
-    use v6;
+    use v6.c;
     my $prog = Proc::Async.new(:w, 'hexdump', '-C');
     my $promise = $prog.start;
     await $prog.write(Buf.new(12, 42));
@@ -49,7 +49,8 @@ An example that opens an external program for writing:
 
 =head2 method new
 
-    method new(:$path, *@args, :$w, :$r) returns Proc::Async:D
+    multi method new(*@ ($path, *@args), :$w, :$enc, :$translate-nl --> Proc::Async:D)
+    multi method new(   :$path, :@args,  :$w, :$enc, :$translate-nl --> Proc::Async:D)
 
 Creates a new C<Proc::Async> object with external program name or path C<$path>
 and the command line arguments C<@args>.
@@ -57,11 +58,16 @@ and the command line arguments C<@args>.
 If C<:w> is passed to C<new>, then a pipe to the external program's standard
 input stream (stdin) is opened, to which you can write with C<write> and
 C<say>.
-If C<:r> is present then you can tap the processes stdout and stderr.
+
+The C<:enc> specifies L<the encoding|/type/IO::Handle#method_encoding> for streams
+(can still be overridden in individual methods) and defaults to C<utf8>.
+
+If C<:translate-nl> is set to C<True> (default value), OS-specific newline
+terminators (e.g. C<\r\n> on Windows) will be automatically translated to C<\n>.
 
 =head2 method stdout
 
-    method stdout(Proc::Async:D: :$bin) returns Supply:D
+    method stdout(Proc::Async:D: :$bin --> Supply:D)
 
 Returns the L<Supply|/type/Supply> for the external program's standard output
 stream. If C<:bin> is passed, the standard output is passed along in  binary as
@@ -88,7 +94,7 @@ you try.
 
 =head2 method stderr
 
-    method stderr(Proc::Async:D: :$bin) returns Supply:D
+    method stderr(Proc::Async:D: :$bin --> Supply:D)
 
 Returns the L<Supply|/type/Supply> for the external program's standard error
 stream. If C<:bin> is passed, the standard error is passed along in  binary as
@@ -123,7 +129,7 @@ the program through the C<.print>, C<.say> and C<.write> methods.
 
 =head2 method start
 
-    method start(Proc::Async:D: :$scheduler = $*SCHEDULER, :$cwd = $*CWD) returns Promise:D
+    method start(Proc::Async:D: :$scheduler = $*SCHEDULER, :$cwd = $*CWD --> Promise:D)
 
 Initiates spawning of the external program. Returns a promise that will be
 kept with a L<Proc|/type/Proc> object once the external
@@ -151,9 +157,17 @@ try sink await $p.start;
 
 =head2 method started
 
-    method started(Proc::Async:D:) returns Bool:D
+    method started(Proc::Async:D: --> Bool:D)
 
 Returns C<False> before C<.start> has been called, and C<True> afterwards.
+
+=head2 method ready
+
+    method ready(Proc::Async:D: --> Promise:D)
+
+Returns a L<Promise|/type/Promise> that will be kept once the process
+has successfully started. L<Promise|/type/Promise> will be broken if the program
+fails to start.
 
 =head2 method path
 
@@ -164,7 +178,7 @@ C<new> method as first argument.
 
 =head2 method args
 
-    method args(Proc::Async:D:) returns Positional:D
+    method args(Proc::Async:D: --> Positional:D)
 
 Returns the command line arguments for the external programs, as passed to the
 C<new> method.
@@ -227,7 +241,7 @@ L<X::Proc::Async::MustBeStarted> exception is thrown.
 
 Closes the standard input stream of the external program. Programs that read
 from STDIN often only terminate when their input stream is closed. So if
-waiting for the promise from C<#method start> hangs (for a program opened for
+waiting for the promise from L<#method start> hangs (for a program opened for
 writing), it might be a forgotten C<close-stdin>.
 
 The C<Proc::Async> object must be created for writing (with

@@ -22,18 +22,17 @@ A named regex can be defined with the C<regex> declarator followed by its
 definition in curly braces. Since any regex does C<Callable> introspection requires
 referencing via C<&>-sigil.
 
-    my regexp R { \N }
-    say &R.WHAT;
-    # OUTPUT«Regex␤»
+    my regex R { \N };
+    say &R.WHAT; # OUTPUT: «(Regex)␤»
 
 To match a string against a regex, you can use the smart match operator:
 
     my $match = 'abc' ~~ rx/ ^ab /;
-    say $match.Bool;                # True
-    say $match.orig;                # abc
-    say $match.Str;                 # ab
-    say $match.from;                # 0
-    say $match.to;                  # 2
+    say $match.Bool;                # OUTPUT: «True␤»
+    say $match.orig;                # OUTPUT: «abc␤»
+    say $match.Str;                 # OUTPUT: «ab␤»
+    say $match.from;                # OUTPUT: «0␤»
+    say $match.to;                  # OUTPUT: «2␤»
 
 Or you can evaluate the regex in boolean context, in which case it matches
 against the C<$_> variable
@@ -50,7 +49,7 @@ against the C<$_> variable
 
 =head2 method ACCEPTS
 
-    multi method ACCEPTS(Regex:D: Mu) returns Match:D
+    multi method ACCEPTS(Regex:D: Mu --> Match:D)
     multi method ACCEPTS(Regex:D: @)
     multi method ACCEPTS(Regex:D: %)
 
@@ -65,7 +64,7 @@ failure.
 
 =head2 method Bool
 
-    multi method Bool(Regex:D:) returns Bool:D
+    multi method Bool(Regex:D: --> Bool:D)
 
 Matches against the caller's L<$_|/syntax/$_> variable, and returns C<True> for a match or
 C<False> for no match.

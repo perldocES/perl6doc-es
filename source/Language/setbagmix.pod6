@@ -1,4 +1,4 @@
-=begin pod
+=begin pod :tag<perl6>
 
 =TITLE Sets, Bags, and Mixes
 
@@ -102,9 +102,12 @@ X<Membership operator>.
 
 Returns C<True> if C<$a> is an B<element> of C<$b>.
 
+    say 2 (elem) (1, 2, 3).Set;              # OUTPUT: «True␤»
+    say 4 (elem) (1, 2, 3).Set;              # OUTPUT: «False␤»
+
 =head4 infix ∈
 
-    only sub infix:<<"∈">>($a, $b --> Bool)
+    only sub infix:<∈>($a, $b --> Bool)
 
 X<Membership operator> (alternate).
 
@@ -112,12 +115,15 @@ Equivalent to L«(elem)|/routine/(elem)», at codepoint U+2208 (ELEMENT OF).
 
 =head4 infix ∉
 
-    only sub infix:<<"∉">>($a, $b --> Bool)
+    only sub infix:<∉>($a, $b --> Bool)
 
 X<Non-membership operator>.
 
 Equivalent to C<!(elem)>, i.e., returns C<True> if C<$a> is not an element
 of C<$b>, at codepoint U+2209 (NOT AN ELEMENT OF).
+
+    say 2 !(elem) (1, 2, 3).Set;             # OUTPUT: «False␤»
+    say 4 !(elem) (1, 2, 3).Set;             # OUTPUT: «True␤»
 
 =head3 infix (cont)
 
@@ -128,9 +134,12 @@ X<Contains operator>.
 
 Returns C<True> if C<$a> B<contains> C<$b> as an element.
 
+    say (1, 2, 3).Set (cont) 2;              # OUTPUT: «True␤»
+    say (1, 2, 3).Set (cont) 4;              # OUTPUT: «False␤»
+
 =head4 infix ∋
 
-    only sub infix:<<"∋">>($a, $b --> Bool)
+    only sub infix:<∋>($a, $b --> Bool)
 
 X<Contains operator> (alternate).
 
@@ -138,12 +147,15 @@ Equivalent to L«(cont)|/routine/(cont)», at codepoint U+220B (CONTAINS AS MEMB
 
 =head4 infix ∌
 
-    only sub infix:<<"∌">>($a, $b --> Bool)
+    only sub infix:<∌>($a, $b --> Bool)
 
 X<Does not contain operator>.
 
 Equivalent to C<!(cont)>, i.e., returns C<True> if C<$a> does not contain
 C<$b>, at codepoint U+220C (DOES NOT CONTAIN AS MEMBER).
+
+    say (1, 2, 3).Set !(cont) 2;             # OUTPUT: «False␤»
+    say (1, 2, 3).Set !(cont) 4;             # OUTPUT: «True␤»
 
 =head3 infix (<=)
 
@@ -156,9 +168,13 @@ Returns C<True> if C<$a> is a B<subset> or is equal to C<$b>, i.e., if all
 the elements of C<$a> are elements of C<$b> and C<$a> is a smaller or equal
 sized set than C<$b>.
 
+    say (1, 2, 3).Set (<=) (3, 2, 1).Set;    # OUTPUT: «True␤»
+    say (1, 3).Set (<=) (2, 1).Set;          # OUTPUT: «False␤»
+    say ∅ (<=) (3, 2, 1).Set;                # OUTPUT: «True␤»
+
 =head4 infix ⊆
 
-    only sub infix:<<"⊆">>($a, $b --> Bool)
+    only sub infix:<⊆>($a, $b --> Bool)
 
 X<Subset of or equal to operator> (alternate).
 
@@ -166,11 +182,14 @@ Equivalent to L«(<=)», at codepoint U+2286 (SUBSET OF OR EQUAL TO).
 
 =head4 infix ⊈
 
-    only sub infix:<<"⊈">>($a, $b --> Bool)
+    only sub infix:<⊈>($a, $b --> Bool)
 
 X<Neither subset of nor equal to operator>.
 
 Equivalent to C«!(<=)», at codepoint U+2288 (NEITHER A SUBSET OF NOR EQUAL TO).
+
+    say (1, 2, 3).Set !(<=) (3, 2, 1).Set;   # OUTPUT: «False␤»
+    say (1, 3).Set ⊈ (2, 1).Set;             # OUTPUT: «True␤»
 
 =head3 infix (<)
 
@@ -183,9 +202,13 @@ Returns C<True> if C<$a> is a B<strict subset> of C<$b>, i.e., that all the
 elements of C<$a> are elements of C<$b> but C<$a> is a smaller set than
 C<$b>.
 
+    say (1, 2, 3).Set (<) (3, 2, 1).Set;     # OUTPUT: «False␤»
+    say (1, 3).Set (<) (3, 2, 1).Set;        # OUTPUT: «True␤»
+    say ∅ (<) (3, 2, 1).Set;                 # OUTPUT: «True␤»
+
 =head4 infix ⊂
 
-    only sub infix:<<"⊂">>($a, $b --> Bool)
+    only sub infix:<⊂>($a, $b --> Bool)
 
 X<Subset of operator> (alternate).
 
@@ -193,11 +216,14 @@ Equivalent to L«(<)», at codepoint U+2282 (SUBSET OF).
 
 =head4 infix ⊄
 
-    only sub infix:<<"⊄">>($a, $b --> Bool)
+    only sub infix:<⊄>($a, $b --> Bool)
 
 X<Not a subset of operator>.
 
 Equivalent to C«!(<)», at codepoint U+2284 (NOT A SUBSET OF).
+
+    say (1, 2, 3).Set !(<) (3, 2, 1).Set;    # OUTPUT: «True␤»
+    say (1, 3).Set ⊄ (3, 2, 1).Set;          # OUTPUT: «False␤»
 
 =head3 infix (>=)
 
@@ -209,9 +235,13 @@ X<Superset of or equal to operator>.
 Like L«(<=)» with reversed arguments. Returns C<True> if C<$a> is a
 B<superset> of or equal to C<$b>.
 
+    say (1, 2, 3).Set (>=) (3, 2, 1).Set;    # OUTPUT: «True␤»
+    say (1, 3).Set (>=) (3, 2, 1).Set;       # OUTPUT: «False␤»
+    say ∅ (>=) (3, 2, 1).Set;                # OUTPUT: «False␤»
+
 =head4 infix ⊇
 
-    only sub infix:<<"⊇">>($a, $b --> Bool)
+    only sub infix:<⊇>($a, $b --> Bool)
 
 X<Superset of or equal to operator> (alternate).
 
@@ -219,12 +249,15 @@ Equivalent to L«(>=)», at codepoint U+2287 (SUPERSET OF OR EQUAL TO).
 
 =head4 infix ⊉
 
-    only sub infix:<<"⊉">>($a, $b --> Bool)
+    only sub infix:<⊉>($a, $b --> Bool)
 
 X<Neither a superset of nor equal to operator>.
 
 Equivalent to C«!(>=)», at codepoint U+2289 (NEITHER A SUPERSET OF
 NOR EQUAL TO).
+
+    say (1, 2, 3).Set !(>=) (3, 2, 1).Set;   # OUTPUT: «False␤»
+    say (1, 3).Set ⊉ (3, 2, 1).Set;          # OUTPUT: «True␤»
 
 =head3 infix (>)
 
@@ -236,9 +269,13 @@ X<Superset of operator>.
 Like L«(<)» with reversed arguments. Returns C<True> if C<$a> is a
 B<strict superset> of C<$b>.
 
+    say (1, 2, 3, 4).Set (>) (3, 2, 1).Set;  # OUTPUT: «True␤»
+    say (1, 3).Set (>) (3, 2, 1).Set;        # OUTPUT: «False␤»
+    say ∅ (>) (3, 2, 1).Set;                 # OUTPUT: «False␤»
+
 =head4 infix ⊃
 
-    only sub infix:<<"⊃">>($a, $b --> Bool)
+    only sub infix:<⊃>($a, $b --> Bool)
 
 X<Superset of operator> (alternate).
 
@@ -246,11 +283,14 @@ Equivalent to L«(>)», at codepoint U+2283 (SUPERSET OF).
 
 =head4 infix ⊅
 
-    only sub infix:<<"⊅">>($a, $b --> Bool)
+    only sub infix:<⊅>($a, $b --> Bool)
 
 X<Not a superset of operator>.
 
 Equivalent to C«!(>)», at codepoint U+2285 (NOT A SUPERSET OF).
+
+    say (1, 2, 3, 4).Set !(>) (3, 2, 1).Set; # OUTPUT: «False␤»
+    say (1, 3).Set ⊅ (3, 2, 1).Set;          # OUTPUT: «True␤»
 
 =head3 infix (<+)
 
@@ -263,9 +303,12 @@ Returns C<True> if C<$a> is a Baggy B<subset> of C<$b>, i.e., if all the
 elements of C<$a> are in C<$b> and each element of C<$b> is weighed at
 least as heavily as the element is in C<$a>.
 
+    say (1, 2, 3).Bag (<+) (3, 2, 1).Bag;    # OUTPUT: «True␤»
+    say (1, 2, 2, 3).Bag (<+) (3, 2, 1).Bag; # OUTPUT: «False␤»
+
 =head4 infix ≼
 
-    only sub infix:<<"≼">>($a, $b --> Bool)
+    only sub infix:<≼>($a, $b --> Bool)
 
 X<Baggy subset of operator> (alternate).
 
@@ -282,9 +325,13 @@ Returns C<True> if C<$a> is a Baggy B<superset> of C<$b>, i.e., if all the
 elements of C<$b> are in C<$a> and no element of C<$b> is weighted heavier
 than that element is in C<$a>.
 
+    say (1, 2, 3).Bag (>+) (3, 2, 1).Bag;    # OUTPUT: «True␤»
+    say (1, 2, 2, 3).Bag (>+) (3, 2, 1).Bag; # OUTPUT: «True␤»
+    say (1, 2).Bag (>+) (3, 2, 1).Bag;       # OUTPUT: «False␤»
+
 =head4 infix ≽
 
-    only sub infix:<<"≽">>($a, $b --> Bool)
+    only sub infix:<≽>($a, $b --> Bool)
 
 X<Baggy superset of operator> (alternate).
 
@@ -302,17 +349,21 @@ X<Union operator>.
 Returns the B<union> of all its arguments. Generally, this creates a new
 C<Set> that contains all the elements its arguments contain.
 
+    =begin code :skip-test
     <a a b c d> (|) <h g f e d c> (|) <i j> === set <a b c d e f g h i j>
+    =end code
 
 If any of its arguments are C<Baggy>, it creates a new C<Bag> that contains
 all the elements of the arguments, each weighed by the highest weight that
 appeared for that element.
 
+    =begin code :skip-test
     bag(<a a b c a>) (|) bag(<a a b c c>) === bag(<a a a b c c>)
+    =end code
 
 =head4 infix ∪
 
-    only sub infix:<<"∪">>(|p)
+    only sub infix:<∪>(|p)
 
 X<Union operator> (alternate).
 
@@ -327,18 +378,22 @@ X<Intersection operator>.
 Returns the B<intersection> of all of its arguments. Generally, this creates
 a new C<Set> that contains only the elements common to all of the arguments.
 
+    =begin code :skip-test
     <a b c> (&) <b c d> === set <b c>
     <a b c d> (&) <b c d e> (&) <c d e f> === set <c d>
+    =end code
 
 If any of the arguments are C<Baggy>, the result is a new C<Bag> containing
 the common elements, each weighted by the largest I<common> weight (which
 is the minimum of the weights of that element over all arguments).
 
+    =begin code :skip-test
     bag(<a a b c a>) (&) bag(<a a b c c>) === bag(<a a b c>)
+    =end code
 
 =head4 infix ∩
 
-    only sub infix:<<"∩">>(|p)
+    only sub infix:<∩>(|p)
 
 X<Intersection operator> (alternate).
 
@@ -360,8 +415,10 @@ If the first argument is C<Baggy>, this returns a C<Bag> that contains each
 element of the first argument with its weight subtracted by the weight of
 that element in each of the other arguments.
 
-    bag(<a a b c a d>) (-) bag(<a a b c c>) = bag(<a d>)
-    bag(<a a a a c d d d>) (-) bag(<a b d a>) (-) bag(<d c>) = bag(<a a d d>)
+    =begin code :skip-test
+    bag(<a a b c a d>) (-) bag(<a a b c c>) === bag(<a d>)
+    bag(<a a a a c d d d>) (-) bag(<a b d a>) (-) bag(<d c>) === bag(<a a d>)
+    =end code
 
 =head4 infix ∖
 
@@ -386,7 +443,7 @@ $a)>.
 
 =head4 infix ⊖
 
-    only sub infix:<<"⊖">>($a, $b --> Setty)
+    only sub infix:<⊖>($a, $b --> Setty)
 
 X<Symmetric set difference operator> (alternate).
 
@@ -402,12 +459,14 @@ Returns the Baggy B<multiplication> of its arguments, i.e., a C<Bag> that
 contains each element of the arguments with the weights of the element
 across the arguments multiplied together to get the new weight.
 
+    =begin code :skip-test
     <a b c> (.) <a b c d> === bag <a b c> # Since 1 * 0 == 0, in the case of 'd'
-    bag(<a a b c a d>) (.) bag(<a a b c c>) === bag(<a a a a a a b c c>)
+    bag(<a a b c a d>) (.) bag(<a a b c c>) === ("a"=>6,"c"=>2,"b"=>1).Bag
+    =end code
 
 =head4 infix ⊍
 
-    only sub infix:<<"⊍">>(|p)
+    only sub infix:<⊍>(|p)
 
 X<Baggy multiplication operator> (alternate).
 
@@ -423,12 +482,13 @@ Returns the Baggy B<addition> of its arguments, i.e., a C<Bag> that contains
 each element of the arguments with the weights of the element across the
 arguments added together to get the new weight.
 
-    bag(<a a b c a d>) (.) bag(<a a b c c>) === bag(<a a a a a b b c c c d>)
-
+    =begin code :skip-test
+    bag(<a a b c a d>) (+) bag(<a a b c c>) === ("a"=>5,"c"=>3,"b"=>2,"d"=>1).Bag
+    =end code
 
 =head4 infix ⊎
 
-    only sub infix:<<"⊎">>(|p)
+    only sub infix:<⊎>(|p)
 
 X<Baggy addition operator> (alternate).
 

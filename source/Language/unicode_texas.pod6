@@ -1,4 +1,4 @@
-=begin pod
+=begin pod :tag<index>
 
 =TITLE Unicode versus Texas symbols
 
@@ -25,25 +25,17 @@ alphabetic character from the ASCII range.
 Any codepoint that has the C<Nd> (Number, decimal digit) property, can
 be used as a digit in any number.  For example:
 
-=begin code
-
   my $var = １９; # U+FF11 U+FF19
-  say $var + 2;  # 21
-
-=end code
+  say $var + 2;  # OUTPUT: «21␤»
 
 =head1 Numeric values
 
-Any codepoint that has the C<No> (Number, other) property can be used
-standalone as a numeric value, such as ½ and ⅓.  (These aren't
-decimal digit characters, so can't be combined.)  For example:
+Any codepoint that has the C<No> (Number, other) or C<Nl> (Number, letter)
+property can be used standalone as a numeric value, such as ½ and ⅓. (These
+aren't decimal digit characters, so can't be combined.) For example:
 
-=begin code
-
-  my $var = ⅒ + 2;
-  say $var; # 2.1
-
-=end code
+  my $var = ⅒ + 2 + Ⅻ; # here ⅒ is No and Rat and Ⅻ is Nl and Int
+  say $var;            # OUTPUT: «14.1␤»
 
 =head1 Whitespace characters
 
@@ -63,6 +55,9 @@ equivalents] that have a special meaning in Perl 6.
   »      |  U+00BB   | >>         | v6.c  | as part of «» or .» or regex right word boundary
   ×      |  U+00D7   | *          | v6.c  |
   ÷      |  U+00F7   | /          | v6.c  |
+  ≤      |  U+2264   | <=         | v6.c  |
+  ≥      |  U+2265   | >=         | v6.c  |
+  ≠      |  U+2260   | !=         | v6.c  |
   −      |  U+2212   | -          | v6.c  |
   ∘      |  U+2218   | o          | v6.c  |
   ≅      |  U+2245   | =~=        | v6.c  |
@@ -77,22 +72,21 @@ equivalents] that have a special meaning in Perl 6.
   “      |  U+201C   | "          | v6.c  | as part of “” or ”“
   ”      |  U+201D   | "          | v6.c  | as part of “” or ”“ or ””
   „      |  U+201E   | "          | v6.c  | as part of „“ or „”
-  ｢      |  U+FF62   | Q//        | v6.c  | as part of ｢｣
-  ｣      |  U+FF63   | Q//        | v6.c  | as part of ｢｣
+  ｢      |  U+FF62   | Q//        | v6.c  | as part of ｢｣ (Note: Q// variant cannot be used bare in regexes)
+  ｣      |  U+FF63   | Q//        | v6.c  | as part of ｢｣ (Note: Q// variant cannot be used bare in regexes)
   ⁺      |  U+207A   | +          | v6.c  | (must use explicit number) as part of exponentiation
   ⁻      |  U+207B   | -          | v6.c  | (must use explicit number) as part of exponentiation
   ¯      |  U+00AF   | -          | v6.c  | (must use explicit number) as part of exponentiation (macron is an alternative way of writing a minus)
   ⁰      |  U+2070   | **0        | v6.c  | can be combined with ⁰..⁹
-  ¹      |  U+2071   | **1        | v6.c  | can be combined with ⁰..⁹
-  ²      |  U+2072   | **2        | v6.c  | can be combined with ⁰..⁹
-  ³      |  U+2073   | **3        | v6.c  | can be combined with ⁰..⁹
+  ¹      |  U+00B9   | **1        | v6.c  | can be combined with ⁰..⁹
+  ²      |  U+00B2   | **2        | v6.c  | can be combined with ⁰..⁹
+  ³      |  U+00B3   | **3        | v6.c  | can be combined with ⁰..⁹
   ⁴      |  U+2074   | **4        | v6.c  | can be combined with ⁰..⁹
   ⁵      |  U+2075   | **5        | v6.c  | can be combined with ⁰..⁹
   ⁶      |  U+2076   | **6        | v6.c  | can be combined with ⁰..⁹
   ⁷      |  U+2077   | **7        | v6.c  | can be combined with ⁰..⁹
   ⁸      |  U+2078   | **8        | v6.c  | can be combined with ⁰..⁹
   ⁹      |  U+2079   | **9        | v6.c  | can be combined with ⁰..⁹
-  ∘      |  U+2218   | o          | v6.c  |
   ∅      |  U+2205   | set()      | v6.c  | (empty set)
   ∈      |  U+2208   | (elem)     | v6.c  |
   ∉      |  U+2209   | !(elem)    | v6.c  |
@@ -126,5 +120,6 @@ when used.
   Symbol | Codepoints       | Texas   | Since | Remarks
   =======|==================|=========|=======|=========================
   »=»    | U+00BB = U+00BB  | >>[=]>> | v6.c  | uses ASCII '='
+  «=»    | U+00AB = U+00BB  | <<[=]>> | v6.c  | uses ASCII '='
 
 =end pod

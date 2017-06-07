@@ -20,7 +20,7 @@ Its important aspect is a method stub for C<iterator>.
     };
 
     my @a does DNA = 'GAATCC';
-    .say for @a; # OUTPUT«G␤G␤A␤T␤C␤C␤»
+    .say for @a; # OUTPUT: «G␤A␤A␤T␤C␤C␤»
 
 =head1 Methods
 
@@ -28,7 +28,7 @@ Its important aspect is a method stub for C<iterator>.
 
 Defined as:
 
-    method iterator() returns Iterator:D
+    method iterator(--> Iterator:D)
 
 Method stub that ensures all classes doing the C<Iterable> role have a method
 C<iterator>.
@@ -41,15 +41,15 @@ It is supposed to return an L<Iterator|/type/Iterator>.
 
 Defined as:
 
-    method flat() returns Iterable
+    method flat(--> Iterable)
 
 Returns another L<Iterable> that flattens out all iterables that the first one
 returns.
 
 For example
 
-    say (<a b>, 'c').elems;         # 2
-    say (<a b>, 'c').flat.elems;    # 3
+    say (<a b>, 'c').elems;         # OUTPUT: «2␤»
+    say (<a b>, 'c').flat.elems;    # OUTPUT: «3␤»
 
 because C<< <a b> >> is a L<List|/type/List> and thus iterable, so
 C<< (<a b>, 'c').flat >> returns C<('a', 'b', 'c')>, which has three elems.
@@ -57,24 +57,24 @@ C<< (<a b>, 'c').flat >> returns C<('a', 'b', 'c')>, which has three elems.
 Note that the flattening is recursive, so C<((("a", "b"), "c"), "d").flat>
 returns C<("a", "b", "c", "d")>, but it does not flatten itemized sublists:
 
-    say ($('a', 'b'), 'c').perl;    # ($("a", "b"), "c")
+    say ($('a', 'b'), 'c').perl;    # OUTPUT: «($("a", "b"), "c")␤»
 
 =head2 method lazy
 
 Defined as:
 
-    method lazy() returns Iterable
+    method lazy(--> Iterable)
 
 Returns a lazy iterable wrapping the invocant.
 
-    say (1 ... 1000).is-lazy;      # False
-    say (1 ... 1000).lazy.is-lazy; # True
+    say (1 ... 1000).is-lazy;      # OUTPUT: «False␤»
+    say (1 ... 1000).lazy.is-lazy; # OUTPUT: «True␤»
 
 =head2 method hyper
 
 Defined as:
 
-    method hyper(Int(Cool) :$batch = 64, Int(Cool) :$degree = 4) returns Iterable
+    method hyper(Int(Cool) :$batch = 64, Int(Cool) :$degree = 4 --> Iterable)
 
 Returns another Iterable that is potentially iterated in parallel, with a
 given batch size and degree of parallelism.
@@ -87,7 +87,7 @@ The order of elements is preserved.
 
 Defined as:
 
-    method race(Int(Cool) :$batch = 64, Int(Cool) :$degree = 4) returns Iterable
+    method race(Int(Cool) :$batch = 64, Int(Cool) :$degree = 4 --> Iterable)
 
 Returns another Iterable that is potentially iterated in parallel, with a
 given batch size and degree of parallelism (number of parallel workers).

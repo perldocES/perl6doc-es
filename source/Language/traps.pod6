@@ -1,4 +1,4 @@
-=begin pod
+=begin pod :tag<index>
 
 =TITLE Traps to avoid
 
@@ -18,6 +18,30 @@ them where they would rarely be seen.  Because of this, Perl 6's warts are
 in different places than you may expect them to be when coming from another
 language.
 
+=head1 Variables and Constants
+
+=head2 Constants are Compile Time
+
+Constants are computed at compile time, so if you use them in modules keep in mind
+their values will be frozen due to pre-compilation:
+
+    # WRONG (most likely):
+    unit module Something::Or::Other;
+    constant $config-file = "config.txt".IO.slurp;
+
+The C<$config-file> will be slurped during precompilation and changes to
+C<config.txt> file won't be re-loaded when you start the script again; only when
+the module is re-compiled.
+
+Avoiding L<using a container|/language/containers> and
+L<binding a value|/language/containers#Binding> to a variable can offer
+behaviour similar to constants, so use that instead, if you want the value
+to get updated:
+
+    # Good; file gets updated from 'config.txt' file on each script run:
+    unit module Something::Or::Other;
+    my $config-file := "config.txt".IO.slurp;
+
 =head1 Objects
 
 =head2 Assigning to attributes
@@ -28,7 +52,7 @@ case.
 
 For example
 
-    use v6;
+    use v6.c;
     class Point {
         has $.x;
         has $.y;
@@ -43,7 +67,7 @@ For example
 
 dies with
 
-    Cannot modify an immutable Int
+    Cannot assign to an immutable value
 
 in the first line marked with C<# WRONG>, because C<$.x>, short for C<$(
 self.x )>, is a call to a read-only accessor.
@@ -67,7 +91,7 @@ which operates on the attributes directly.
 When you define your own C<BUILD> submethod, you must take care of
 initializing all attributes yourself. For example
 
-    use v6;
+    use v6.c;
     class A {
         has $.x;
         has $.y;
@@ -76,7 +100,7 @@ initializing all attributes yourself. For example
         }
     }
 
-    say A.new(x => 42).x;       # Any
+    say A.new(x => 42).x;       # OUTPUT: «Any␤»
 
 leaves C<$!x> uninitialized, because the custom C<BUILD> doesn't initialize
 it.
@@ -97,7 +121,7 @@ which can be shortened to:
 Another, more general approach is to leave C<BUILD> alone, and hook into the
 C<BUILDALL> mechanism instead:
 
-    use v6;
+    use v6.c;
     class A {
         has $.x;
         has $.y;
@@ -108,12 +132,12 @@ C<BUILDALL> mechanism instead:
         }
     }
 
-    say A.new(x => 42).x;       # 42
+    say A.new(x => 42).x;       # OUTPUT: «42␤»
 
 (Note that C<BUILDALL> is a method, not a submethod. That's because by
 default, there is only one such method per class hierarchy, whereas C<BUILD>
 is explicitly called per class. Which also explains why you need the
-C<nextsame> inside C<BUILDALL>, but not inside C<BUILD>).
+C<callsame> inside C<BUILDALL>, but not inside C<BUILD>).
 
 =head1 Regexes
 
@@ -164,14 +188,20 @@ In Perl 5 one could reference the last element of an array by asking for the
 "-1th" element of the array, e.g.:
 
     my @array = qw{victor alice bob charlie eve};
-    say @array[-1];    #->  eve
+    say @array[-1];    # OUTPUT: «eve␤»
 
 In Perl 6 it is not possible to use negative subscripts, however the same is
 achieved by actually using a function, namely C<*-1>.  Thus accessing the
 last element of an array becomes:
 
     my @array = qw{victor alice bob charlie eve};
-    say @array[*-1];   #->  eve
+    say @array[*-1];   # OUTPUT: «eve␤»
+
+Yet another way is to utilize the array's tail method:
+
+    my @array = qw{victor alice bob charlie eve};
+    say @array.tail;      # OUTPUT: «eve␤»
+    say @array.tail(2);   # OUTPUT: «(charlie eve)␤»
 
 =head2 Typed Array parameters
 
@@ -188,14 +218,14 @@ Arrays, use instead:
 It is also common to expect this to work, when it does not:
 
     sub bar(Int @a) { 42.say };
-    bar([1, 2, 3]);             #-> expected Positional[Int] but got Array
+    bar([1, 2, 3]);             # expected Positional[Int] but got Array
 
 The problem here is that [1, 2, 3] is not an C<Array[Int]>, it is a plain
 old Array that just happens to have Ints in it.  To get it to work,
 the argument must also be an C<Array[Int]>.
 
     my Int @b = 1, 2, 3;
-    bar(@b);                    #-> 42
+    bar(@b);                    # OUTPUT: «42␤»
     bar(Array[Int].new(1, 2, 3));
 
 This may seem inconvenient, but on the upside it moves the type-check
@@ -204,26 +234,9 @@ than requiring every element to be checked on every call.
 
 =head1 Strings
 
-=head2 Capitalizing a string
-
-In Perl 5 one could capitalize a string by using the C<ucfirst> function
-
-    say ucfirst "alice"; #-> Alice
-
-The C<ucfirst> function does not exist in Perl 6; one needs to use the
-C<tc> method:
-
-    say "alice".tc;      #-> Alice
-
-which is equivalent to
-
-    say tc "alice";      #-> Alice
-
-Here, C<tc> means "title case".
-
 =head2 Quotes and interpolation
 
-Interpolation in string literals can be too clever for your good.
+Interpolation in string literals can be too clever for your own good.
 
     "$foo<html></html>" # Perl 6 understands that as:
     $foo<html> ~ '</html>'
@@ -231,19 +244,54 @@ Interpolation in string literals can be too clever for your good.
     "$foo(" ~ @args ~ ")" # Perl 6 understands that as:
     $foo( ~ @args ~ ")"   # and will produce very confusing error messages
 
-You can avoid those problems by surrounding all variables with C<{}>, with or
-without using C<Q:c> as your quoting construct.
+You can avoid those problems using non-interpolating single quotes and switching
+to more liberal interpolation with C<\qq[]> escape sequence:
+
+    my $a = 1;
+    say '\qq[$a]()$b()';
+    OUTPUT: «1()$b()␤»
+
+Another alternative is to use C<Q:c> quoter, and use code blocks C<{}> for
+all interpolation:
 
     my $a = 1;
     say Q:c«{$a}()$b()»;
-    OUTPUT«1()$b()␤»
+    OUTPUT: «1()$b()␤»
 
 =head2 Strings are not iterable
 
 There are methods that Str inherits from Any that work on iterables like lists. Iterators on Strings contain one element that is the whole string. To use C<sort>, C<reverse> and friends, you need to split the string into a list first.
 
-    say "cba".sort;              #   cba (what is wrong)
-    say "cba".comb.sort.join;    #   abc
+    say "cba".sort;              # OUTPUT: «(cba)␤» (what is wrong)
+    say "cba".comb.sort.join;    # OUTPUT: «abc␤»
+
+=head2 IO::Path Stringification
+
+Partly for historical reasons and partly by design, an L<IO::Path> object
+L<stringifies|/type/IO::Path#method_Str> without considering its
+L«C<CWD> attribute|/type/IO::Path#attribute_CWD», which means if you L<chdir>
+and then stringify an L<IO::Path>, the resultant string won't reference
+the original filesystem object:
+
+=begin code
+    with 'foo'.IO {
+        .Str.say;       # OUTPUT: «foo␤»
+        .relative.say;  # OUTPUT: «foo␤»
+
+        chdir "/tmp";
+        .Str.say;       # OUTPUT: «foo␤»
+        .relative.say   # OUTPUT: «../home/camelia/foo␤»
+    }
+=end code
+
+The easy way to avoid this issue is to not stringify an L<IO::Path> object at all.
+Core routines that work with paths can take an L<IO::Path> object, so you don't
+need to stringify the paths.
+
+If you do have a case where you need a stringified version of an L<IO::Path>, use
+L<absolute> or L<relative> methods to stringify it into an absolute or relative
+path, respectively.
+
 
 =head1 Operators
 
@@ -259,25 +307,25 @@ bitwise operators in Perl 6 are: C<+^>, C<+|>, C<+&> for integers and C<?^>, C<
 In some languages, using strings as range end points, considers the entire string when figuring out what the next string
 should be; loosely treating the strings as numbers in a large base. Here's Perl 5 version:
 
-    say join ", ", "az".."bc"
+    say join ", ", "az".."bc";
     az, ba, bb, bc
 
 Such a range in Perl 6 will produce a different result, where I<each letter> will be ranged to a corresponding letter in the
 end point, producing more complex sequences:
 
-    say join ", ", "az".."bc"'
+    say join ", ", "az".."bc";
     az, ay, ax, aw, av, au, at, as, ar, aq, ap, ao, an, am, al, ak, aj, ai, ah,
     ag, af, ae, ad, ac, bz, by, bx, bw, bv, bu, bt, bs, br, bq, bp, bo, bn, bm,
     bl, bk, bj, bi, bh, bg, bf, be, bd, bc
 
-    say join ", ", "r2".."t3"
-    r2, r3, s2, s3, t2, t3
+    say join ", ", "r2".."t3";
+    # OUTPUT: «r2, r3, s2, s3, t2, t3␤»
 
 To achieve simpler behaviour, similar to the Perl 5 example above, use a sequence operator that calls C<.succ> method on the
 starting string:
 
-    say join ", ", ("az", *.succ ... "bc")
-    az, ba, bb, bc
+    say join ", ", ("az", *.succ ... "bc");
+    # OUTPUT: «az, ba, bb, bc␤»
 
 =head2 Topicalizing Operators
 
@@ -288,18 +336,29 @@ surprising results.
     my &method = { note $_; $_ };
     $_ = 'object';
     say .&method;
-    # OUTPUT«object␤object␤»
+    # OUTPUT: «object␤object␤»
     say 'topic' ~~ .&method;
-    # OUTPUT«topic␤True␤»
+    # OUTPUT: «topic␤True␤»
 
 In many cases flipping the method call to the LHS will work.
 
     my &method = { note $_; $_ };
     $_ = 'object';
     say .&method;
-    # OUTPUT«object␤object␤»
+    # OUTPUT: «object␤object␤»
     say .&method ~~ 'topic';
-    # OUTPUT«object␤True␤»
+    # OUTPUT: «object␤False␤»
+
+=head2 Fat Arrow and Constants
+
+The fat arrow operator C«=>» will turn words on its left hand side to C<Str>
+without checking the scope for constants or C<\>-sigiled variables. Use
+explicit scoping to get what you mean.
+
+    constant V = 'x';
+    my %h = V => 'oi‽', ::V => 42;
+    say %h.perl
+    # OUTPUT: «{:V("oi‽"), :x(42)}␤»
 
 =head1 Common Precedence Mistakes
 
@@ -318,8 +377,8 @@ Adverbs do have a precedence that may not follow the order of operators that is 
 
 The loose precedence of C<..> can lead to some errors.  It is usually best to parenthesize ranges when you want to operate on the entire range.
 
-    1..3.say    # says "3" (and warns about useless "..")
-    (1..3).say  # says "1..3"
+    1..3.say;    # says "3" (and warns about useless "..")
+    (1..3).say;  # says "1..3"
 
 =head2 Loose boolean operators
 
@@ -332,12 +391,12 @@ statements in other languages like C<return>, C<last> and many others.
         # this is actually
         # (return True) and False;
     }
-    say f; # OUTPUT«True␤»
+    say f; # OUTPUT: «True␤»
 
 =head2 Exponentiation Operator and Prefix Minus
 
-    say -1²;   # -1
-    say -1**2; # -1
+    say -1²;   # OUTPUT: «-1␤»
+    say -1**2; # OUTPUT: «-1␤»
 
 When performing a
 L<regular mathematical calculation|http://www.wolframalpha.com/input/?i=-1%C2%B2>,
@@ -346,8 +405,17 @@ Perl 6 matches these rules of mathematics and the precedence of C<**> operator 
 tighter than that of the prefix C<->. If you wish to raise a negative number
 to a power, use parentheses:
 
-    say (-1)²;   # 1
-    say (-1)**2; # 1
+    say (-1)²;   # OUTPUT: «1␤»
+    say (-1)**2; # OUTPUT: «1␤»
+
+The operator infix:<but> is narrower then the list constructor. When providing
+a list of roles to mix in, always use parentheses.
+
+    role R1 { method m {} }
+    role R2 { method n {} }
+    my $a = 1 but R1,R2; # R2 is in sink context
+    say $a.^name;
+    # OUTPUT: «Int+{R1}␤»
 
 =head1 Subroutine and method calls
 
@@ -427,8 +495,8 @@ If you really do want to pass them as pairs you should use a L<List|/type/List>
 or L<Capture|/type/Capture> instead:
 
     my $list = ('b' => 2); # this is a List containing a single Pair
-    foo(|$arg, :$b); # okay: we passed the pair 'b' => 2 to the first argument
-    foo(1, |$arg);   # FAIL: Too many positionals passed; expected 1 argument but got 2
+    foo(|$list, :$b); # okay: we passed the pair 'b' => 2 to the first argument
+    foo(1, |$list);   # FAIL: Too many positionals passed; expected 1 argument but got 2
 
     my $cap = \('b' => 2); # a Capture with a single positional value
     foo(|$cap, :$b); # okay: we passed the pair 'b' => 2 to the first argument
@@ -451,14 +519,23 @@ exception to be thrown. That means this construct will throw, despite the C<try>
 
     try run("perl6", "-e", "exit 42");
     say "still alive";
-    # OUTPUT: The spawned process exited unsuccessfully (exit code: 42)
+    # OUTPUT: «The spawned process exited unsuccessfully (exit code: 42)␤»
 
 This is because C<try> receives a C<Proc> and returns it, at which point it sinks and
-throws. Explicitly sinking it inside the C<try> avoids the issue:
+throws. Explicitly sinking it inside the C<try> avoids the issue
+and ensures the exception is thrown inside the C<try>:
 
     try sink run("perl6", "-e", "exit 42");
     say "still alive";
-    # OUTPUT: still alive
+    # OUTPUT: «still alive␤»
+
+If you're not interested in catching any exceptions, then use an anonymous
+variable to keep the returned C<Proc> in; this way it'll never sink:
+
+    $ = run("perl6", "-e", "exit 42");
+    say "still alive";
+    # OUTPUT: «still alive␤»
+
 
 =head1 Using Shortcuts
 
@@ -476,27 +553,27 @@ The trouble arises when a person wants to use more complex names for the variabl
 
     #In order
     sub f1 { say "$^first $^second"; }
-    f1 "Hello", "there";    #"Hello There"
+    f1 "Hello", "there";    # OUTPUT: «Hello There␤»
 
     #Out of order
     sub f2 { say "$^second $^first"; }
-    f2 "Hello", "there";    #"there Hello"
+    f2 "Hello", "there";    # OUTPUT: «there Hello␤»
 
 Due to the variables allowed to be called anything, this can cause some problems if you are not accustomed to how Perl 6 handles these variables.
 
-    for 1..4 { say "$^one $^two $^three $^four"; }    # 2 4 3 1
+    for 1..4 { say "$^one $^two $^three $^four"; }    # OUTPUT: «2 4 3 1␤»
 
 =head1 Scope
 
 =head2 Using a C<once> block
 
-The C<once> block is a block of code that will only run once when it's parent block is run. As an example:
+The C<once> block is a block of code that will only run once when its parent block is run. As an example:
 
     my $var = 0;
     for 1..10 {
         once { $var++; }
     }
-    say "Variable = $var";    # "Variable = 1"
+    say "Variable = $var";    # OUTPUT: «Variable = 1␤»
 
 This functionality also applies to other code blocks like C<sub> and C<while>, not just C<for> loops. Problems arise though, when trying to nest C<once> blocks inside of other code blocks:
 
@@ -504,7 +581,7 @@ This functionality also applies to other code blocks like C<sub> and C<while>, n
     for 1..10 {
         do { once { $var++; } }
     }
-    say "Variable = $var";    # "Variable = 10"
+    say "Variable = $var";    # OUTPUT: «Variable = 10␤»
 
 In the above example, the C<once> block was nested inside of a code block which was inside of a C<for> loop code block. This causes the C<once> block to run multiple times, because the C<once> block uses state variables to determine whether it has run previously. This means that if the parent code block goes out of scope, then the state variable the C<once> block uses to keep track of if it has run previously, goes out of scope as well. This is why C<once> blocks and C<state> variables can cause some unwanted behaviour when buried within more than one code block.
 
@@ -515,11 +592,22 @@ If you want to have something that will emulate the functionality of a once bloc
         state $run-code = True;
         do { if ($run-code) { $run-code = False; $var++; } }
     }
-    say "Variable = $var";    # "Variable = 1"
+    say "Variable = $var";    # OUTPUT: «Variable = 1␤»
 
 In this example, we essentially manually build a C<once> block by making a C<state> variable called C<$run-code> at the highest level that will be run more than once, then checking to see if C<$run-code> is C<True> using a regular C<if>. If the variable C<$run-code> is C<True>, then make the variable C<False> and continue with the code that should only be completed once.
 
 The main difference between using a C<state> variable like the above example and using a regular C<once> block is what scope the C<state> variable is in. The scope for the C<state> variable created by the C<once> block, is the same as where you put the block (imagine that the word 'C<once>' is replaced with a state variable and an C<if> to look at the variable). The example above using C<state> variables works because the variable is at the highest scope that will be repeated; whereas the example that has a C<once> block inside of a C<do>, made the variable within the C<do> block which is not the highest scope that is repeated.
+
+Using a C<once> block inside a class method will cause the once state to carry across all instances of that class.
+For example:
+
+    class A {
+        method sayit() { once say 'hi' }
+    }
+    my $a = A.new;
+    $a.sayit;      # OUTPUT: «hi␤»
+    my $b = A.new;
+    $b.sayit;      # nothing
 
 =end pod
 

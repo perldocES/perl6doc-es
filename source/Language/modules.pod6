@@ -1,4 +1,4 @@
-=begin pod
+=begin pod :tag<perl6>
 
 =TITLE Modules
 
@@ -32,9 +32,10 @@ directory for executable programs and scripts.
 
 Source files generally use the standard C<.pm> extension, and scripts or
 executables use C<.pl>.  However, if you wish to highlight that the file is
-written in Perl 6 you can use the C<.pm6> extension for modules, and the
-C<.p6> extension for scripts.  Test files still use the normal C<.t>
-extension.
+written in Perl 6 you can use the C<.pm6> extension for modules, and
+C<.p6> or C<.pl6> extension for scripts.  Test files still use the normal C<.t>
+extension. For windows compatibility, C<.p6> is the preferred extension for
+cross-platform scripts.
 
 =head2 Loading and Basic Importing
 
@@ -73,43 +74,62 @@ It is equivalent to:
     import MyModule;
     =end code
 
+See also L<Selective Importing|/language/modules#Exporting_and_Selective_Importing> to restrict what you import.
+
 =head3 X<require|compunit>
 
 C<require> loads a compunit and imports definite symbols at runtime.
 
-    sub load-mymodule {
-       say "loading MyModule";
-       require MyModule;
-    }
-
-    load-mymodule();
+    say "loading MyModule";
+    require MyModule;
 
 The compunit name can be in a runtime variable if you put it inside an
 indirect lookup.
 
-    sub load-a-module($name){
-       require ::($name);
-    }
-
-    load-a-module('MyModule');
+    my $name = 'MyModule';
+    require ::($name);
 
 The symbols provided by the loaded module will not be imported into the current
 scope. You may use L<dynamic lookup|/language/packages#index-entry-::()> or
 L<dynamic subsets|/language/typesystem#subset> to use them by providing the
 fully qualified name of a symbol.
 
-To import symbols you must define them at compile time.
+To import symbols you must define them at compile time. B<NOTE:> C<require>
+is lexically scoped:
 
     sub do-something {
        require MyModule <&something>;
+       say ::('MyModule'); # MyModule symbol exists here
        something() # &something will be defined here
     }
-
+    say ::('MyModule'); # This will NOT contain the MyModule symbol
     do-something();
     # &something will not be defined here
 
+If C<MyModule> doesn't export C<&something> then C<require> will fail.
 
-If C<MyModule> doesn't export C<&something> then it will fail.
+A C<require> with compile-time symbol will install a placeholder C<package>
+that will be updated to the loaded module, class, or package. Note that the
+placeholder will be kept, B<even if require failed to load the module.>
+This means that checking if a module loaded like this is wrong:
+
+    # *** WRONG: ***
+    try require Foo;
+    if ::('Foo') ~~ Failure { say "Failed to load Foo!"; }
+    # *** WRONG: ***
+
+As the compile-time installed package causes C<::('Foo')> to never be
+a C<Failure>. The correct way is:
+
+    # Use return value to test whether loading succeeded:
+    (try require Foo) === Nil and say "Failed to load Foo!";
+
+    # Or use a run-time symbol lookup with require, to avoid compile-time
+    # package installation:
+    try require ::('Foo');
+    if ::('Foo') ~~ Failure {
+        say "Failed to load Foo!";
+    }
 
 =head2 Exporting and Selective Importing
 
@@ -254,8 +274,8 @@ dynamically. For example:
     =begin code
     # main.pl
     use MyModule;
-    say sqrt-of-four; # -> 2
-    say log-of-zero;  # -> -Inf
+    say sqrt-of-four; # OUTPUT: «2␤»
+    say log-of-zero;  # OUTPUT: «-Inf␤»
     =end code
 
 =head3 EXPORT
@@ -290,12 +310,11 @@ the values are the desired values. The names should include the sigil
     say @array;
     say %hash;
     doit();
-    say ShortName.new; # -> MyModule::Class.new
+    say ShortName.new; # OUTPUT: «MyModule::Class.new␤»
     =end code
 
 Note, C<EXPORT> can't be declared inside a package because
-presently Rakudo (2015.09) seems to treat C<EXPORT> as part of the
-compunit rather than the package.
+it is part of the compunit rather than the package.
 
 Whereas C<UNIT::EXPORT> packages deal with the named parameters passed
 to C<use>, the C<EXPORT> sub handles positional parameters. If you
@@ -346,7 +365,7 @@ L<Cool>s.
 
     =begin code
     use MakeQuestionable Cool;
-    say 0?, 1?, {}?, { a => "b" }?; # False True False True
+    say 0?, 1?, {}?, { a => "b" }?; # OUTPUT: «False True False True␤»
     =end code
 
 =head2 Introspection
@@ -356,12 +375,12 @@ the module.
 
     use URI::Escape;
     dd URI::Escape::EXPORT::.keys;
-    # OUTPUT«("DEFAULT", "ALL").Seq»
+    # OUTPUT: «("DEFAULT", "ALL").Seq»
 
 Then use the tag you like and pick the symbol by its name.
 
     dd URI::Escape::EXPORT::DEFAULT::.keys;
-    # OUTPUT«("\&uri-escape", "\&uri_escape", "\&uri-unescape", "\&uri_unescape").Seq»
+    # OUTPUT: «("\&uri-escape", "\&uri_escape", "\&uri-unescape", "\&uri_unescape").Seq»
     my &escape-uri = URI::Escape::EXPORT::DEFAULT::<&uri_escape>;
 
 =head2 Finding Modules
@@ -401,7 +420,7 @@ To share your module, do the following:
     =item Create a project directory named after your module. For
     example, if your module is C<Vortex::TotalPerspective>, then create a
     project directory named C<Vortex-TotalPerspective>. This project
-    directory name will also be used as the GitHub repo name.
+    directory name will also be used as the GitHub repository name.
 
     =begin item
     Make your project directory look like this:
@@ -442,6 +461,19 @@ To share your module, do the following:
     copy/paste the raw form of L<its license|https://github.com/rakudo/rakudo/blob/nom/LICENSE>
     into your own C<LICENSE> file.
 
+    =item The license field in META6.json
+    The license field should be one of the standardized names listed here:
+    https://spdx.org/licenses/, in the case of the B<Artistic 2.0> license which
+    is what many of our ecosystem modules use, its identifier is
+    C<Artistic-2.0>. Having standardized identifiers make it easy for humans
+    and computers alike to know which license was actually used by looking at
+    the metadata!
+
+    =item My license is not on spdx.org or using your own license
+    If you can't find your license on C<spdx.org> or you use your own license,
+    you should put the licenses name in the license field, and under
+    more details here https://design.perl6.org/S22.html#license
+
     =item If you don't yet have any tests, you can leave out the C<t>
     directory and C<basic.t> file for now. For more info on how to write
     tests (for now), you might have a look at how other modules use
@@ -464,15 +496,16 @@ To share your module, do the following:
     »
 
     =begin item
-    Make your C<META6.json> file look something like this:
+    Make your X<C<META6.json>|META6.json> file look something like this:
 
-    =for code :allow<R>
+    =begin code :allow<R>
     {
         "perl" : "6.c",
         "name" : "Vortex::TotalPerspective",
         "version" : "0.1.0",
         "description" : "Wonderful simulation to get some perspective.",
         "authors" : [ "R<Your Name>" ],
+        "license" : "Artistic-2.0",
         "provides" : {
             "Vortex::TotalPerspective" : "lib/Vortex/TotalPerspective.pm"
         },
@@ -480,6 +513,7 @@ To share your module, do the following:
         "resources" : [ ],
         "source-url" : "git://github.com/R<you>/Vortex-TotalPerspective.git"
     }
+    =end code
 
     For choosing a version numbering scheme, perhaps use
     "major.minor.patch" (see L<the spec on versioning |
@@ -505,7 +539,7 @@ To share your module, do the following:
     C<%?RESOURCES> Hash indexed on the name provided.
 
     The L<Test::META module | https://github.com/jonathanstowe/Test-META/>
-    can help you check the correctness of the META6.json file.  See the full
+    can help you check the correctness of the META.info file.  See the full
     L<META specification | https://design.perl6.org/S22.html#META6.json> for
     more details as well as further options available for use in
     C<META6.json> files.
@@ -515,11 +549,11 @@ To share your module, do the following:
     =item Put your project under git version control if you haven't done so
     already.
 
-    =item Once you're happy with your project, create a repo for it at GitHub.
+    =item Once you're happy with your project, create a repository for it at GitHub.
     See L<GitHub's help docs|https://help.github.com/> if necessary. Your
-    GitHub repo should be named the same as your project directory. Immediately
+    GitHub repository should be named the same as your project directory. Immediately
     after creating the GitHub repo, GitHub shows you how to configure your
-    local repo to know about your GitHub repo.
+    local repository to know about your GitHub repository.
 
     =item Push your project to GitHub.
 
@@ -536,13 +570,13 @@ To share your module, do the following:
 
 B<That's it! Thanks for contributing to the Perl 6 community!>
 
-If you'd like to try out installing your module, use the X<panda> module
+If you'd like to try out installing your module, use the X<zef> module
 installer tool which is included with Rakudo Star Perl 6:
 
-=code panda install Vortex::TotalPerspective
+=code zef install Vortex::TotalPerspective
 
-This will download your module to its own working directory (C<~/.panda>),
-build it there, and install the module into C<~/.perl6>.
+This will download your module to its own working directory (C<~/.zef>),
+build it there, and install the module into your local Perl 6 installation directory.
 
 To use C<Vortex::TotalPerspective> from your scripts, just write
 C<use Vortex::TotalPerspective>, and your Perl 6 implementation will
@@ -574,11 +608,14 @@ upload. That will ensure your module is indexed in Perl 6's space and not Perl�
 
 =head2 Contact Information
 
-To help out or learn more, join the dedicated channel
+To discuss module development in general, or if your module would
+fill a need in the ecosystem, naming, etc., you can use the
+L<#perl6 on irc.freenode.net|irc://irc.freenode.net/#perl6> IRC channel.
+
+To discuss toolchain specific questions, you can use the
 L<#perl6-toolchain on irc.freenode.net|irc://irc.freenode.net/#perl6-toolchain>
-L<(channel logs)|https://irclog.perlgeek.de/perl6-toolchain/today>. A repository
-to discuss tooling issues is also available at
-L<https://github.com/perl6/toolchain-bikeshed>
+IRC channel. A repository to discuss tooling issues is also available at
+L<https://github.com/perl6/toolchain-bikeshed>.
 
 =end pod
 

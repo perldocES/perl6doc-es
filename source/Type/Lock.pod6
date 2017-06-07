@@ -17,7 +17,7 @@ I<critical section>).
             $l.protect({ $x++ });
         }
     }
-    say $x;         # 10
+    say $x;         # OUTPUT: «10␤»
 
 Locks are re-entrant, that is, a thread that holds the lock can lock it again
 without blocking.
@@ -37,8 +37,36 @@ Defined as:
 
 Runs C<&code> and makes sure it is only run in one thread at once.
 
-    my $l = Lock.new;
-    $l.protect({ #`( some unsafe operations here ) 1 + 1; });
+Note that the L<Lock> itself needs to be created outside the portion
+of the code that gets threaded and it needs to protect. In the first
+example below, L<Lock> is first created and assigned to C<$lock>,
+which is then used I<inside> the L<Promises|/type/Promise> to protect
+the sensitive code. In the second example, a mistake is made, the
+C<Lock> is created right inside the L<Promise>, so the code ends up
+with a bunch of separate locks, created in a bunch of threads, and
+thus they don't actually protect the code we want to protect.
+
+    # Right: $lock is instantiated outside the portion of the
+    # code that will get threaded and be in need of protection
+    my $lock = Lock.new;
+    await ^20 .map: {
+        start {
+            $lock.protect: {
+                print "Foo";
+                sleep rand;
+                say "Bar";
+            }
+        }
+    }
+
+    # !!! WRONG !!! Lock is created inside threaded area!
+    await ^20 .map: {
+        start {
+            Lock.new.protect: {
+                print "Foo"; sleep rand; say "Bar";
+            }
+        }
+    }
 
 =head2 method lock
 
@@ -74,7 +102,7 @@ my class ConditionVariable {
     method signal_all();
 }
 
-method condition(Lock:D:) returns ConditionVariable:D
+method condition(Lock:D: --> ConditionVariable:D)
 =end code
 
 Returns a condition variable. Compare

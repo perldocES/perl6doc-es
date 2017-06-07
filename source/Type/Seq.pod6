@@ -16,9 +16,11 @@ A typical use case is L<method C<lines> in C<IO::Handle>|/type/IO::Handle#method
 which could use a lot of memory if it stored all the lines read from the
 file. So
 
+    =begin code :skip-test
     for open('README.md').lines -> $line {
         say $line;
     }
+    =end code
 
 won't keep all lines from the file in memory.
 
@@ -39,17 +41,25 @@ A high-level construct to generate a C<Seq> is C<gather/take>, as well as many
 built-in methods like C<map> and C<grep>, low-level constructors to create a
 Seq from an iterator or from looping constructs are available too.
 
+B<Caution:> No program should ever assume a C<Seq> may only be iterated once
+even if not cached by the program. Caching is a volatile state exposed to the
+developer as an optimization. The C<Seq> may become cached by many operations,
+including calling C<perl> on the C<Seq> (if called prior to a non-cached
+iteration). If a program assumes a Seq can only iterate once, but then is
+later changed to call one of these operations during the loop, that assumption
+will fail.
+
 =head1 Methods
 
 =head2 method new
 
-    method new(Iterator:D $iter) returns Seq:D
+    method new(Iterator:D $iter --> Seq:D)
 
 Creates a new C<Seq> object from the iterator passed as the single argument.
 
 =head2 method iterator
 
-    method iterator(Seq:D:) returns Iterator:D
+    method iterator(Seq:D: --> Iterator:D)
 
 Returns the underlying iterator, and marks the invocant as consumed.
 If called on an already consumed sequence, throws an error of type
@@ -57,7 +67,7 @@ L<X::Seq::Consumed>.
 
 =head2 method is-lazy
 
-    method is-lazy(Seq:D:) returns Bool:D
+    method is-lazy(Seq:D: --> Bool:D)
 
 Returns C<True> if the sequence is lazy and potentially infinite, and C<False>
 otherwise.
@@ -66,7 +76,7 @@ L<X::Seq::Consumed>.
 
 =head2 method eager
 
-    method eager(Seq:D:) returns Bool:D
+    method eager(Seq:D: --> List:D)
 
 Returns an eagerly evaluated L<List|/type/List> based on the invocant
 sequence, and marks it as consumed.
@@ -76,10 +86,9 @@ L<X::Seq::Consumed>.
 
 =head2 method from-loop
 
-    proto method from-loop(|) returns Seq:D
-    multi method from-loop(&body)
-    multi method from-loop(&body, &cond, :$repeat)
-    multi method from-loop(&body, &cond, &afterward)
+    multi method from-loop(&body --> Seq:D)
+    multi method from-loop(&body, &cond, :$repeat --> Seq:D)
+    multi method from-loop(&body, &cond, &afterward --> Seq:D)
 
 Creates a new C<Seq> based callbacks.
 

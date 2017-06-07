@@ -1,4 +1,4 @@
-=begin pod
+=begin pod :tag<convert>
 
 =TITLE 5to6-perlvar
 
@@ -19,14 +19,17 @@ variables.
 
 =head1 SPECIAL VARIABLES
 
+X<|Special Variables (Perl 5)>
+
 =head2 General Variables
 
 =item $ARG
 
 =item $_
+X<|$_ (Perl 5)>
 
 Thankfully, C<$_> is the general default variable as in Perl 5. The
-main difference in Perl 6 seems to be that you can now call methods on
+main difference in Perl 6 is that you can now call methods on
 it. For instance, Perl 5's C<say $_> can be rendered in Perl 6 as
 C<$_.say>. Furthermore, as it is the default variable, you don't even
 need to use the variable name. The previous example can also be
@@ -35,6 +38,7 @@ achieved by using C<.say>.
 =item @ARG
 
 =item @_
+X<|@_ (Perl 5)>
 
 As Perl 6 now has function signatures, your arguments can go there, rather
 than depending on C<@_> for them. In fact, if you use a function signature, use
@@ -59,11 +63,13 @@ your breath.
 =item $PID
 
 =item $$
+X<|$$ (Perl 5)>
 
 C<$$> is replaced in Perl 6 by C<$*PID>
 
 =item $PROGRAM_NAME
 =item $0
+X<|$0 (Perl 5)>
 
 You can access the program name in Perl 6 via C<$*PROGRAM-NAME>.
 
@@ -139,14 +145,13 @@ $^z)>. Ergo:
     # 312
 
 =end code
-
 For more on placeholder variables, see
-L<this page|/language/variables#The_%5E_Twigil>
+L<this page|/language/variables#The_^_Twigil>
 =item %ENV
 
 %ENV has been replaced by %*ENV in Perl 6. Note that the keys of this hash may
-not be exactly the same between Perl 5 and Perl 6. As of this writing, the
-only difference seems to be that OLDPWD is missing from Perl 6's %ENV.
+not be exactly the same between Perl 5 and Perl 6. For example,
+C<OLDPWD> is missing from Perl 6's %ENV.
 
 =item $OLD_PERL_VERSION
 
@@ -171,6 +176,7 @@ moot point, as the Perl 5 to Perl 6 Translation doc indicates that the C<-a>
 and C<-F> command-line switches are not yet implemented in rakudo.
 
 =item @INC
+X<|@INC (Perl 5)>
 
 No longer exists in Perl 6.  Please use "use lib" to manipulate the
 module repositories to be searched.  The closest thing to @INC is
@@ -181,11 +187,13 @@ because of the precompilation capabilities of Perl 6.
      .say for $*REPO.repo-chain;
 
 =item %INC
+X<|%INC (Perl 5)>
 
 No longer exists in Perl 6.  Because each Repository is responsible for
 remembering which modules have been loaded already. You can get a list
 of all loaded modules (compilation units) like so:
 
+=for code :skip-test
     use Test;
     use MyModule;
     say flat $*REPO.repo-chain.map(*.loaded); #-> (MyModule Test)
@@ -365,8 +373,7 @@ Much like C<%+>, a use of C<%-{$match}> would be replaced with C<$/{$match}>.
 
 =item $^R
 
-S28 suggests C<$*LAST_REGEXP_CODE_RESULT>, but no variable seems to actually
-exist yet.
+No equivalent.
 
 =item ${^RE_DEBUG_FLAGS}
 
@@ -410,8 +417,30 @@ Currently no obvious equivalent.
 
 =item $.
 
-The current line number is returned by the C<.ins> method on the appropriate
-filehandle. E. g. C<$*IN.ins>.
+No direct replacement exists.
+
+When iterating using L<lines> method from L<IO::Path> or L<IO::Handle> types,
+you can L<zip|/language/operators#index-entry-Z_%28zip_meta_operator%29> with
+a L<Range>:
+
+=begin code
+    for 1..* Z "foo".IO.lines -> ($ln, $text) {
+        say "$ln: $text"
+    }
+    # OUTPUT:
+    # 1: a
+    # 2: b
+    # 3: c
+    # 4: d
+=end code
+
+For L<IO::CatHandle> types
+(of which L«C<$*ARGFILES>|/language/variables#index-entry-%24%2AARGFILES» is
+one), you can use L«C<on-switch>|/type/IO::CatHandle#method_on-switch» hook
+to reset line number on handle switch, and increment it manually.
+See also L«C<IO::CatHandle::AutoLines>|https://modules.perl6.org/repo/IO::CatHandle::AutoLines»
+and L«C<LN>|https://modules.perl6.org/repo/LN» modules that simplify this
+operation.
 
 =item $INPUT_RECORD_SEPARATOR
 

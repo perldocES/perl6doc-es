@@ -2,10 +2,11 @@
 
 =TITLE Perl 6
 
-=SUBTITLE perl6 - the Rakudo Perl 6 Compiler
+=SUBTITLE perl6 - the Rakudo Perl 6 Compiler's switches and environment variables
 
 =head1 SYNOPSIS
 
+=for code :skip-test
  perl6 [switches] [--] [programfile] [arguments]
 
 =head1 DESCRIPTION
@@ -14,7 +15,7 @@ With no arguments, enters a REPL. With a C<[programfile]> or the C<-e>
 option, compiles the given program and, by default, also executes the
 compiled code.
 
-=begin code
+=begin code :skip-test
 
   Option               Purpose
   ======               ==============================================
@@ -38,9 +39,11 @@ compiled code.
                          heap - record heap snapshots after every
                                 garbage collector run
   --profile-filename=name
-                       provide a different filename; if the name ends in
-                         .json, instrumented profiles will be written as
-                         JSON instead of HTML
+                       provide a different filename for profile. Extension
+                       controls format:
+                            .json outputs in JSON
+                            .sql  outputs in SQL
+                            any other extension outputs in HTML
   --doc=module         use Pod::To::[module] to render inline documentation
 
 =end code
@@ -48,7 +51,7 @@ compiled code.
 Note that only boolean single-letter options may be bundled.
 
 To modify the include path, you can set the PERL6LIB environment variable:
-=begin code
+=begin code :skip-test
 PERL6LIB="lib" perl6 example.pl
 =end code
 
@@ -71,7 +74,9 @@ The supported values for C<--target> are:
 For C<--profile-filename>, specifying a name ending in C<.json> will write a raw JSON profile dump.
 The default if this is omitted is C<profile-I<[timestamp]>.html>.
 
-=head1 ENVIRONMENT VARIABLES
+For examples, and notes about correct quoting on Windows, see L<"Perl 6 One Liners"|https://github.com/WildYorkies/Perl6-One-Liners/blob/master/README.md>.
+
+=head1 X<Environment Variables|Environment Variables>
 
 Rakudo's behavior can be tweaked by a (growing) number of environment variables; this section
 attempts to document all those currently in use.
@@ -82,13 +87,21 @@ Other variables are listed in Rakudo's github wiki: L<https://github.com/rakudo/
 
 =item C<RAKUDOLIB>, C<PERL6LIB> (I<Str>; C<src/core/Inc.pm>)
 
-  Appends a comma-delimited list of paths to C<@INC>. C<RAKUDOLIB> is evaluated first.
+Appends a comma-delimited list of paths to C<@INC>. C<RAKUDOLIB> is evaluated first.
 
 =defn C<RAKUDO_MODULE_DEBUG> (I<Bool>; C<src/Perl6/ModuleLoader.pm>)
 Causes the module loader to print debugging information to standard error.
 
 
 =head2 Error Message Verbosity and Strictness
+
+=defn C<RAKUDO_EXCEPTIONS_HANDLER> (I<Str>; C<src/core/Exception.pm>)
+Specifies the name of a custom exceptions handler. For example, to load and use
+C<Exceptions::JSON> class that comes with Rakudo, set this env var to C<JSON>.
+The exception handling class needs to implement method C<process> that takes
+a single positional argument: the exception object. If that method returns
+a truthy value, the exception will also be printed to the terminal, as if
+the exception handler was not specified.
 
 =defn C<RAKUDO_NO_DEPRECATIONS> (I<Bool>; C<src/core/Deprecations.pm>)
 If true, suppresses deprecation warnings triggered by the C<is DEPRECATED> trait.
@@ -126,7 +139,7 @@ Controls whether to emit ANSI codes for error highlighting. Defaults to true if 
 Win32.
 
 =defn C<RAKUDO_MAX_THREADS> (I<UInt>; C<src/core/ThreadPoolScheduler.pm>)
-Override the default maximum number of threads used by a thread pool.
+Override the default maximum number of threads used by a thread pool. Defaults to C<16>.
 
 =defn C<RAKUDO_JDB_PORT> (I<Str>; C< src/core/CompUnit/PrecompilationRepository.pm>)
 In C<perl6-jdb-server> for setting the jdb port
@@ -154,6 +167,7 @@ semicolon-delimited list.
 When set to a true value will cause timing information to be printed when
 the test suite is running:
 
+=begin code :skip-test
     $ PERL6_TEST_TIMES=1 perl6 -MTest -e 'plan 2; is sleep(2), Nil; nok sleep(.5)'
     1..2
     # between two timestamps 1 microseconds
@@ -161,6 +175,7 @@ the test suite is running:
     # t=2000562
     ok 2 -
     # t=500388
+=end code
 
 The C<# between two timestamps> is printed when C<plan> is called and
 indicates how long it takes
@@ -177,11 +192,19 @@ message will not be displayed and the first C<# t=> value will be a C<NaN>.
 When set to a true value will cause the test suite to abort on first failure,
 even if there are more tests to be run:
 
+=for code :skip-test
     $ PERL6_TEST_DIE_ON_FAIL=1 perl6 t/test-filename.t
 
 =defn C<RAKUDO_OPTIMIZER_DEBUG>, (I<Bool>; C<src/Perl6/Optimizer.nqp>)
 
 When set to a true value, causes to produce extra debugging output, useful for
 debugging Rakudo's static optimizer.
+
+=defn C<$*DEFAULT-READ-ELEMS>
+
+Default number of bytes or chars read by C<.readchars> and C<.Supply>
+methods in L<IO::Handle> and L<IO::CatHandle>. Defaults to
+C<65536> or the value of C<RAKUDO_DEFAULT_READ_ELEMS> environmental variable, if
+set.
 
 =end pod
