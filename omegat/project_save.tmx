@@ -6949,6 +6949,14 @@ the following:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Example</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20170607T124145Z" creationid="explorer" creationdate="20170607T124145Z">
+        <seg>Ejemplo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Example of invoking a function pointer "$fptr" returned by a function "f", using a
 signature defining the desired function parameters and return value:</seg>
       </tuv>
