@@ -2762,6 +2762,14 @@ say $p1.result;         # resultado</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=begin code :skip-test</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20171006T142138Z" creationid="explorer" creationdate="20171006T142138Z">
+        <seg>=begin code :skip-test</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=begin code :skip-test
 Cannot use bind operator with this left-hand side
 =end code</seg>
