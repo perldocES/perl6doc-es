@@ -1126,6 +1126,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>...;</seg>
+      </tuv>
+      <tuv lang="ES-ES">
+        <seg>...;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>...; # your usual supply tap code here</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T213352Z" creationid="ramiroencinas" creationdate="20160520T213352Z">
@@ -1336,8 +1344,8 @@
       <tuv lang="EN-US">
         <seg>:-)</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20140729T012009Z">
-        <seg>:-) </seg>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110203T114150Z">
+        <seg> </seg>
       </tuv>
     </tu>
     <tu>
@@ -1519,6 +1527,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T150452Z" creationid="explorer" creationdate="20161113T142438Z">
         <seg>=  =====                  ========</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>===============================================================</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20120621T023039Z">
+        <seg>===============================================================</seg>
       </tuv>
     </tu>
     <tu>
@@ -2712,7 +2728,7 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
 Welcome to the official documentation of the &lt;a href="https://perl6.org"&gt;Perl 6&lt;/a&gt;
 programming language!</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20161102T214429Z" creationid="explorer" creationdate="20161102T214429Z">
+      <tuv lang="ES-ES" changeid="explorer" changedate="20171006T141938Z" creationid="explorer" creationdate="20161102T214429Z">
         <seg>=begin Html
 &lt;img style="float: right; margin: 0 0 1em 1em" src="/images/camelia.png" alt="" id="home_logo"/&gt;
 ¡Bienvenido a la documentación oficial del lenguaje de programación &lt;a href="https://perl6.org"&gt;Perl 6&lt;/a&gt;!</seg>
@@ -12082,6 +12098,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my $a;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110719T080235Z">
+        <seg>my $a;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my $answer = 42;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110129T230806Z">
@@ -13846,6 +13870,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160520T203338Z" creationid="ramiroencinas" creationdate="20160520T203338Z">
         <seg>{ my $i = 0; for 1 ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>|</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20111008T182304Z">
+        <seg>|</seg>
       </tuv>
     </tu>
     <tu>
