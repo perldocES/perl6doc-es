@@ -3552,6 +3552,14 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=head1 Lexical Conventions</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145556Z" creationid="explorer" creationdate="20180121T145556Z">
+        <seg>=head1 Convenciones léxicas</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=head1 Library Paths and Names</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114416Z" creationid="Ram" creationdate="20161210T114416Z">
@@ -3781,6 +3789,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120831T235855Z">
         <seg>=head2 Variables obsoletas y eliminadas</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=head2 Free Form</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145936Z" creationid="explorer" creationdate="20180121T145936Z">
+        <seg>=head2 Formato libre</seg>
       </tuv>
     </tu>
     <tu>
@@ -8580,6 +8596,15 @@ in a radically different way to C arrays.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Perl 6 code is Unicode text, current implementations support UTF-8 as the
+input encoding.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145854Z" creationid="explorer" creationdate="20180121T145711Z">
+        <seg>El código Perl 6 es texto Unicode. Las implementaciones actuales soportan UTF-8 como codificación de entrada.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Perl 6 will generate the actual
 combined operator in the background, allowing the mechanism to be applied to
 user defined operators.</seg>
@@ -9001,6 +9026,14 @@ was provided.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192023Z" creationid="ramiroencinas" creationdate="20161202T192023Z">
         <seg>¿Asustado?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>See also L&lt;Unicode versus ASCII symbols|/language/unicode_ascii&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145922Z" creationid="explorer" creationdate="20180121T145922Z">
+        <seg>Vea también L&lt;Símbolos Unicode versus ASCII|/language/unicode_ascii&gt;.</seg>
       </tuv>
     </tu>
     <tu>
