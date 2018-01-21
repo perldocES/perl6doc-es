@@ -80,7 +80,7 @@ empty L<string|/type/Str> or numerical zeros
     say Mu.new.Bool;                # OUTPUT: «True␤»
     say [1, 2, 3].Bool;             # OUTPUT: «True␤»
     say [].Bool;                    # OUTPUT: «False␤»
-    say { 'hash' => 'full' }.Bool;  # OUTPUT: «True␤»
+    say %( hash => 'full' ).Bool;   # OUTPUT: «True␤»
     say {}.Bool;                    # OUTPUT: «False␤»
     say "".Bool;                    # OUTPUT: «False␤»
     say 0.Bool;                     # OUTPUT: «False␤»
@@ -134,8 +134,7 @@ output.
 
 =head2 routine perl
 
-    multi sub    perl(Mu --> Str)
-    multi method perl(   --> Str)
+    multi method perl(--> Str)
 
 Returns a Perlish representation of the object (i.e., can usually
 be re-evaluated with L<EVAL|/routine/EVAL> to regenerate the object). The exact output of
@@ -148,9 +147,9 @@ write a Perl expression that produces a particular value
 
 Forces the invocant to be evaluated in item context and returns the value of it.
 
-    say [1,2,3].item.perl;         # OUTPUT: «$[1, 2, 3]␤»
-    say { apple => 10 }.item.perl; # OUTPUT: «${:apple(10)}␤»
-    say "abc".item.perl;           # OUTPUT: «"abc"␤»
+    say [1,2,3].item.perl;          # OUTPUT: «$[1, 2, 3]␤»
+    say %( apple => 10 ).item.perl; # OUTPUT: «${:apple(10)}␤»
+    say "abc".item.perl;            # OUTPUT: «"abc"␤»
 
 =head2 method self
 
@@ -162,9 +161,9 @@ Returns the object it is called on.
 
     method clone(*%twiddles)
 
-Creates a shallow clone of the invocant. Alternative values for I<public>
-attributes can be provided via named arguments with names matching the
-attributes' names.
+Creates a shallow clone of the invocant, including shallow cloning of private
+attributes. Alternative values for I<public> attributes can be provided via
+named arguments with names matching the attributes' names.
 
 =begin code
 class Point2D {
@@ -178,6 +177,58 @@ my $p = Point2D.new(x => 2, y => 3);
 
 say $p;                     # OUTPUT: «Point(2, 3)␤»
 say $p.clone(y => -5);      # OUTPUT: «Point(2, -5)␤»
+=end code
+
+Note that C<.clone> does not go the extra mile to shallow-copy C<@.> and C<%.>
+sigiled attributes and, if modified, the modifications will still be available
+in the original object:
+
+=begin code
+class Foo {
+    has $.foo is rw = 42;
+    has &.boo is rw = { say "Hi" };
+    has @.bar       = <a b>;
+    has %.baz       = <a b c d>;
+}
+
+my $o1 = Foo.new;
+with my $o2 = $o1.clone {
+    .foo = 70;
+    .bar = <Z Y>;
+    .baz = <Z Y X W>;
+    .boo = { say "Bye" };
+}
+
+# Hash and Array attribute modifications in clone appear in original as well:
+say $o1;    # OUTPUT: «Foo.new(foo => 42, bar => ["Z", "Y"], baz => {:X("W"), :Z("Y")}, …␤»
+say $o2;    # OUTPUT: «Foo.new(foo => 70, bar => ["Z", "Y"], baz => {:X("W"), :Z("Y")}, …␤»
+$o1.boo.(); # OUTPUT: «Hi␤»
+$o2.boo.(); # OUTPUT: «Bye␤»
+=end code
+
+To clone those, you could implement your own C<.clone> that clones the
+appropriate attributes and passes the new values to C<Mu.clone>, for example,
+via L«C<nextwith>|/language/functions#index-entry-nextwith-nextwith». Alternatively,
+your own C<.clone> could clone self first
+(using C<self.Mu::clone> or L«C<callsame>|/language/functions#index-entry-callsame-callsame»)
+and then manipulate the clone as needed, before returning it.
+
+=begin code
+class Bar {
+    has @.foo = <a b>;
+    has %.bar = <a b c d>;
+    method clone { nextwith :foo(@!foo.clone) :bar(%!bar.clone) }
+}
+
+my $o1 = Bar.new;
+with my $o2 = $o1.clone {
+    .foo = <Z Y>;
+    .bar = <Z Y X W>;
+}
+
+# Hash and Array attribute modifications in clone do not affect original:
+say $o1; # OUTPUT: «Bar.new(foo => ["a", "b"], bar => {:a("b"), :c("d")})␤»
+say $o2; # OUTPUT: «Bar.new(foo => ["Z", "Y"], bar => {:X("W"), :Z("Y")})␤»
 =end code
 
 =head2 method new
@@ -250,7 +301,7 @@ stringifying non-C<Str> object using the C<.Str> method.
 
     multi method say(--> Bool:D)
 
-Prints value to C<$*OUT> after stringification using C<.gist> method with
+Prints value to C<$*OUT> after stringification using L<gist|/routine/gist> method with
 newline at end. To produce machine readable output use C<.put>.
 
     say 42;                 # OUTPUT: «42␤»
@@ -291,25 +342,22 @@ Returns an C<Int> representing the memory address of the object.
 
 =head2 method WHY
 
-    multi method WHY()
+    multi method WHY(--> Pod::Block::Declarator)
 
-Returns the attached Pod value.  For instance,
+Returns the attached Pod::Block::Declarator.
 
-=for code :skip-test
-sub cast(Spell $s)
-#= Initiate a specified spell normally
-#= (do not use for class 7 spells)
-{
-do-raw-magic($s);
+For instance:
+
+=for code :preamble<class Spell {};sub do-raw-magic(Spell) {};> :method<False>
+#| Initiate a specified spell normally
+sub cast(Spell $s) {
+  do-raw-magic($s);
 }
+#= (do not use for class 7 spells)
 say &cast.WHY;
+# OUTPUT: «Initiate a specified spell normally␤(do not use for class 7 spells)␤»
 
-prints
-
-=for code :skip-test
-Initiate a specified spell normally (do not use for class 7 spells)
-
-See the L<documentation specification|https://design.perl6.org/S26.html> for
+See L<Pod declarator blocks|/language/pod#Declarator_blocks> for
 details about attaching Pod to variables, classes, functions, methods, etc.
 
 =head2 trait is export
@@ -337,7 +385,7 @@ checked unless the return value is C<Nil>. A control exception is raised and
 can be caught with L<CONTROL|/language/phasers#CONTROL>.
 
     sub f { (1|2|3).return };
-    dd f(); # OUTPUT: «any(1, 2, 3)␤»
+    say f(); # OUTPUT: «any(1, 2, 3)␤»
 
 =head2 method return-rw
 
@@ -440,4 +488,4 @@ like so:
 
 =end pod
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

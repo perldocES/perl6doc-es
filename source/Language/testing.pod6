@@ -9,12 +9,8 @@ Testing code is an integral part of software development.
 Tests provide automated, repeatable
 verifications of code behaviour, and ensures your code works as expected.
 
-In Perl 6, the L<Test|https://github.com/rakudo/rakudo/blob/nom/lib/Test.pm6> module provides a testing framework similar to the
-Perl 5 L<Test::More|http://perldoc.perl.org/Test/More.html>
-module.  Therefore, anyone familiar with C<Test::More> (and related modules) should be
-comfortable with Perl 6's C<Test> module.
-
-Perl 6's official spectest suite uses C<Test>.
+In Perl 6, the L<Test|https://github.com/rakudo/rakudo/blob/master/lib/Test.pm6>
+module provides a testing framework. Perl 6's official spectest suite uses C<Test>.
 
 The testing functions emit output conforming to the L<Test Anything
 Protocol|http://testanything.org>.
@@ -119,15 +115,17 @@ project's base directory.
 
 A typical test file looks something like this:
 
-    use v6.c;
-    use Test;      # a Standard module included with Rakudo
-    use lib 'lib';
+=begin code :skip-test
+use v6.c;
+use Test;      # a Standard module included with Rakudo
+use lib 'lib';
 
-    plan $num-tests;
+plan $num-tests;
 
-    # .... tests
+# .... tests
 
-    done-testing;  # optional with 'plan'
+done-testing;  # optional with 'plan'
+=end code
 
 We ensure that we're using Perl 6, via the C<use v6.c> pragma, then we load
 the C<Test> module and specify where our libraries are.  We then specify how
@@ -135,22 +133,37 @@ many tests we I<plan> to run (such that the testing framework can tell us if
 more or fewer tests were run than we expected) and when finished with the
 tests, we use I<done-testing> to tell the framework we are done.
 
+=head2 Thread Safety
+
+Note that routines in C<Test> module are I<not> thread-safe. This means you
+should not attempt to use the testing routines in multiple threads simultaneously,
+as the L<TAP|https://testanything.org/> output might
+come out of order and confuse the program interpreting it.
+
+There are no current plans to make it thread safe. If threaded-testing is
+crucial to you, you may find some suitable
+L<ecosystem modules|https://modules.perl6.org/search/?q=Test> to use
+instead of C<Test> for your testing needs.
+
 =head1 Running tests
 
 Tests can be run individually by specifying the test filename on the
 command line:
 
-    $ perl6 t/test-filename.t
+=for code :lang<shell>
+$ perl6 t/test-filename.t
 
 Or via the L<prove|http://perldoc.perl.org/prove.html> command from Perl 5,
 where C<perl6> is specified as the executable that runs the tests:
 
-    $ prove --exec perl6 -r t
+=for code :lang<shell>
+$ prove --exec perl6 -r t
 
 To abort the test suite upon first failure, set the
 C<PERL6_TEST_DIE_ON_FAIL> environmental variable:
 
-    $ PERL6_TEST_DIE_ON_FAIL=1 perl6 t/test-filename.t
+=for code :lang<shell>
+$ PERL6_TEST_DIE_ON_FAIL=1 perl6 t/test-filename.t
 
 The same variable can be used within the test file. Set it before loading
 the C<Test> module:
@@ -176,14 +189,14 @@ C<done-testing>.
 
 You can also provide a C<:skip-all> named argument instead of a test count,
 to indicate that you want to skip all of the tests. Such a plan will
-call L«C<exit>|/routine/exit>, unless used inside of a C<subtest>.
+call L«C<exit>|/routine/exit», unless used inside of a C<subtest>.
 
     plan :skip-all<These tests are only for Windows> unless $*DISTRO.is-win;
     plan 1;
     ok dir 'C:/'; # this won't get run on non-Windows
 
 If used in a C<subtest>, it will instead C<return> from that
-C<subtest>'s L«C<Callable>|/type/Callable>. For that reason, to be able to
+C<subtest>'s L«C<Callable>|/type/Callable». For that reason, to be able to
 use C<:skip-all> inside a C<subtest>, you must use a C<sub> instead of a
 regular block:
 
@@ -258,12 +271,14 @@ evaluates to C<True>. The C<nok> function marks
 a test as passed if the given value evaluates to C<False>. Both functions
 accept an optional C<$description> of the test.
 
+    my $response; my $query; ...;
     ok  $response.success, 'HTTP response was successful';
     nok $query.error,      'Query completed without error';
 
 In principle, you could use C<ok> for every kind of comparison test, by
 including the comparison in the expression passed to C<$value>:
 
+    sub factorial($x) { ... };
     ok factorial(6) == 720, 'Factorial - small integer';
 
 However, where possible it's better to use one of the specialized comparison
@@ -285,6 +300,7 @@ as lists: C<is (1, (2, (3,))), [1, 2, 3]> passes the test, even though the opera
 are vastly different. For those cases, use
 L«C<is-deeply> routine|/language/testing#index-entry-is-deeply-is-deeply($value,_$expected,_$description?)»
 
+    my $pdf-document; sub factorial($x) { ... }; ...;
     is $pdf-document.author, "Joe", 'Retrieving the author field';
     is factorial(6),         720,   'Factorial - small integer';
     my Int $a;
@@ -372,7 +388,7 @@ Both versions use C<0.1> for relative tolerance, yet the first can differ
 by about C<1> while the second can differ by about C<10>. The function used
 to calculate the difference is:
 
-=begin code
+=begin code :lang<text>
               |value - expected|
 ⁣rel-diff = ────────────────────────
            max(|value|, |expected|)
@@ -382,7 +398,8 @@ and the test will fail if C<rel-diff> is higher than C<$rel-tol>.
 
 =head3 Both Absolute and Relative Tolerance Specified
 
-    is-approx $value, $expected, :rel-tol<.5>, :abs-tol<10>;
+=for code :skip-test
+is-approx $value, $expected, :rel-tol<.5>, :abs-tol<10>;
 
 When both absolute and relative tolerances are specified, each will be
 tested independently, and the C<is-approx> test will succeed only if both pass.
@@ -421,11 +438,11 @@ B<Note:> for L<historical
 reasons|https://github.com/rakudo/rakudo/commit/096bc17cd5>, L<Seq:D|/type/Seq> arguments
 to C<is-deeply> get converted to L<Lists|/type/List>. If you want to ensure
 strict C<Seq> comparisons, use
-L«C<cmp-ok $got, 'eqv', $expected, $desc>|/language/testing#index-entry-cmp-ok-cmp-ok%28%24value%2C_%24comparison%2C_%24expected%2C_%24description%3F%29> instead.
+L«C<cmp-ok $got, 'eqv', $expected, $desc>|/language/testing#index-entry-cmp-ok-cmp-ok%28%24value%2C_%24comparison%2C_%24expected%2C_%24description%3F%29» instead.
 
 =head2 By arbitrary comparison
 
-=item X<cmp-ok($value, $comparison, $expected, $description?)|cmp-ok>
+=item X<cmp-ok(Mu $value is raw, $comparison, Mu $expected is raw, $description?)|cmp-ok>
 
 Compares C<$value> and C<$expected> with the given C<$comparison> comparator and
 passes the test if the comparison yields a C<True> value. The C<$description>
@@ -436,6 +453,10 @@ a L<Str> containing an infix operator, such as C<'=='>, a C<'~~'>, or a
 user-defined infix.
 
     cmp-ok 'my spelling is apperling', '~~', /perl/, "bad speller";
+
+Meta operators cannot be given as a string; pass them as a L<Callable> instead:
+
+    cmp-ok <a b c>, &[!eqv], <b d e>, 'not equal';
 
 A L<Callable> C<$comparison> lets you use custom comparisons:
 
@@ -468,6 +489,7 @@ Marks a test as passed if the given C<$variable> can run the given
 C<$method-name>.  The function accepts an optional C<$description>.  For
 instance:
 
+    class Womble {};
     my $womble = Womble.new;
 
     # with automatically generated test description
@@ -601,14 +623,22 @@ where the key is the name of the method to be called on the exception, and
 the value is the value it should have to pass. For example:
 
 =begin code
-sub frodo { fail "Oops. Frodo dies" unless $destroys-ring };
+sub frodo(Bool :$destroys-ring) { fail "Oops. Frodo dies" unless $destroys-ring };
 throws-like { frodo }, Exception, message => /dies/;
 =end code
 
-=comment Someone needs to clarify the preceding paragraph, because I have
-         no idea what it is talking about... ;)
-
 The function accepts an optional C<$description> of the test.
+
+The routine makes L<Failures|/type/Failure> fatal. If you wish to avoid that,
+use L«C<no fatal> pragma|/language/pragmas#index-entry-fatal-fatal» and ensure the
+tested code does not sink the possible L<Failures|/type/Failure>:
+
+    sub fails-not-throws { +"a" }
+    # test passes, even though it's just a Failure and would not always throw:
+    throws-like { fails-not-throws }, Exception;
+
+    # test detects nothing got thrown, because our Failure wasn't sunk or made fatal:
+    throws-like { no fatal; my $ = fails-not-throws; Nil }, Exception;
 
 Please note that you can only use the string form (for C<EVAL>) if you are not referencing
 any symbols in the surrounding scope. If you are, you should encapsulate
@@ -683,12 +713,17 @@ only one test will be marked TODO.
 
 The result from the test code above will be something like:
 
-    not ok 1 - my-custom-pi# TODO not yet precise enough
+=begin code :lang<TAP>
+not ok 1 - my-custom-pi# TODO not yet precise enough
 
-    # Failed test 'my-custom-pi'
-    # at test-todo.t line 7
-    # expected: '3.14159265358979'
-    #      got: '3'
+# Failed test 'my-custom-pi'
+# at test-todo.t line 7
+# expected: '3.14159265358979'
+#      got: '3'
+=end code
+
+Note that if you C<todo> a C<subtest>, all of the failing tests inside of it will be
+automatically marked TODO as well and will I<not> count towards your original TODO count.
 
 =item X<skip($reason, $count = 1)|skip>
 
@@ -697,9 +732,11 @@ test will be skipped.  Use such functionality when a test (or tests) would
 die if run.
 
 =begin code
+sub num-forward-slashes($arg) { ... } ;
+
 if $*KERNEL ~~ 'linux' {
     is num-forward-slashes("/a/b"),             2;
-    is num-forward-slashes(normalize("/a//b")), 2;
+    is num-forward-slashes("/a//b".IO.cleanup), 2;
 }
 else {
     skip "Can't use forward slashes on Windows", 2;
@@ -716,6 +753,7 @@ would all fail due to some condition, use this function to skip them,
 providing an optional C<$reason> as to why.
 
 =begin code
+my $location; sub womble { ... }; ...;
 unless $location ~~ "Wimbledon Common" {
     skip-rest "We can't womble, the remaining tests will fail";
     exit;
@@ -742,7 +780,9 @@ If you already know the tests will fail, you can bail out of the test run
 using C<bail-out()>:
 
 =begin code
-    $has-db-connection or bail-out 'Must have database connection for testing';
+my $has-db-connection;
+...
+$has-db-connection  or bail-out 'Must have database connection for testing';
 =end code
 
 The function aborts the current test run, signaling failure to the harness.
@@ -784,4 +824,4 @@ to provide visual markers on how the testing of a test-file is progressing
 
 =end pod
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

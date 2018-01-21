@@ -6,14 +6,14 @@
 
 =head1 SYNOPSIS
 
-=for code :skip-test
+=for code :lang<usage>
  perl6 [switches] [--] [programfile] [arguments]
 
 =head1 DESCRIPTION
 
-With no arguments, enters a REPL. With a C<[programfile]> or the C<-e>
-option, compiles the given program and, by default, also executes the
-compiled code.
+With no arguments, enters a REPL (see --repl-mode option).
+With a "[programfile]" or the "-e" option, compiles the given program
+and, by default, also executes the compiled code.
 
 =begin code :skip-test
 
@@ -46,12 +46,21 @@ compiled code.
                             any other extension outputs in HTML
   --doc=module         use Pod::To::[module] to render inline documentation
 
+  --repl-mode=interactive|non-interactive
+                       when running without "-e" or filename arguments,
+                       a REPL is started. By default, if STDIN is a TTY,
+                       "interactive" REPL is started that shows extra messages and
+                       prompts, otherwise a "non-interactive" mode is used where
+                       STDIN is read entirely and evaluated as if it were a program,
+                       without any extra output (in fact, no REPL machinery is even
+                       loaded). This option allows to bypass TTY detection and
+                       force one of the REPL modes.
 =end code
 
 Note that only boolean single-letter options may be bundled.
 
 To modify the include path, you can set the PERL6LIB environment variable:
-=begin code :skip-test
+=begin code :lang<shell>
 PERL6LIB="lib" perl6 example.pl
 =end code
 
@@ -82,6 +91,13 @@ Rakudo's behavior can be tweaked by a (growing) number of environment variables;
 attempts to document all those currently in use.
 
 Other variables are listed in Rakudo's github wiki: L<https://github.com/rakudo/rakudo/wiki/dev-env-vars>.
+
+=head2 User Debugging
+
+=item C<RAKUDO_POD_TABLE_DEBUG>
+
+Enables verbose information about Perl 6 pod tables.  Useful for tweaking table pod for the
+user's intended output.
 
 =head2 Module Loading
 
@@ -132,6 +148,14 @@ in NQP's config.
 These are internal variables for passing serialized state to precompilation jobs in child processes.
 Please do not set them manually.
 
+=head2 REPL
+
+=defn C<RAKUDO_LINE_EDITOR> (C<src/core/REPL.pm>)
+Specifies what line editor to use. Valid values are C<Linenoise>, C<Readline>, and C<none>,
+which load L<Linenoise|https://modules.perl6.org/repo/Linenoise> or
+L<Readline|https://modules.perl6.org/repo/Readline> line editors, or starts the
+default (C<none>) line editor that doesn't require any extra modules.
+
 =head2 Other
 
 =defn C<RAKUDO_ERROR_COLOR> (I<Bool>; C<src/core/Exception.pm>)
@@ -167,7 +191,7 @@ semicolon-delimited list.
 When set to a true value will cause timing information to be printed when
 the test suite is running:
 
-=begin code :skip-test
+=begin code :lang<shell>
     $ PERL6_TEST_TIMES=1 perl6 -MTest -e 'plan 2; is sleep(2), Nil; nok sleep(.5)'
     1..2
     # between two timestamps 1 microseconds
@@ -192,13 +216,17 @@ message will not be displayed and the first C<# t=> value will be a C<NaN>.
 When set to a true value will cause the test suite to abort on first failure,
 even if there are more tests to be run:
 
-=for code :skip-test
+=for code :lang<shell>
     $ PERL6_TEST_DIE_ON_FAIL=1 perl6 t/test-filename.t
 
 =defn C<RAKUDO_OPTIMIZER_DEBUG>, (I<Bool>; C<src/Perl6/Optimizer.nqp>)
 
 When set to a true value, causes to produce extra debugging output, useful for
 debugging Rakudo's static optimizer.
+
+=defn C<RAKUDO_SCHEDULER_DEBUG> and C<RAKUDO_SCHEDULER_DEBUG_STATUS>
+
+Set to enable scheduler debugging.
 
 =defn C<$*DEFAULT-READ-ELEMS>
 
@@ -208,3 +236,5 @@ C<65536> or the value of C<RAKUDO_DEFAULT_READ_ELEMS> environmental variable, if
 set.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

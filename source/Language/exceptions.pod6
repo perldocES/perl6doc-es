@@ -4,9 +4,12 @@
 
 =SUBTITLE Using exceptions in Perl 6
 
-Exceptions in Perl 6 are objects that record error information; for example:
-that unexpected data was received; that a
-network connection is no longer available; or that a needed file is missing.
+Exceptions in Perl 6 are objects that hold information about errors.
+An error can be, for example, the unexpected receiving of data or a
+network connection no longer available, or a missing file.
+The information that an exception objects store is, for instance,
+a human-readable message about the error condition, the backtrace
+of the raising of the error, and so on.
 
 All built-in exceptions inherit from L<Exception>, which provides some basic
 behavior, including the storage of a backtrace and an interface for the
@@ -14,12 +17,15 @@ backtrace printer.
 
 =head1 Ad hoc exceptions
 
-Ad hoc exceptions work just like in Perl 5, where C<die> is called with
-a description of the error.
+Ad hoc exceptions can be used by calling L<die|/routine/die> with
+a description of the error:
 
     die "oops, something went wrong";
 
     # RESULT: «oops, something went wrong in block <unit> at my-script.p6:1␤»
+
+
+It is worth noting that C<die> prints the error message to the standard error C<$*ERR>.
 
 =head1 Typed exceptions
 
@@ -46,13 +52,13 @@ It's possible to handle exceptional circumstances by supplying a C<CATCH> block:
     die X::IO::DoesNotExist.new(:path("foo/bar"), :trying("zombie copy"));
 
     CATCH {
-        when X::IO { say "some kind of IO exception was caught!" }
+        when X::IO { $*ERR.say: "some kind of IO exception was caught!" }
     }
 
     # RESULT: «some kind of IO exception was caught!»
 
 Here, we are saying that if any exception of type C<X::IO> occurs, then the
-message C<some kind of IO exception was caught!> will be displayed.
+message C<some kind of IO exception was caught!> will be sent to I<stderr> and displayed.
 
 A X<C<CATCH>|CATCH> block uses smart matching similar to how C<given/when> smart
 matches on options, thus it's possible to catch and handle various categories of
@@ -62,7 +68,7 @@ To handle all exceptions, use a C<default> statement.
 
    CATCH {
         default {
-            say .WHAT.perl, do given .backtrace[0] { .file, .line, .subname }
+            say .^name, do given .backtrace[0] { .file, .line, .subname }
         }
    }
 
@@ -103,7 +109,7 @@ Compare with this:
 
 See "Resuming of Exceptions", for how to return control back to where the exception originated.
 
-=head1 X<C<try>|try blocks> blocks
+=head1 X<C<try>|try>
 
 To contain an exception, use a C<try> block. Any exception that is thrown in
 such a block will be caught by the implicit C<CATCH> block or a C<CATCH> block
@@ -144,7 +150,7 @@ Output:
       in block <unit> at exception.p6 line 21
     =end code
 
-A C<try>-block is a normal block and as such treats it's last statement as the
+A C<try>-block is a normal block and as such treats its last statement as the
 return value of itself. We can therefore use it as a RHS.
 
     =begin code
@@ -163,6 +169,13 @@ the expression or L<Nil|/type/Nil> if an exception was thrown.
         say "not my number!"
     }
     # OUTPUT: «not my number!␤»
+
+C<try> can also be used with a statement instead of a block:
+
+=begin code
+say try "some-filename.txt".IO.slurp // "sane default";
+# OUTPUT: «sane default␤»
+=end code
 
 =head1 Throwing exceptions
 
@@ -263,4 +276,4 @@ converted to a normal exception.
 
 =end pod
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

@@ -145,7 +145,7 @@ key principles of object oriented design.
 The first declaration specifies instance storage for a callback – a bit of
 code to invoke in order to perform the task that an object represents:
 
-=for code :skip-test
+=for code
 has &!callback;
 
 X<|sigils,&>
@@ -170,7 +170,7 @@ class (or some subclass of it).
 
 The third attribute represents the state of completion of a task:
 
-=for code :skip-test
+=for code
 has Bool $.done;
 
 X<|twigils,.>
@@ -559,9 +559,8 @@ L<MOP|/type/Metamodel::ClassHOW#method_can>.
 As mentioned before, a class can inherit from multiple classes.  When a
 class inherits from multiple classes the dispatcher knows to look at both
 classes when looking up a method to search for.  Perl 6 uses the C3
-algorithm to linearize multiple inheritance hierarchies, which is a
-significant improvement over Perl 5's default approach
-(depth-first search) to handling multiple inheritance.
+algorithm to linearize multiple inheritance hierarchies, which is
+better than depth-first search for handling multiple inheritance.
 
     =begin code :skip-test
     class GeekCook is Programmer is Cook {
@@ -682,3 +681,5 @@ bunch of bytes needs to know the attributes of that object, which it can
 find out via introspection.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

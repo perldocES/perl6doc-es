@@ -69,7 +69,7 @@ for bitwise integer negation. Assumes two's complement.
 C<+> I<does> have an effect in Perl 6, coercing its argument to the
 Numeric type.
 
-Unary <\> is no more. If you really want to take a reference to an existing
+Unary C<\> is no more. If you really want to take a reference to an existing
 named variable, you can use item context, like so: C<$aref = item(@array)>
 You can get a reference to a named subroutine by using the C<&> sigil: C<$sref
 = &foo> Anonymous arrays, hashes, and subs return their references during
@@ -94,7 +94,7 @@ use C<@ones = 1 xx 80;>.
 =head2 Additive Operators
 
 Binary C<+> and C<-> do addition and subtraction, respectively, as you would
-expect..
+expect.
 
 As C<.> is the method call operator, so binary C<~> acts as the
 concatenation operator in Perl 6.
@@ -116,8 +116,8 @@ These all work as in Perl 5.
 C<==> and C<!=> both work as in Perl 5.
 
 C<< <=> >> and C<cmp> have different behavior in Perl 6. C<< <=> >> does
-a numeric comparison, but returns <Order::Less>, <Order::Same>, or
-<Order::More> instead of Perl 5's C<-1>, C<0>, or C<1>. To get the Perl
+a numeric comparison, but returns C<Order::Less>, C<Order::Same>, or
+C<Order::More> instead of Perl 5's C<-1>, C<0>, or C<1>. To get the Perl
 5 behavior (with the change that it returns the C<Order> objects, rather
 than integers) of C<cmp>, you would use the C<leg> operator.
 
@@ -161,21 +161,35 @@ In list context, C<..> operates as the range operator and should not
 need to be changed. That said, there are exclusionary range operators
 that may be useful. These are:
 
-    infix  ..^  Excludes endpoint. C<1..^5>; # 1 2 3 4 >
-    infix  ^..  Excludes starting point. C<1^..5>; # 2 3 4 5>
-    infix  ^..^ Excludes both starting and endpoint. C<1^..^5>; # 2 3 4>
-    prefix ^    From 0, excludes endpoint. C<^5>; # 0 1 2 3 4>
+=item infix C<..^> which excludes the endpoint;
+=item infix ^.. which excludes the starting point;
+=item infix C<^..^> which excludes both the starting and ending points;
+=item prefix C<^> which starts from zero excluding the endpoint.
 
-In scalar context, C<..> and C<...> work as flip-flop operators in Perl
-5, but are little-known, and probably even less used. Those operations
-have been taken over by C<ff> and C<fff> in Perl 6, but are not clearly
-documented at this time.
+The following example shows the effects of all the above range operators
+(please note parentheses are used only to allow the method call):
+
+=begin code
+(1..^5).list;  # (1 2 3 4)
+(1^..5).list;  # (2 3 4 5)
+(1^..^5).list; # (2 3 4)
+(^5).list;     # (0 1 2 3 4)
+=end code
+
+In Perl 5, in scalar context, the operators C<..> and C<...> work
+as flip-flop operators, even if they are little-known and probably
+less used. Those operators have been replaced in Perl 6
+by L<ff|/routine/ff> and L<fff|/routine/fff> respectively.
 
 =head2 Conditional Operator
 
-C<?:> has been replaced by C<?? !!>. I. e. where you would use C<$x
-= $ok ? $y : $z;> in Perl 5, you would use C<$x = $ok ?? $y !! $z;>
-in Perl 6.
+The conditional operator C<? :> has been replaced
+by C<?? !!>:
+
+=for code :lang<perl5>
+$x = $ok  ? $yes  : $no;  # Perl 5
+=for code :preamble<my $x;my $ok;my $yes;my $no>
+$x = $ok ?? $yes !! $no;  # Perl 6
 
 =head2 Assignment Operators
 
@@ -297,11 +311,9 @@ the file for reading). To do this in an iterative manner, you can use a
 C<for> loop this way:
 
 =begin code
-
 for 'huge-csv'.IO.lines -> $line {
     # Do something with $line
 }
-
 =end code
 
 Note the use of C<< -> >> there. That's part of the Block syntax, and in
@@ -341,3 +353,5 @@ boolean or is C<?|>.
 Left shift and right shift are C<< +< >> and C<< +> >>.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

@@ -16,35 +16,35 @@ tightest to loosest:
 
 =begin table
 
-    A  Level             Examples
-    =  =====             ========
-    N  Terms             42 3.14 "eek" qq["foo"] $x :!verbose @$array
-    L  Method postfix    .meth .+ .? .* .() .[] .{} .<> .«» .:: .= .^ .:
-    N  Autoincrement     ++ --
-    R  Exponentiation    **
-    L  Symbolic unary    ! + - ~ ? | || +^ ~^ ?^ ^
-    L  Dotty infix       .= .
-    L  Multiplicative    * / % %% +& +< +> ~& ~< ~> ?& div mod gcd lcm
-    L  Additive          + - +| +^ ~| ~^ ?| ?^
-    L  Replication       x xx
-    X  Concatenation     ~
-    X  Junctive and      &
-    X  Junctive or       | ^
-    L  Named unary       temp let
-    N  Structural infix  but does <=> leg cmp .. ..^ ^.. ^..^
-    C  Chaining infix    != == < <= > >= eq ne lt le gt ge ~~ === eqv !eqv =~=
-    X  Tight and         &&
-    X  Tight or          || ^^ // min max
-    R  Conditional       ?? !! ff fff
-    R  Item assignment   = => += -= **= xx=
-    L  Loose unary       so not
-    X  Comma operator    , :
-    X  List infix        Z minmax X X~ X* Xeqv ...
-    R  List prefix       print push say die map substr ... [+] [*] any Z=
-    X  Loose and         and andthen notandthen
-    X  Loose or          or xor orelse
-    X  Sequencer         <==, ==>, <<==, ==>>
-    N  Terminator        ; {...}, unless, extra ), ], }
+    A | Level            |   Examples
+    ==+==================+==========
+    N | Terms            |   42 3.14 "eek" qq["foo"] $x :!verbose @$array
+    L | Method postfix   |   .meth .\+ .? .* .() .[] .{} .<> .«» .:: .= .^ .:
+    N | Autoincrement    |   \+\+ --
+    R | Exponentiation   |   **
+    L | Symbolic unary   |   ! \+ - ~ ? \| \|\| \+^ ~^ ?^ ^
+    L | Dotty infix      |   .= .
+    L | Multiplicative   |   * / % %% \+& \+< \+> ~& ~< ~> ?& div mod gcd lcm
+    L | Additive         |   \+ - \+\| \+^ ~\| ~^ ?\| ?^
+    L | Replication      |   x xx
+    X | Concatenation    |   ~
+    X | Junctive and     |   &
+    X | Junctive or      |   \| ^
+    L | Named unary      |   temp let
+    N | Structural infix |   but does <=> leg cmp .. ..^ ^.. ^..^
+    C | Chaining infix   |   != == < <= > >= eq ne lt le gt ge ~~ === eqv !eqv =~=
+    X | Tight and        |   &&
+    X | Tight or         |   \|\| ^^ // min max
+    R | Conditional      |   ?? !! ff fff
+    R | Item assignment  |   = => \+= -= **= xx=
+    L | Loose unary      |   so not
+    X | Comma operator   |   , :
+    X | List infix       |   Z minmax X X~ X* Xeqv ...
+    R | List prefix      |   print push say die map substr ... [\+] [*] any Z=
+    X | Loose and        |   and andthen notandthen
+    X | Loose or         |   or xor orelse
+    X | Sequencer        |   <==, ==>, <<==, ==>>
+    N | Terminator       |   ; {...}, unless, extra ), ], }
 
 =end table
 
@@ -54,13 +54,13 @@ for binary operators are interpreted as follows:
 
 =begin table
 
-    A   Assoc     Meaning of $a ! $b ! $c
-    =   =====     =======================
-    L   left      ($a ! $b) ! $c
-    R   right     $a ! ($b ! $c)
-    N   non       ILLEGAL
-    C   chain     ($a ! $b) and ($b ! $c)
-    X   list      infix:<!>($a; $b; $c)
+    A  | Assoc   | Meaning of $a ! $b ! $c
+    ===+=========+========================
+    L  | left    |  ($a ! $b) ! $c
+    R  | right   |  $a ! ($b ! $c)
+    N  | non     |  ILLEGAL
+    C  | chain   |  ($a ! $b) and ($b ! $c)
+    X  | list    |  infix:<!>($a; $b; $c)
 
 =end table
 
@@ -68,11 +68,11 @@ For unary operators this is interpreted as:
 
 =begin table
 
-    A   Assoc     Meaning of !$a!
-    =   =====     =========================
-    L   left      (!$a)!
-    R   right     !($a!)
-    N   non       ILLEGAL
+    A  | Assoc   |  Meaning of !$a!
+    ===+=========+==========================
+    L  | left    |  (!$a)!
+    R  | right   |  !($a!)
+    N  | non     |  ILLEGAL
 
 =end table
 
@@ -80,6 +80,7 @@ In the operator descriptions below, a default associativity of I<left>
 is assumed.
 
 =head1 Operator classification
+
 X<|prefix operator>
 X<|infix operator>
 X<|postfix operator>
@@ -90,11 +91,11 @@ Operators can occur in several positions relative to a term:
 
 =begin table
 
-    +term           prefix
-    term1 + term2   infix
-    term++          postfix
-    (term)          circumfix
-    term1[term2]    postcircumfix
+    \+term          | prefix
+    term1 \+ term2  | infix
+    term\+\+        | postfix
+    (term)          | circumfix
+    term1[term2]    | postcircumfix
 
 =end table
 
@@ -183,6 +184,34 @@ warning. To execute the substitution on a variable that isn't the C<$_> this
 operator uses, alias it to C<$_> with C<given>, C<with>, or any other way.
 Alternatively, use the L«C<.subst> method|/routine/subst».
 
+=head2 C<tr///> in-place transliteration
+
+    my $str = 'old string';
+    $str ~~ tr/dol/wne/;
+    say $str; # OUTPUT: «new string␤»
+
+Operates on C<$_> topical variable, changing it in place. Behaves similar to
+L«C<Str.trans>|/routine/trans» called with a single L<Pair> argument where
+key is the matching part (characters C<dol> in example above) and value is
+the replacement part (characters C<wne> in the example above). Accepts the
+same adverbs as L«C<Str.trans>|/routine/trans». Returns L<StrDistance> object
+that measures the distance between original value and the resultant string.
+
+    my $str = 'old string';
+    $str ~~ tr:c:d/dol st//;
+    say $str; # OUTPUT: «ring␤»
+
+=head2 C<TR///> non-destructive transliteration
+
+    with 'old string' {
+        say TR/dol/wne/; # OUTPUT: «new string␤»
+    }
+
+Behaves the same as C<tr///> operator with the exception that it leaves C<$_>
+value untouched and instead returns the resultant string.
+
+    say TR:d/dol // with 'old string'; # OUTPUT: «string␤»
+
 =head1 Assignment Operators
 
 Infix operators can be combined with the assignment operator to modify a
@@ -213,6 +242,7 @@ Although not strictly operators, methods can be used in the same fashion.
     $a .= round;      # RESULT: «3»
 
 =head1 Negated Relational Operators
+X<|! (negation meta operator)>X<|!==>X<|!eq>
 
 The result of a relational operator returning C<Bool> can be negated by
 prefixing with C<!>. To avoid visual confusion with the C<!!> operator,
@@ -239,10 +269,13 @@ with C<R>. Associativity of operands is reversed as well.
 
 =head1 X<<<Hyper Operators|hyper,<<;hyper,>>;hyper,«;hyper,»>>>
 
+Hyper Operators include C<«> and C<»>, with their ASCII variants C«<<»
+and C«>>».
+
 Hyper operators apply a given operator enclosed by C<«> and C<»> to one or two
 lists, returning the resulting list. The pointy part of C<«> or C<»> has to
 point to the shorter list. A list with just one element is fine too. If one of
-the lists is shorter then the other, the operator will cycle over the shorter
+the lists is shorter than the other, the operator will cycle over the shorter
 list until all elements of the longer list are processed.
 
     say (1, 2, 3) »*» 2;          # OUTPUT: «(2 4 6)␤»
@@ -532,7 +565,7 @@ its argument using the same rules as the L<interpolating quote-words operator|
 
     my %color = kiwi => "green", banana => "yellow", cherry => "red";
     my $fruit = "kiwi";
-    say %color«cherry $fruit».perl;   # OUTPUT: «("red", "green")␤»
+    say %color«cherry "$fruit"».perl;   # OUTPUT: «("red", "green")␤»
 
 This is not a real operator, just syntactic sugar that is turned into the
 C<{ }> postcircumfix operator at compile-time.
@@ -562,12 +595,12 @@ a method. The invocant will be bound to the first positional argument.
 
 Technically this is not an operator, but syntax special-cased in the compiler.
 
-    my sub f($invocant){ dd $invocant; }
-    my $i = 42;
+    my sub f($invocant){ "The arg has a value of $invocant" }
     42.&f;
-    # OUTPUT: «Int $invocant = 42␤»
-    42.&(-> $invocant { dd $invocant });
-    # OUTPUT: «Int $invocant = 42␤»
+    # OUTPUT: «The arg has a value of 42␤»
+
+    42.&(-> $invocant { "The arg has a value of $invocant" });
+    # OUTPUT: «The arg has a value of 42␤»
 
 =head2 postfix C«.=»
 
@@ -621,8 +654,10 @@ X<Hyper method call operator>. Will call a method on all elements of a C<List> o
     say @a».&foo;                     # So we can pretend to have a method call with a sub that got a good first positional argument.
     say @a».&{ .ord};                 # Blocks have an implicit positional arguments that lands in $_. The latter can be omitted for method calls.
 
-Take care to avoid a common mistake of expecting side-effects to occur in order. The following
-C<say> is B<not> guaranteed to produce the output in order:
+Take care to avoid a
+L<common mistake|/language/traps#Using_»_and_map_interchangeably> of expecting
+side-effects to occur in order. The following C<say> is B<not>
+guaranteed to produce the output in order:
 
     =begin code :skip-test
     @a».say;  # WRONG! Could produce a␤b␤c␤ or c␤b␤a␤ or any other order
@@ -655,7 +690,7 @@ call.
 If the postfix is an identifier, however, it will be interpreted as a normal
 method call.
 
-=begin code :skip-test
+=begin code
 1.i # No such method 'i' for invocant of type 'Int'
 =end code
 
@@ -1130,9 +1165,45 @@ is returned.
 
 X<String concatenation operator>.
 
-Coerces both arguments to L<Str> and concatenates them. If both arguments are L<Buf>, a combined buffer is returned.
+Coerces both arguments to L<Str> and concatenates them. If both arguments are
+L<Buf|/type/Buf>, a combined buffer is returned.
 
     say 'ab' ~ 'c';     # OUTPUT: «abc␤»
+
+=head2 infix C«∘»
+
+    multi sub infix:<∘>()
+    multi sub infix:<∘>(&f)
+    multi sub infix:<∘>(&f, &g --> Block:D)
+
+X<Function combinator operator>
+
+The function composition operator C«infix:<∘>» or C«infix:<o>» combines two
+functions, so that the left function is called with the return value of the
+right function. If the L«C<.count>|/routine/count» of the left function is
+greater than 1, the return value of the right function will be
+L<slipped|/type/Slip> into the left function.
+
+Both C<.count> and C<.arity> of the RHS will be maintained.
+
+    sub f($p){ say 'f'; $p / 2 }
+    sub g($p){ say 'g'; $p * 2 }
+
+    my &composed = &f ∘ &g;
+    say composed 2; # OUTPUT: «g␤f␤2␤»
+    # equivalent to:
+    say 2.&g.&f;
+    # or to:
+    say f g 2;
+
+    =begin code
+    sub f($a, $b, $c) { [~] $c, $b, $a }
+    sub g($str){ $str.comb }
+    my &composed = &f ∘ &g;
+    say composed 'abc'; # OUTPUT: «cba␤»
+    # equivalent to:
+    say f |g 'abc';
+    =end code
 
 =head1 Junctive AND (all) Precedence
 
@@ -1186,11 +1257,38 @@ restored to its original value.
     }
     say $a; # OUTPUT: «three␤»
 
-Note that you can also assign immediately as part of the call to temp:
+You can also assign immediately as part of the call to temp:
 
     =begin code :skip-test
     temp $a = "five";
     =end code
+
+Be warned the C<temp> effects get removed once the block is left. If
+you were to access the value from, say, within a L<Promise> after
+the C<temp> was undone, you'd get the original value, not the C<temp> one:
+
+    =begin code
+    my $v = "original";
+    {
+        temp $v = "new one";
+        start {
+            say "[PROMISE] Value before block is left: `$v`";
+            sleep 1;
+            say "[PROMISE] Block was left while we slept; value is now `$v`";
+        }
+        sleep ½;
+        say "About to leave the block; value is `$v`";
+    }
+    say "Left the block; value is now `$v`";
+    sleep 2;
+
+    # OUTPUT:
+    # [PROMISE] Value before block is left: `new one`
+    # About to leave the block; value is `new one`
+    # Left the block; value is now `original`
+    # [PROMISE] Block was left while we slept; value is now `original`
+    =end code
+
 
 =head2 prefix C«let»
 
@@ -1227,8 +1325,15 @@ unsuccessfully, resetting the answer to 42.
 
 Mixes C<$role> into C<$obj> at run time. Requires C<$obj> to be mutable.
 
-C<$role> doesn't need to a be a role, it can be something that knows how
-to act like a role; e.g., enum values.
+Similar to L<but> operator, the C<$role> can instead be an instantiated object,
+in which case, the operator will create a role for you automatically.
+The role will contain a single method named the same as C<$obj.^name>
+and that returns C<$obj>:
+
+    my $o = class { method Str { "original" } }.new;
+    put $o;            # OUTPUT: «original␤»
+    $o does "modded";
+    put $o;            # OUTPUT: «modded␤»
 
 If methods of the same name are present already, the last mixed in role takes
 precedence.
@@ -1245,7 +1350,7 @@ Instead of a role, you can provide an instantiated object. In this case,
 the operator will create a role for you automatically. The role will contain
 a single method named the same as C<$obj.^name> and that returns C<$obj>:
 
-    =begin code :skip-test
+    =begin code
     say 42 but 'forty two'; # OUTPUT: «forty two␤»
 
     my $s = 12 but class Warbles { method hi { 'hello' } }.new;
@@ -1353,6 +1458,8 @@ X<Numeric inequality operator>.
 
 Coerces both arguments to L<Numeric> (if necessary), and returns C<True> if they are
 distinct.
+
+Is an alias to C«!==».
 
 =head2 infix C«≠»
 
@@ -1517,12 +1624,22 @@ Returns C<True> if the first argument is larger than the second.
     sub infix:<eqv>(Any, Any)
 
 X<Equivalence operator>. Returns C<True> if the two arguments are structurally
-the same, i.e. from the same type and (recursively) contain the same values.
+the same, i.e. from the same type and (recursively) contain equivalent values.
 
     say [1, 2, 3] eqv [1, 2, 3];    # OUTPUT: «True␤»
     say Any eqv Any;                # OUTPUT: «True␤»
     say 1 eqv 2;                    # OUTPUT: «False␤»
     say 1 eqv 1.0;                  # OUTPUT: «False␤»
+
+Lazy L«C<Iterables>|/type/Iterable» cannot be compared, as
+they're assumed to be infinite. However, the operator will do its best and
+return C<False> if the two lazy C<Iterables> are of different types or
+if only one C<Iterable> is lazy.
+
+    say (1…∞) eqv (1…∞).List; # Both lazy, but different types;   OUTPUT: «False␤»
+    say (1…∞) eqv (1…3);      # Same types, but only one is lazy; OUTPUT: «False␤»
+    (try say (1…∞) eqv (1…∞)) # Both lazy and of the same type. Cannot compare; throws.
+        orelse say $!.^name;  # OUTPUT: «X::Cannot::Lazy␤»
 
 The default C<eqv> operator even works with arbitrary objects. E.g., C<eqv>
 will consider two instances of the same object as being structurally
@@ -1533,7 +1650,7 @@ equivalent:
     }
     say A.new(a => 5) eqv A.new(a => 5);  # OUTPUT: «True␤»
 
-Although the above example works as intended the C<eqv> code has to fall back
+Although the above example works as intended the C<eqv> code might fall back
 to a slower code path in order to do its job. One way to avoid this is to
 implement an appropriate infix C<eqv> operator:
 
@@ -1585,11 +1702,14 @@ also modify the other.
 
 =head2 infix C«~~»
 
+X<|smartmatch operator>
 The X<smart-match operator>. Aliases the left-hand side to C<$_>, then evaluates
 the right-hand side, and calls C<.ACCEPTS($_)> on it. The semantics are left
 to the type of the right-hand side operand.
 
-Here is an excerpt of built-in smart-matching functionality:
+Here is a partial list of some of the built-in smart-matching functionality. For
+full details, see L<ACCEPTS|/routine/ACCEPTS> documentation
+for the type on the right-hand side of the operator.
 
 =begin table
 
@@ -1615,11 +1735,12 @@ Here is an excerpt of built-in smart-matching functionality:
     multi sub infix:<=~=>(Complex:D, Complex:D)
     multi sub infix:<=~=>(Numeric:D, Numeric:D)
 
-The X<approximately-equal operator|infix, ≅>. Calculates the relative difference between
-the left-hand and right-hand sides and returns C<True> if the difference is
-less than $*TOLERANCE (which defaults to 1e-15). However, if either side is zero
-then it checks that the absolute difference between the sides is less than $*TOLERANCE.
-Note that this operator is not arithmetically symmetrical (doesn't do ± Δ):
+The approximately-equal operator X<C<≅>|infix, ≅>, whose ASCII variant is
+C<=~=>. Calculates the relative difference between the left-hand and right-hand
+sides and returns C<True> if the difference is less than $*TOLERANCE
+(which defaults to 1e-15). However, if either side is zero then it checks that
+the absolute difference between the sides is less than $*TOLERANCE. Note that
+this operator is not arithmetically symmetrical (doesn't do ± Δ):
 
     my $x = 1;
     say ($x + $*TOLERANCE) =~= $x;   # OUTPUT: «False␤»
@@ -2117,7 +2238,8 @@ referred to at runtime and thus can't be used as an argument to meta operators.
 
 =head2 infix C«::=»
 
-X<Read-only binding operator>. See L<C<infix :=>|:=>.
+X<Read-only binding operator>, not yet implemented in Rakudo.
+See L<C<infix :=>|:=>.
 
 =head2 listop C«...»
 
@@ -2264,7 +2386,7 @@ behaviour:
 
 =head2 infix C«or»
 
-Same as C<infix ||>, except with looser precedence.
+Same as L<infix C<||>|#infix || >, except with looser precedence.
 
 Returns the first argument that evaluates to C<True> in boolean context,
 or otherwise the last argument, it short-circuits. Please note that C<or> is easy
@@ -2300,6 +2422,20 @@ while a L<Failure> never is:
         given meows-processor2;
     meows-processor3;           # OUTPUT: «something's wrong␤»
     meows-processor3;           # OUTPUT: «🐱␤»
+
+=head2 infix C«xor»
+
+Same as L<infix C<^^>|#infix ^^>, except with looser precedence.
+
+Returns the operand that evaluates to C<True> in boolean context, if and
+only if the other operand evaluates to C<False> in boolean context. If
+both operands evaluate to C<False>, returns the last argument. If both
+operands evaluate to C<True>, returns C<Nil>.
+
+When chaining, returns the operand that evaluates to C<True>, if and
+only if there is one such operand. If more than one operand is true,
+it short-circuits after evaluating the second and returns C<Nil>. If all
+operands are false, returns the last one.
 
 =head1 Sequencer Precedence
 
@@ -2418,4 +2554,4 @@ a subthread).
 
 =end pod
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

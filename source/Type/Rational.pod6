@@ -31,9 +31,20 @@ Coerces the invocant to L<Int> by truncating non-whole portion of the represente
 number, if any. If the L<denominator> is zero, will L<fail> with
 C<X::Numeric::DivideByZero>.
 
+=head2 method Num
+
+Defined as:
+
+    method Num(Rational:D: --> Num:D)
+
+Coerces the invocant to L<Num> by dividing L<numerator> by L<denominator>.
+If L<denominator> is C<0>, returns C<Inf>, C<-Inf>, or C<NaN>, based on
+whether L<numerator> is a positive number, negative number, or C<0>,
+respectively.
+
 =head2 method isNaN
 
-=for code :skip-test
+=for code
 method isNaN(Rational:D: --> Bool:D)
 
 Tests whether the invocant's Num value is a NaN. That is both its numerator
@@ -88,3 +99,5 @@ The precision for determining the repeating group is limited to 1000
 characters, above that, the second string is C<???>.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

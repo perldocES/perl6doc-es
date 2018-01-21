@@ -28,7 +28,7 @@ hyper-operators, autothreading junctions?
 Additionally, certain Perl features may implicitly operate in an asynchronous
 fashion, so in order to ensure predictable interoperation with these features,
 user code should, where possible, avoid the lower level concurrency APIs
-(i.e. L<Thread> and L<Scheduler> ) and use the higher-level interfaces.
+(e.g., L<Thread> and L<Scheduler>) and use the higher-level interfaces.
 
 =head1 High-level APIs
 
@@ -72,11 +72,11 @@ chaining, usually by the L<then|/type/Promise#method_then> method:
 Here the L<then|/type/Promise#method_then> method schedules code to be
 executed when the first L<Promise> is kept or broken, itself returning
 a new L<Promise> which will be kept with the result of the code when
-it is executed (or broken if the code fails.)  C<keep> changes the
+it is executed (or broken if the code fails).  C<keep> changes the
 status of the promise to C<Kept> setting the result to the positional
 argument. C<result> blocks the current thread of execution until the
 promise is kept or broken, if it was kept then it will return the
-result (that is the value passed to C<keep>, ) otherwise it will throw an
+result (that is the value passed to C<keep>), otherwise it will throw an
 exception based on the value passed to C<break>. The latter behaviour
 is illustrated with:
 
@@ -262,8 +262,7 @@ Note that the C<tap> is called on a L<Supply> object created by the
 L<Supplier> and new values are emitted on the L<Supplier>.
 
 X«|supply (on-demand)»
-Or alternatively as an C<on-demand> L<Supply> created by the C<supply>
-keyword:
+An C<on-demand> L<Supply> is created by the C<supply> keyword:
 
     my $supply = supply {
         for 1 .. 10 {
@@ -345,6 +344,9 @@ written as:
         }
     }
 
+A live C<Supply> that keeps values until first tapped can be created with
+L<Supplier::Preserving|/type/Supplier::Preserving>.
+
 An existing supply object can be filtered or transformed, using the methods
 C<grep> and C<map> respectively, to create a new supply in a manner like
 the similarly named list methods: C<grep> returns a supply such that only
@@ -378,7 +380,7 @@ to the C<map> is emitted:
 If you need to have an action that runs when the supply finishes, you can do so
 by setting the C<done> and C<quit> options in the call to C<tap>:
 
-    =begin code :skip-test
+    =begin code :preamble<my $supply; class X::MyApp::Error is Exception {}>
     $supply.tap: { ... },
         done => { say 'Job is done.' },
         quit => {
@@ -396,7 +398,7 @@ If you are using the C<react> or C<supply> block syntax with C<whenever>, you
 can add phasers within your C<whenever> blocks to handle the C<done> and C<quit>
 messages from the tapped supply:
 
-    =begin code :skip-test
+    =begin code :preamble<my $supply; class X::MyApp::Error is Exception {}>
     react {
         whenever $supply {
             ...; # your usual supply tap code here
@@ -500,7 +502,7 @@ The C<.poll> method can be used in combination with C<.receive> method, as a
 caching mechanism where lack of value returned by `.poll` is a signal that
 more values need to be fetched and loaded into the channel:
 
-    =begin code :skip-test
+    =begin code :preamble<my $c; sub slowly-fetch-a-thing {};>
     sub get-value {
         return $c.poll // do { start replenish-cache; $c.receive };
     }
@@ -515,7 +517,7 @@ more values need to be fetched and loaded into the channel:
 Channels can be used in place of the L<Supply> in the C<whenever> of a
 C<react> block described earlier:
 
-    =begin code :skip-test
+    =begin code
     my $channel = Channel.new;
     my $p = start {
         react {
@@ -654,7 +656,7 @@ In both cases the completion of the code encapsulated by the L<Thread>
 object can be waited on with the C<finish> method which will block until
 the thread completes:
 
-=for code :skip-test
+=for code :preamble<my $thread;>
 $thread.finish;
 
 Beyond that there are  no further facilities for synchronization or resource
@@ -754,11 +756,11 @@ at a time:
 
     await (^10).map: {
         start {
-                $lock.protect({
-                    my $r = rand;
-                    sleep $r;
-                    $a++;
-                });
+            $lock.protect({
+                my $r = rand;
+                sleep $r;
+                $a++;
+            });
         }
     }
 
@@ -784,8 +786,10 @@ example, in this code:
     $slot = 'foo';
 
 The third line is the critical section as that is when the array is extended.
-The simplest fix is to use a L<Lock> to protect the critical section .  A
+The simplest fix is to use a L<Lock> to protect the critical section.  A
 possibly better fix would be to refactor the code so that sharing a container
 is not necessary.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

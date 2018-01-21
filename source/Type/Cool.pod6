@@ -2,13 +2,18 @@
 
 =TITLE class Cool
 
-=SUBTITLE Value that can be treated as a string or number interchangeably
+=SUBTITLE Object that can be treated as both a string and number
 
     class Cool is Any { }
 
 C<Cool>, also known as the B<C>onvenient B<OO> B<L>oop, is a base class
-for strings, numbers and other built-in classes that you are supposed to use
-mostly interchangeably.
+employed by a number of built-in classes that can be meaningfully coerced
+to a string and a number. For example, an L<Array> can be used in mathematical
+operations, where its numerical representation is the number of elements it
+contains. At the same time, it can be concatenated to a string, where its
+stringy representation is all of its elements L<joined|/routine/join> by
+a space. Because L<Array> is L<Cool>, the appropriate coercion happens
+automatically.
 
 Methods in C<Cool> coerce the invocant to a more
 specific type, and then call the same method on that type. For example both
@@ -812,7 +817,7 @@ Defined as:
 
 Coerces the invocant (or in sub form, its argument) to L<Str|/type/Str>, and returns it with the first letter
 case-folded to title case (or where not available, upper case), and the rest
-of the string case-folded to lower case..
+of the string case-folded to lower case.
 
     say 'abC'.tclc;     # OUTPUT: «Abc␤»
 
@@ -900,7 +905,8 @@ Defined as:
 
 Interprets the invocant / first argument as a L<Str|/type/Str>, and returns the
 Unicode codepoint name of the first codepoint of the first character. See
-L<uninames|#routine_uninames> for a routine that works with multiple codepoints.
+L<uninames|#routine_uninames> for a routine that works with multiple
+codepoints, and L<uniparse> for the opposite direction.
 
     # Camelia in Unicode
     say ‘»ö«’.uniname;
@@ -929,6 +935,8 @@ codepoints in that character.
 
     say "Ḍ̇'oh".comb>>.uninames.perl;
     # OUTPUT: «(("LATIN CAPITAL LETTER D WITH DOT BELOW", "COMBINING DOT ABOVE").Seq, ("APOSTROPHE",).Seq, ("LATIN SMALL LETTER O",).Seq, ("LATIN SMALL LETTER H",).Seq)␤»
+
+See L<uniparse> for the opposite direction.
 
 =head2 method unimatch
 
@@ -1113,7 +1121,7 @@ the list of lines.
 This method can be used as part of an C<IO::Path> to process a file
 line-by-line, since C<IO::Path> objects inherit from C<Cool>, e.g.:
 
-=begin code :skip-test
+=begin code
 for 'huge-csv'.IO.lines -> $line {
     # Do something with $line
 }
@@ -1127,7 +1135,7 @@ C<$*ARGFILES>, which defaults to C<$*IN> in the absence of any filenames.
 
 To modify values in place use C<is copy> to force a writable container.
 
-=for code :skip-test
+=for code
 for $*IN.lines -> $_ is copy { s/(\w+)/{$0 ~ $0}/; .say }
 
 =head2 method words
@@ -1163,11 +1171,19 @@ L<Regex|/type/Regex> as a list of strings.
 
     multi method contains(Cool:D: Str(Cool) $needle, Cool $start? --> Bool:D)
 
-Returns C<True> if the invocant contains the C<$needle> at any position within
-the string. If $start is provided skip as many characters.
+Coerces the invocant and first argument to L<Str|/type/Str>, and searches for
+C<$needle> in the string starting from C<$start>. Returns C<True> if C<$needle>
+is found.
 
+    say "Hello, World".contains('Hello');      # OUTPUT: «True␤»
     say "Hello, World".contains('hello');      # OUTPUT: «False␤»
     say "Hello, World".contains(',');          # OUTPUT: «True␤»
+    say "Hello, World".contains(',', 3);       # OUTPUT: «True␤»
+    say "Hello, World".contains(',', 10);      # OUTPUT: «False␤»
+
+Note that because of how a L<List|/type/List> or L<Array|/type/Array> is
+L<coerced|/type/List#method_Str> into a L<Str|/type/Str>, the results may
+sometimes be surprising. See L<traps|/language/traps#Lists_become_strings,_so_beware_.contains>.
 
 =head2 routine index
 
@@ -1240,16 +1256,12 @@ say @roots;
 for @roots -> $r {
     say abs($r ** 4 - $original);
 }
-=end code
 
-produces this output:
-
-=begin code :skip-test
-2+0i 1.22464679914735e-16+2i -2+2.44929359829471e-16i -3.67394039744206e-16-2i
-1.77635683940025e-15
-4.30267170434156e-15
-8.03651692704705e-15
-1.04441561648202e-14
+# OUTPUT:«2+0i 1.22464679914735e-16+2i -2+2.44929359829471e-16i -3.67394039744206e-16-2i␤»
+# OUTPUT:«1.77635683940025e-15␤»
+# OUTPUT:«4.30267170434156e-15␤»
+# OUTPUT:«8.03651692704705e-15␤»
+# OUTPUT:«1.04441561648202e-14␤»
 =end code
 
 =head2 method IO
@@ -1260,16 +1272,24 @@ Defined as:
 
 Coerces the invocant to L<IO::Path>.
 
-=for code :skip-test
+=for code
 .say for '.'.IO.dir;        # gives a directory listing
 
 =head2 routine EVAL
 
 Defined as:
 
-    sub EVAL(Cool $code, :$lang = { ... })
+=for code
+    method EVAL(*%_)
+=for code
+    sub EVAL($code where Cool|Blob, :$lang = 'perl6')
 
-Coerces the invocant to L<Str>.
+Method form calls subroutine form with invocant as C<$code>, passing along
+named args, if any. Subroutine form coerces L<Cool> C<$code> to L<Str>.
+If C<$code> is a L<Blob>, it'll be processed using the same encoding as
+the C<$lang> compiler would: for C<perl6>, uses the encoding specified
+via C<--encoding> command line argument, or C<utf-8> if none were given;
+for C<Perl5>, processes using same rules as C<perl>.
 
 This works as-is with a literal string parameter. More complex input, such as
 a variable or string with embedded code, is illegal by default. This can be
@@ -1316,20 +1336,20 @@ An C<EVAL> statement evaluates to the result of the last statement:
 
 C<EVAL> is also a gateway for executing code in other languages:
 
-=for code :skip-test
+=for code
 EVAL "use v5.20; say 'Hello from perl5!'", :lang<Perl5>;
 
 =head2 routine EVALFILE
 
 Defined as:
 
-    sub EVALFILE(Cool $filename, :$lang = { ... })
+    sub EVALFILE($filename where Blob|Cool, :$lang = 'perl6')
 
 Slurps the specified file and evaluates it. Behaves the same way as C<EVAL>
-with regard to both scoping and the C<$lang> parameter. Evaluates to the value
+with regard to L<Blob> decoding, scoping, and the C<$lang> parameter. Evaluates to the value
 produced by the final statement in the file.
 
-=for code :skip-test
+=for code
 EVALFILE "foo.p6";
 
 =begin comment
@@ -1342,4 +1362,4 @@ match, subst, sprintf, printf, samecase
 
 =end pod
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

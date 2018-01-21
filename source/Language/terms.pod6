@@ -156,22 +156,22 @@ Returns a pseudo-random L<Num> in the range C<0..^1>.
 =head2 term π
 
 Returns the number C<π>, i.e., the ratio between circumference and diameter
-of a circle. The Texas (ASCII) equivalent of C<π> is C<pi>.
+of a circle. The ASCII equivalent of C<π> is C<pi>.
 
 =head2 term pi
 
 Returns the number C<π>, i.e., the ratio between circumference and diameter
-of a circle. C<pi> is the Texas (ASCII) equivalent of C<π>.
+of a circle. C<pi> is the ASCII equivalent of C<π>.
 
 =head2 term τ
 
 Returns the number C<τ>, i.e., the ratio between circumference and radius
-of a circle. The Texas (ASCII) equivalent of C<τ> is C<tau>.
+of a circle. The ASCII equivalent of C<τ> is C<tau>.
 
 =head2 term tau
 
 Returns the number C<τ>, i.e., the ratio between circumference and radius
-of a circle. C<tau> is the Texas (ASCII) equivalent of C<τ>.
+of a circle. C<tau> is the ASCII equivalent of C<τ>.
 
 =head2 term e
 
@@ -190,7 +190,8 @@ Variables are discussed in the L<variable language docs |/language/variables>.
 X<|constant (Terms)>
 Constants are declared with C<constant>, followed by an
 L<identifier|/language/syntax#Identifiers> and do not require a sigil. The RHS
-is evaluated at compile time, what may be too early to make sense.
+is evaluated at compile time, therefore being possibly too early to make sense.
+
 
     constant SpeedOfLight = 299792458;     # m/s
     constant PHI          = 1.61803398875; # The golden ratio is everywhere!
@@ -198,9 +199,35 @@ is evaluated at compile time, what may be too early to make sense.
     say POW2[16];
     # OUTPUT: «65536␤»
 
-Constants are C<our>-scoped by default, but adding C<my> would make them lexical.
+Since constants RHS are evaluated at compile time, their usage within modules
+could lead to unexpected behavior, please see the related
+L<traps section|https://docs.perl6.org/language/traps#Constants_are_Compile_Time>.
 
-    # Use "my" to make it only visible within the current block
-    my constant SpeedOfLight = 186200; # mi/s (watch out, not SI units)
+Constants are C<our>-scoped by default, but adding C<my> would make them lexical:
+
+=begin code
+constant SpeedOfLight = 186200;
+constant Unit         = 'mi/s';
+{
+    my constant SpeedOfLight  = 299_792_458;
+    my constant Unit          = 'm/s';
+    my constant Source        = 'wikipedia';
+    say 'Speed of Light is ' ~ SpeedOfLight ~ ' ' ~ Unit;
+}
+say 'Speed of Light is ' ~ SpeedOfLight ~ ' ' ~ Unit;
+# here 'wikipedia' is out of scope !
+=end code
+
+that will produce the following output (note how the constants have been
+lexically overwritten):
+
+=for code :lang<output>
+Speed of Light is 299792458 m/s
+Speed of Light is 186200 mi/s
+
+Referencing a lexical C<constant> outside of the block will produce
+an C<Undeclared name> compilation error.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

@@ -23,7 +23,7 @@ definition in curly braces. Since any regex does C<Callable> introspection requi
 referencing via C<&>-sigil.
 
     my regex R { \N };
-    say &R.WHAT; # OUTPUT: «(Regex)␤»
+    say &R.^name; # OUTPUT: «Regex␤»
 
 To match a string against a regex, you can use the smart match operator:
 
@@ -70,3 +70,5 @@ Matches against the caller's L<$_|/syntax/$_> variable, and returns C<True> for 
 C<False> for no match.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

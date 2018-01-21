@@ -1,4 +1,4 @@
-=begin pod
+=begin pod :tag<perl6>
 
 =TITLE Perl 6 Pod
 
@@ -9,7 +9,7 @@ documentation, for documenting programs and modules, as well as for
 other types of document composition.
 
 Every Pod document has to begin with C<=begin pod> and end with C<=end pod>.
-Everything between these 2 delimiters will be processed and used to generate documentation.
+Everything between these two delimiters will be processed and used to generate documentation.
 
 =begin code
 =begin pod
@@ -22,19 +22,65 @@ A very simple Perl 6 Pod document
 =head1 Block Structure
 
 A Pod document may consist of multiple Pod blocks.
-There are three ways to define a block; all of which yield the same result.
+There are four ways to define a block (delimited, paragraph, abbreviated, and declarator);
+the first three yield the same result but the fourth differs.
 You can use whichever form is most convenient for your particular documentation task.
 
 =head2 Delimited blocks
 
-Delimited blocks are bound by C<=begin> and C<=end> markers, both of
-which are followed by the typename of the block.
+Delimited blocks are bounded by C<=begin> and C<=end> markers, both of
+which are followed by a valid Perl 6 identifier, which is the
+C<typename> of the block. Typenames that are entirely lowercase (for
+example: C<=begin head1>) or entirely uppercase (for example: C<=begin
+SYNOPSIS>) are reserved.
 
 =begin code
 =begin head1
 Top Level Heading
 =end head1
 =end code
+
+=head3 Configuration information
+
+After the typename, the rest of the C<=begin> marker line is treated as
+configuration information for the block. This information is used in
+different ways by different types of blocks, but is always specified using
+Perl6-ish option pairs. That is, any of:
+
+=begin table
+ Value is...       Specify with...           Or with...          Or with...
+ ===============   ===================       ==============      ===========
+ List              :key[$e1, $e2, ...]       :key($e1, $e2, ...)
+ Hash              :key{$k1=>$v1, $k2=>$v2}
+ Boolean (true)    :key                      :key(True)          :key[True]
+ Boolean (false)   :!key                     :key(False)         :key[False]
+ String            :key<str>                 :key('str')         :key("str")
+ Int               :key(42)                  :key[42]
+ Number            :key(2.3)                 :key[2.3]
+=end table
+
+Where '$e1, $e2, ...' are list elements of type String, Int, Number, or
+Boolean.  Lists may have mixed element types. Note that one-element
+lists are converted to the type of their element (String, Int, Number, or
+Boolean). Also note that "bigints" can be used if required.
+
+For hashes, '$k1, $k2, ...' are keys of type Str and '$v1, $2, ...'
+are values of type String, Int, Number, or Boolean.
+
+Strings are delimited by single or double quotes.  Whitespace is insignificant outside
+of strings. Hash keys need not be quote-delimited unless they contain
+significant whitespace.
+
+All option keys and values must, of course, be constants since Pod is a
+specification language, not a programming language. Specifically, option
+values cannot be closures. See Synopsis 2 for details of the various
+Perl 6 pair notations.
+
+The configuration section may be extended over subsequent lines by
+starting those lines with an C<=> in the first (virtual) column followed
+by a whitespace character. (NOTE: This feature is not yet implemented.
+All configuration information currently must be provided on the same
+line as the C<=begin> marker line.)
 
 =head2 Paragraph blocks
 
@@ -55,6 +101,42 @@ first blank line.
 
 =begin code
 =head1 Top Level Heading
+=end code
+
+=head2 Declarator blocks
+
+Declarator blocks differ from the others by not having a specific type,
+instead they are attached to some source code.
+
+Declarator blocks are introduced by a special comment: either C<#=> or C<#|>,
+which must be immediately followed by either a space or an opening bracket.
+If followed by a space, the block is terminated by the end of line;
+if followed by one or more opening brackets, the block is terminated by the matching
+sequence of closing brackets.
+
+Blocks starting with C<#|> are attached to the code after them,
+and blocks starting with C<#=> are attached to the code before them.
+
+Since declarator blocks are attached to source code, they can be used to document
+classes, roles, subroutines etc.
+
+The C<WHY> method can be used on these classes, roles, subroutines etc. to return the attached Pod value.
+
+=begin code :skip-test
+#| Base class for magicians
+class Magician {
+  has Int $.level;
+  has Str @.spells;
+}
+
+#| Fight mechanics
+sub duel(Magician $a, Magician $b) {
+}
+#= Magicians only, no mortals.
+
+say Magician.WHY; # OUTPUT: «Base class for magicians␤»
+say &duel.WHY.leading; # OUTPUT: «Fight mechanics␤»
+say &duel.WHY.trailing; # OUTPUT: «Magicians only, no mortals.␤»
 =end code
 
 =head1 Block types
@@ -85,7 +167,7 @@ The paragraph is terminated by the first blank line or block directive.
 
 For example:
 
-=begin code
+=begin code :skip-test
 =head1 This is a heading block
 
 This is an ordinary paragraph.
@@ -147,7 +229,7 @@ The implicit code block is then terminated by a blank line.
 
 For example:
 
-=begin code
+=begin code :skip-test
 This ordinary paragraph introduces a code block:
 
     my $name = 'John Doe';
@@ -182,7 +264,7 @@ Lists in Pod are specified as a series of C<=item> blocks.
 
 For example:
 
-=begin code
+=begin code :skip-test
 The three suspects are:
 
 =item  Happy
@@ -231,7 +313,7 @@ we can specify items that contain multiple paragraphs.
 
 For example:
 
-=begin code
+=begin code :skip-test
 Let's consider two common proverbs:
 
 =begin item
@@ -310,44 +392,59 @@ Formatting codes may nest other formatting codes.
 =head2 Bold
 
 To format a text in bold enclose it in C<B< >>
-=code Perl 6 is B<awesome>
+=for code :skip-test
+Perl 6 is B<awesome>
 
 Perl 6 is B<awesome>
 
 =head2 Italic
 
 To format a text in italic enclose it in C<I< >>
-=code Perl 6 is I<awesome>
+=for code :skip-test
+Perl 6 is I<awesome>
 
 Perl 6 is I<awesome>
 
 =head2 Underlined
 
 To underline a text enclose it in C<U< >>
-=code Perl 6 is U<awesome>
+=for code :skip-test
+Perl 6 is U<awesome>
 
 Z<If used will bust Pod::To::BigPage>
 
 =head2 Code
 
 To flag text as Code and treat it verbatim enclose it in C<C< >>
-=code C<my $var = 1; say $var;>
+=for code :skip-test
+C<my $var = 1; say $var;>
 
 C<my $var = 1; say $var;>
 
 =head2 Links
 
 To create a link enclose it in C<L< >>
-=code Perl 6 homepage L<https://perl6.org>
+=for code :skip-test
+Perl 6 homepage L<https://perl6.org>
+L<Perl 6 homepage|https://perl6.org>
 
 Perl 6 homepage L<https://perl6.org>
+
+L<Perl 6 homepage|https://perl6.org>
+
+To create a link to a section in the same document:
+=for code :skip-test
+Comments L<#Comments>
+
+Comments L<#Comments>
 
 =head2 Comments
 
 A comment is text that is never rendered.
 
 To create a comment enclose it in C<Z< >>
-=code Perl 6 is awesome Z<Of course it is!>
+=for code :skip-test
+Perl 6 is awesome Z<Of course it is!>
 
 Perl 6 is awesome Z<Of course it is!>
 
@@ -356,21 +453,24 @@ Perl 6 is awesome Z<Of course it is!>
 Notes are rendered as footnotes.
 
 To create a note enclose it in C<N< >>
-=code Perl 6 is multi-paradigmatic N<Supporting Procedural, Object Oriented, and Functional programming>
+=for code :skip-test
+Perl 6 is multi-paradigmatic N<Supporting Procedural, Object Oriented, and Functional programming>
 
 Z<Perl 6 is multi-paradigmatic N<Supporting Procedural, Object Oriented, and Functional programming> >
 
 =head2 Keyboard input
 
 To flag text as keyboard input enclose it in C<K< >>
-=code Enter your name K<John Doe>
+=for code :skip-test
+Enter your name K<John Doe>
 
 Z<If used will bust Pod::To::BigPage>
 
 =head2 Terminal Output
 
 To flag text as terminal output enclose it in C<T< >>
-=code Hello T<John Doe>
+=for code :skip-test
+Hello T<John Doe>
 
 Z<If used will bust Pod::To::BigPage>
 
@@ -381,7 +481,7 @@ To include Unicode code points or HTML5 character references in a Pod document, 
 C<E< >> can enclose a number, that number is treated as the decimal Unicode value for the desired code point.
 It can also enclose explicit binary, octal, decimal, or hexadecimal numbers using the Perl 6 notations for explicitly based numbers.
 
-=begin code
+=begin code :skip-test
 Perl 6 makes considerable use of the E<171> and E<187> characters.
 
 Perl 6 makes considerable use of the E<laquo> and E<raquo> characters.
@@ -407,7 +507,7 @@ If it is not already installed, install it by running the following command:
 C<zef install Pod::To::HTML>
 
 Using the terminal run the following command:
-=begin code
+=begin code :lang<shell>
 perl6 --doc=HTML input.pod6 > output.html
 =end code
 
@@ -419,7 +519,7 @@ If it is not already installed, install it by running the following command:
 C<zef install Pod::To::Markdown>
 
 Using the terminal run the following command:
-=begin code
+=begin code :lang<shell>
 perl6 --doc=Markdown input.pod6 > output.md
 =end code
 
@@ -429,7 +529,13 @@ In order to generate Text from Pod, you can use the default
 C<Pod::To::Text> module.
 
 Using the terminal, run the following command:
-=begin code
+=begin code :lang<shell>
+perl6 --doc=Text input.pod6 > output.txt
+=end code
+
+You can omit the C<=Text> portion:
+
+=begin code :lang<shell>
 perl6 --doc input.pod6 > output.txt
 =end code
 
@@ -447,3 +553,5 @@ multi MAIN(Bool :$man)
 Now C<myprogram --man> will output your Pod rendered as a man page.
 
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

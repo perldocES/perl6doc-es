@@ -11,7 +11,7 @@ allow for the representation of a value as both a string and a numeric type, typ
 they will be created for you when the context is "stringy" but they can be determined
 to be numbers, such as in some L<quoting constructs|/language/quoting>:
 
-    my $f = <42.1>; say $f.WHAT; # OUTPUT: «(RatStr)␤»
+    my $f = <42.1>; say $f.^name; # OUTPUT: «RatStr␤»
 
 As a subclass of both L«C<Rat>|/type/Rat» and L«C<Str>|/type/Str», a C<RatStr>
 will be accepted where either is expected. However, C<RatStr> does not share
@@ -34,6 +34,14 @@ directly the values can be whatever is required:
     my $f = RatStr.new(42.1, "forty two and a bit");
     say +$f; # OUTPUT: «42.1␤»
     say ~$f; # OUTPUT: «"forty two and a bit"␤»
+
+=head2 method Capture
+
+Defined as:
+
+    method Capture(RatStr:D --> Capture:D)
+
+Equivalent to L«C<Mu.Capture>|/type/Mu#method_Capture».
 
 =head2 method Numeric
 
@@ -61,9 +69,10 @@ Defined as:
 
 If C<$value> is L<Numeric> (including another
 L<allomorph|/language/glossary#index-entry-Allomorph>), checks if invocant's
-L<Numeric> part L<ACCEPTS> the C<$value>. If C<$value> is L<Str>, checks if
-invocant's L<Str> part L<ACCEPTS> the C<$value>. If value is anything else,
-checks if both L<Numeric> and L<Str> parts L<ACCEPTS> the C<$value>.
+L<Numeric> part L<ACCEPTS|/type/Numeric#method_ACCEPTS> the C<$value>. If
+C<$value> is L<Str>, checks if invocant's L<Str> part
+L<ACCEPTS|/type/Str#method_ACCEPTS> the C<$value>. If value is anything else,
+checks if both L<Numeric> and L<Str> parts C<ACCEPTS> the C<$value>.
 
     say <5.0> ~~ "5"; # OUTPUT: «False␤»
     say <5.0> ~~  5 ; # OUTPUT: «True␤»
@@ -86,4 +95,4 @@ coerce to the C<Rat> or C<Str> values first:
 
 =end pod
 
-# vim: expandtab shiftwidth=4 ft=perl6
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

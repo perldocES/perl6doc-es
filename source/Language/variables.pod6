@@ -13,7 +13,21 @@ values may create a container on the fly.
 =head1 Sigils
 X<|$ (sigil),@ (sigil),% (sigil),& (sigil)>
 
-The sigil serves as a variable indicator and type constraint.
+There are four sigils. The scalar-sigil C<$>, the positional-sigil C<@>, the
+associative-sigil C<%> and the callable-sigil C<&>.
+
+Sigils provide a link between syntax, the type system and
+L<containers|/language/containers>. They provide a shortcut for the most common
+type constraints when declaring variables and serve as markers for
+L<string interpolation|/language/quoting#Interpolation:_qq>. The
+L<positional-sigil|/language/containers#Flattening,_items_and_containers> and
+the L<associative-sigil|/language/containers#Flattening,_items_and_containers>
+provide type constraint that enforce a base type
+L<subscripts|/language/subscripts#Custom_types> require to know what methods to
+dispatch to. The L<callable-sigil|/language/containers#Callable_containers>
+does the same for function calls. The latter also tells the compiler where
+parentheses for calls can be omitted. The positional and associative-sigil also
+simplify assignment by flattening by default.
 
 =begin table
 
@@ -33,7 +47,7 @@ Examples:
     my %hash   = London => 'UK', Berlin => 'Germany';
 
 X<|is (container type)>
-The default type can be set with C<is>.
+The container type can be set with C<is> in a declaration.
 
     class FailHash is Hash {
         has Bool $!final = False;
@@ -80,11 +94,11 @@ seen in the current expression or declarator:
     say $foo.perl;          # OUTPUT: «5␤»
 
     my @bar = 7, 9;         # list assignment
-    say @bar.WHAT;          # OUTPUT: «(Array)␤»
+    say @bar.^name;         # OUTPUT: «Array␤»
     say @bar.perl;          # OUTPUT: «[7, 9]␤»
 
     (my $baz) = 11, 13;     # list assignment
-    say $baz.WHAT;          # OUTPUT: «(List)␤»
+    say $baz.^name;         # OUTPUT: «List␤»
     say $baz.perl;          # OUTPUT: «$(11, 13)␤»
 
 Thus, the behavior of an assignment contained within a list assignment depends
@@ -183,7 +197,11 @@ only depends on the C<$>.
 X<|$*>
 
 Dynamic variables are looked up through the caller, not through the outer
-scope. For example:
+scope. Look at the example below.
+
+I<Note:> So far, if you use rakudo perl6, the example below cannot run
+correctly in REPL. You can try it by copy-pasting it into a file, then
+run the file.
 
     =begin code
     my $lexical   = 1;
@@ -238,6 +256,7 @@ boolean context before using it for anything else:
     say foo; # OUTPUT: «bar␤»
     =end code
 
+Dynamic variables can have lexical scope when declared with C<my> or package scope when declared with C<our>. Dynamic resolution and resolution through symbol tables introduced with C<our> are two orthogonal issues.
 
 =head2 The C<!> Twigil
 X<|$!>
@@ -384,8 +403,6 @@ C<Associative> roles.
 =head2 The C<~> Twigil
 X<|$~>
 
-Note: Slangs are L<NYI|/language/glossary#NYI> in Rakudo.
-
 The C<~> twigil is for referring to sublanguages (called slangs). The
 following are useful:
 
@@ -491,7 +508,7 @@ new-location; # OUTPUT: «outside␤»
 =end code
 
 To make C<new-location()> print C<nowhere>, make C<$location> a dynamic
-variable using L<the * twigil|#The_*_Twigil>.
+variable using L<the * twigil|#The_*_Twigil>. This twigil makes the compiler look up the symbol in the calling scope instead of the outer scope after trying the local scope.
 
 C<my> is the default scope for subroutines, so C<my sub x() {}> and
 C<sub x() {}> do exactly the same thing.
@@ -510,7 +527,7 @@ introduce an alias into the symbol table.
 
 =head2 Declaring a list of variables
 
-The declarators C<my> and C<our> take a list of variables in parentheses as argument to declare more then one variable at a time.
+The declarators C<my> and C<our> take a list of variables in parentheses as argument to declare more than one variable at a time.
 
     my (@a, $s, %h);
 
@@ -613,13 +630,17 @@ Many operators come with implicit binding which can lead to actions at a distanc
 Use C<.clone> or coercion to create a new container that can be bound to.
 
     my @a;
+    my @a-cloned;
     sub f() {
         state $i;
         $i++;
-        @a.push: "k$i" => $i # <-- .clone goes here
+        @a\      .push: "k$i" => $i;
+        @a-cloned.push: "k$i" => $i.clone;
     };
+
     f for 1..3;
-    dd @a; # OUTPUT: «Array @a = [:k1(3), :k2(3), :k3(3)]␤»
+    say @a;        # OUTPUT: «[k1 => 3 k2 => 3 k3 => 3]␤»
+    say @a-cloned; # OUTPUT: «[k1 => 1 k2 => 2 k3 => 3]␤»
 
 State variables are shared between all threads. The result can be unexpected.
 
@@ -640,7 +661,7 @@ as an anonymous state variable without an explicit C<state> declaration.
     say "1-a 2-b 3-c".subst(:g, /\d/, {<one two three>[$++]});
     # OUTPUT: «one-a two-b three-c␤»
 
-Furthermore, state variables are not required in subroutines. You
+Furthermore, state variables can be used outside of subroutines. You
 could, for example, use C<$> in a one-liner to number the lines in a file.
 
 =begin code :skip-test
@@ -893,10 +914,9 @@ L<Signature|/type/Signature>s. or subsequent assignments to a variable.
 
 =head1 Special Variables
 
-Perl 5 is infamous for its many obscure special variables. Perl 6 also has
-special variables (but only three are extra short).
-
-Other special variables have longer, more descriptive names.
+Perl 6 attempts to use long, descriptive names for special
+variables. There are only three special variables that are extra
+short.
 
 =head2 Pre-defined lexical variables
 
@@ -1039,7 +1059,7 @@ Which routine am I in? Has method C<.name>
     sub awesome-sub { say &?ROUTINE.name }
     awesome-sub # OUTPUT: awesome-sub
 
-=begin code :skip-test
+=begin code
 for '.' {
     .Str.say when !.IO.d;
     .IO.dir()».&?BLOCK when .IO.d # lets recurse a little!
@@ -1048,7 +1068,7 @@ for '.' {
 
 Other compile-time variables:
 
-X<|$?PACKAGE>X<|$?MODULE>X<|$?CLASS>X<|$?ROLE>X<|$?GRAMMAR>X<|$?TABSTOP>X<|$?USAGE>X<|$?ENC>
+X<|$?PACKAGE>X<|$?MODULE>X<|$?CLASS>X<|$?ROLE>X<|$?GRAMMAR>X<|$?TABSTOP>X<|$?ENC>
 
 =for table
     $?PACKAGE   Which package am I in?
@@ -1057,7 +1077,7 @@ X<|$?PACKAGE>X<|$?MODULE>X<|$?CLASS>X<|$?ROLE>X<|$?GRAMMAR>X<|$?TABSTOP>X<|$?USA
     $?ROLE      Which role am I in? (as variable)
     $?GRAMMAR   Which grammar am I in?
     $?TABSTOP   How many spaces is a tab in a heredoc or virtual margin?
-    $?USAGE     The usage message generated from the signatures of MAIN subs.
+    $?LF        What "\n" signifies: LF, CR or CRLF (see the L<newline pragma|/language/pragmas>)
     $?ENC       Default encoding of Str.encode/Buf.decode/various IO methods.
 
 =head2 Dynamic variables
@@ -1067,11 +1087,15 @@ X<|$?PACKAGE>X<|$?MODULE>X<|$?CLASS>X<|$?ROLE>X<|$?GRAMMAR>X<|$?TABSTOP>X<|$?USA
 
 X<|$*ARGFILES>X<|@*ARGS>X<|$*IN>X<|$*OUT>X<|$*ERR>X<|%*ENV>X<|$*REPO>X<|$*TZ>
 X<|$*CWD>X<|$*KERNEL>X<|$*DISTRO>X<|$*VM>X<|$*PERL>X<|$*PID>X<|$*PROGRAM-NAME>
-X<|$*PROGRAM>X<|$*EXECUTABLE>X<|$*EXECUTABLE-NAME>X<|$*USER>X<|$*GROUP>X<|$*HOME>
-X<|$*SPEC>X<|$*TMPDIR>X<|$*THREAD>X<|$*SCHEDULER>
+X<|$*PROGRAM>X<|$*EXECUTABLE>X<|$*EXECUTABLE-NAME>X<|$*USER>X<|$*GROUP>
+X<|$*HOME>X<|$*SPEC>X<|$*TMPDIR>X<|$*THREAD>X<|$*SCHEDULER>X<|$*USAGE>
+
 =begin table
-    $*ARGFILES        | An IO::CatHandle that uses @*ARGS as source files, if
-                      | it contains any files, or $*IN otherwise
+    $*ARGFILES        | An L<IO::ArgFiles> (an empty subclass of L<IO::CatHandle>)
+                      | that uses C<@*ARGS> as source files, if
+                      | it contains any files, or C<$*IN> otherwise. When C<$*IN>
+                      | is used, its C<:nl-in>, C<:chomp>, C<:encoding>,
+                      | and C<:bin> will be set on the L<IO::ArgFiles> object.
     ------------------+--------------------------------------------
     @*ARGS            | Arguments from the command line.
     ------------------+--------------------------------------------
@@ -1085,7 +1109,13 @@ X<|$*SPEC>X<|$*TMPDIR>X<|$*THREAD>X<|$*SCHEDULER>
     ------------------+--------------------------------------------
     $*REPO            | A variable holding information about modules installed/loaded
     ------------------+--------------------------------------------
-    $*TZ              | The system's local timezone.
+    $*INIT-INSTANT    | An Instant object representing program startup time.
+                      | In particular, this is when the core code starts up,
+                      | so the value of $*INIT-INSTANT may be a few milliseconds
+                      | earlier than C<INIT now> or even C<BEGIN now> executed
+                      | in your program.
+    ------------------+--------------------------------------------
+    $*TZ              | The system's local timezone offset, as the number of B<seconds> from GMT
     ------------------+--------------------------------------------
     $*CWD             | The Current Working Directory.
     ------------------+--------------------------------------------
@@ -1105,12 +1135,20 @@ X<|$*SPEC>X<|$*TMPDIR>X<|$*THREAD>X<|$*SCHEDULER>
     $*PROGRAM         | Location (in the form of an C<IO::Path> object) of the
                       | Perl program being executed.
     ------------------+--------------------------------------------
+    &*EXIT            | Code that will be executed when doing an exit().  Intended
+                      | to be used in situations where Perl 6 is embedded in
+                      | another language runtime (such as Inline::Perl6 in Perl 5)
+    ------------------+--------------------------------------------
     $*EXECUTABLE      | Absolute path of the perl executable that is currently running.
     ------------------+--------------------------------------------
     $*EXECUTABLE-NAME | The name of the perl executable that is currently running.
                       | (e.g. perl6-p, perl6-m, Niecza.exe)
                       | Favor $*EXECUTABLE because it's not guaranteed that the perl
                       | executable is in PATH.
+    ------------------+--------------------------------------------
+    $*USAGE           | Read-only. The default usage message generated from the
+                      | signatures of MAIN subs available from inside
+                      | sub MAIN and sub USAGE
     ------------------+--------------------------------------------
     $*USER            | The user that is running the program. It's an object
                       | that evaluates to "username (uid)".  It will evaluate
@@ -1131,7 +1169,7 @@ X<|$*SPEC>X<|$*TMPDIR>X<|$*THREAD>X<|$*SCHEDULER>
     $*SPEC            | The appropriate L<IO::Spec> sub-class for the platform that
                       | the program is running on.
     ------------------+--------------------------------------------
-    $*TMPDIR          | An L<IO::Path> object representing the "system temporary directory" as determined by L«C<.tmpdir IO::Spec::* method|/routine/tmpdir»
+    $*TMPDIR          | An L<IO::Path> object representing the "system temporary directory" as determined by L«C<.tmpdir IO::Spec::* method|/routine/tmpdir>»
     ------------------+--------------------------------------------
     $*TOLERANCE       | Used by the C<=~=> operator, and any operations that depend on it, to
                       | decide if two values are approximately equal. Defaults to 1e-15.
@@ -1140,6 +1178,10 @@ X<|$*SPEC>X<|$*TMPDIR>X<|$*THREAD>X<|$*SCHEDULER>
     ------------------+--------------------------------------------
     $*SCHEDULER       | A L<ThreadPoolScheduler> object representing the current default
                       | scheduler. (see note below)
+    ------------------+--------------------------------------------
+    $*SAMPLER         | The current L<Telemetry::Sampler> used for making
+                      | snapshots of system state.  Only available if
+                      | L<Telemetry> has been loaded.
     ------------------+--------------------------------------------
 =end table
 
@@ -1154,4 +1196,24 @@ with the default changed before using C<.hyper> or C<.race>:
 
 This behavior is not tested in the spec tests and is subject to change.
 
+=head1 Naming Conventions
+
+It is helpful to know our naming conventions in order to understand what codes
+do directly. However, there is not yet a conventions list covering anywhere.
+Still we list several conventions that are widely held.
+
+=item1 Subs and methods from the built-ins library try to have single-word names when a good one could be found. In cases where there are two or more words making up a name, they are separated by a "-".
+
+=item1 Compounds are treated as a single word, thus C<substr>, C<subbuf>, and C<deepmap> (just like we write "starfish", not "star fish" in English).
+
+=item1 Subs and methods that are automatically called for you at special times are written in uppercase. This includes the C<MAIN> sub, the C<AT-POS> and related methods for implementing container types, along with C<BUILD> and C<DESTROY>.
+
+=item1 Type names are camel case, except for native types, which are lowercase. For the exception, you can remember it by: they are stored in a more compact way, so they names look smaller too.
+
+=item1 Built-in dynamic variables and compile-time variables are always uppercase, such like C<$*OUT>, C<$?FILE>.
+
+=item1 Methods from the MOP and other internals use "_" to separate multiple words, suck like C<add_method>.
+
 =end pod
+
+# vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6

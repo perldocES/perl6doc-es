@@ -10,7 +10,7 @@ Source note
 
 The 00-running.pod file in this directory was copied from
 
-  https://github.com/rakudo/rakudo/tree/nom/docs
+  https://github.com/rakudo/rakudo/tree/master/docs
 
 in commit:
 
@@ -20,9 +20,4 @@ on:
 
   2016-05-06
 
-It was then modified to Perl 6 pod syntax.  At the moment, there
-is an error in the Perl 6 pod converter which throws an exception
-on leading hyphens in column one of a table row.  The error
-can be partially mitigated by escaping the '-', but the
-backslash will show in the rendered pod.  Rakudo bug #128221 has
-been filed for the error.
+It was then modified to Perl 6 pod syntax.

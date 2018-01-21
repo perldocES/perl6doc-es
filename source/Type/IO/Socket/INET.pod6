@@ -12,7 +12,7 @@ C<IO::Socket::INET> provides TCP sockets, both the server and the client side.
 Here is an example of a very simplistic "echo" server that listens on
 localhost, port 3333:
 
-=begin code :skip-test
+=begin code
 use v6.c;
 
 my $listen = IO::Socket::INET.new(:listen, :localhost<localhost>, :localport(3333));
@@ -27,7 +27,7 @@ loop {
 
 And a client that connects to it, and prints out what the server answers:
 
-=begin code :skip-test
+=begin code
 use v6.c;
 
 my $conn = IO::Socket::INET.new(:host<localhost>, :port(3333));
@@ -44,14 +44,14 @@ $conn.close;
 multi method new(
         :$host,
         :$port,
-        :$family = 2,
+        :$family = PF_INET,
         :$encoding = 'utf-8',
         :$nl-in = "\r\n",
     --> IO::Socket::INET:D)
 multi method new(
         :$localhost,
         :$localport,
-        :$family = 2,
+        :$family = PF_INET,
         :$listen,
         :$encoding = 'utf-8',
         :$nl-in = "\r\n",
@@ -63,7 +63,8 @@ If C<:$listen> is True, creates a new socket that listen on C<$localhost>
 (which can be an IP address or a domain name) on port C<$localport>. Otherwise
 it opens a connection to C<$host> on port C<$port>.
 
-C<$family> defaults to 2 for IPv4, and can be set to 3 for IPv6.
+C<$family> defaults to C<PF_INET> constant for IPv4, and can be set
+to C<PF_INET6> constant for IPv6.
 
 For text operations (such as L<#method lines> and L<#method get>),
 C<$encoding> specifies the encoding, and C<$nl-in> determines
