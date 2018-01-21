@@ -1326,6 +1326,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>6.</seg>
+      </tuv>
+      <tuv lang="ES-ES">
+        <seg>6.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>64-bit integers)</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20140716T163956Z" creationid="explorer" creationdate="20140716T163956Z">
@@ -4205,6 +4213,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=item</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110718T232425Z">
+        <seg>=item</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=item $.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110719T095420Z">
@@ -4529,6 +4545,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20110717T233709Z">
         <seg>=item $a</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=item %ENV</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20111008T180245Z">
+        <seg>=item %ENV</seg>
       </tuv>
     </tu>
     <tu>
@@ -5233,6 +5257,14 @@ X&lt;|R,meta operador de reversión&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20140716T153024Z" creationid="explorer" creationdate="20140716T153024Z">
         <seg>=item redo EXPR</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=item s</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110717T230519Z">
+        <seg>=item s</seg>
       </tuv>
     </tu>
     <tu>
@@ -8227,6 +8259,14 @@ Perl 6 callbacks this way.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120722T232419Z">
         <seg>Notas:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>OUTPUT:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20140529T231311Z" creationid="explorer" creationdate="20140529T231311Z">
+        <seg>SALIDA:</seg>
       </tuv>
     </tu>
     <tu>
