@@ -1987,6 +1987,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=SUBTITLE General rules of Perl 6 syntax</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144419Z" creationid="explorer" creationdate="20180121T144419Z">
+        <seg>=SUBTITLE Reglas generales de la sintaxis de Perl 6</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=SUBTITLE Human readable form for comparison operators.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T162430Z" creationid="explorer" creationdate="20161106T162430Z">
@@ -2199,6 +2207,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T113753Z" creationid="explorer" creationdate="20161113T113753Z">
         <seg>=TITLE Operadores</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=TITLE Syntax</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144132Z" creationid="explorer" creationdate="20180121T144132Z">
+        <seg>=TITLE Sintaxis</seg>
       </tuv>
     </tu>
     <tu>
@@ -2860,6 +2876,14 @@ circumfix:«( )»('a', 'b', 'c'); # lo mismo que ('a', 'b', 'c')
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T175547Z" creationid="explorer" creationdate="20160428T175547Z">
         <seg>=begin pod</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=begin pod :tag&lt;perl6&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144123Z" creationid="explorer" creationdate="20180121T144123Z">
+        <seg>=begin pod :tag&lt;perl6&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -7813,6 +7837,15 @@ which is fed by a C&lt;tap&gt; on the L&lt;Supply&gt;:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>It is also self-clocking, so that the parser can detect most of the common
+errors and give good error messages.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145541Z" creationid="explorer" creationdate="20180121T145541Z">
+        <seg>También tiene autoservicio, de modo que el intérprete puede detectar la mayoría de los errores comunes y dar buenos mensajes de error.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>It is constrained to work with machine-size
 integers, doubles and strings, sized numeric types, arrays of pointers, arrays of
 structs, and arrays of arrays.</seg>
@@ -7828,6 +7861,17 @@ in a concurrent or asynchronous manner.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160429T201804Z" creationid="ramiroencinas" creationdate="20160429T201804Z">
         <seg>Proporciona gran parte de la funcionalidad que el código necesita para operar de forma concurrente o asíncrona.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It reuses common elements in different contexts, has the notion of nouns
+(terms) and verbs (operators), is context-sensitive (in the every day sense, not
+necessarily in the Computer Science interpretation), so a symbol can have a
+different meaning depending on whether a noun or a verb is expected.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145300Z" creationid="explorer" creationdate="20180121T145300Z">
+        <seg>Reutiliza elementos comunes de contextos diferentes; tiene la noción de sustantivos (términos) y verbos (operadores); es sensible al contexto (en el sentido que le damos a diario, no necesariamente en la interpretación de la Ciencia Informática), por lo que un símbolo puede tener un significado diferente dependiendo de si se espera un sustantivo o un verbo.</seg>
       </tuv>
     </tu>
     <tu>
@@ -8524,6 +8568,14 @@ in a radically different way to C arrays.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201129Z" creationid="Ram" creationdate="20161201T201129Z">
         <seg>Los arrays en Perl 6 son perezosos y en memoria son radicalmente distintos a los arrays de C.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Perl 6 borrows many concepts from human language.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144514Z" creationid="explorer" creationdate="20180121T144514Z">
+        <seg>Perl 6 toma prestado muchos conceptos del lenguaje humano.</seg>
       </tuv>
     </tu>
     <tu>
@@ -10467,6 +10519,15 @@ expanded for you as required.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204959Z" creationid="Ram" creationdate="20161201T204959Z">
         <seg>Cuando creas un array puedes añadirle elementos y ampliarlo de esa forma todo lo que necesites.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Which is not surprising,
+considering it was designed by a linguist.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144708Z" creationid="explorer" creationdate="20180121T144708Z">
+        <seg>Lo cual no es sorprendente, considerando que lo diseñó un lingüista.</seg>
       </tuv>
     </tu>
     <tu>
