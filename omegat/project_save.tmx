@@ -246,6 +246,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg># OUTPUT: «X::TypeCheck::Binding: Type check failed in binding; expected Int but got Str ("foo")␤»</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143837Z" creationid="explorer" creationdate="20180121T143837Z">
+        <seg># OUTPUT: «X::TypeCheck::Binding: Type check failed in binding; expected Int but got Str ("foo")␤»</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg># OUTPUT: «X::TypeCheck::Return: Type check failed for return value; expected Int but got Str ("foo")␤»</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155503Z" creationid="explorer" creationdate="20161111T155503Z">
@@ -370,6 +378,14 @@
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T135657Z" creationid="explorer" creationdate="20161101T135657Z">
         <seg># vim: expandtab shiftwidth=4 ft=perl6</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg># vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T142549Z" creationid="explorer" creationdate="20180121T142549Z">
+        <seg># vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6</seg>
       </tuv>
     </tu>
     <tu>
@@ -1803,6 +1819,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=SUBTITLE Error due to calling start on an already started Proc::Async object</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143421Z" creationid="explorer" creationdate="20180121T143421Z">
+        <seg>=SUBTITLE Error debido a llamar a start en un objeto Proc::Async que ya estaba arrancado</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=SUBTITLE Error due to constructing a sequence from ineligible input</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T191608Z" creationid="explorer" creationdate="20161101T191608Z">
@@ -1951,6 +1975,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T212354Z" creationid="explorer" creationdate="20161101T212354Z">
         <seg>=SUBTITLE Excepción que se lanza por parte de L&lt;Proc::Async&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=SUBTITLE Exception thrown by Proc::Async</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143342Z" creationid="explorer" creationdate="20180121T143342Z">
+        <seg>=SUBTITLE Excepción que se lanza por parte de Proc::Async</seg>
       </tuv>
     </tu>
     <tu>
@@ -2892,6 +2924,26 @@ circumfix:«( )»('a', 'b', 'c'); # lo mismo que ('a', 'b', 'c')
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T145319Z" creationid="explorer" creationdate="20161113T145319Z">
         <seg>=end table</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=for code
+#`</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143542Z" creationid="explorer" creationdate="20180121T143542Z">
+        <seg>=for code
+#`</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=for code
+class X::Syntax::Confused does X::Syntax { }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143612Z" creationid="explorer" creationdate="20180121T143612Z">
+        <seg>=for code
+class X::Syntax::Confused does X::Syntax { }</seg>
       </tuv>
     </tu>
     <tu>
@@ -7173,6 +7225,15 @@ refer to the type object of one of the Perl 6 built-in classes.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>For more information on what this means, see
+L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T142941Z" creationid="explorer" creationdate="20180121T142941Z">
+        <seg>Para más información sobre lo que significa esto, vea L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>For numeric conversions, you can specify the size to interpret the
 number as using C&lt;l&gt;, C&lt;h&gt;, C&lt;V&gt;, C&lt;q&gt;, C&lt;L&gt;, or C&lt;ll&gt;.</seg>
       </tuv>
@@ -10140,6 +10201,14 @@ signature (for example C&lt;class A { $^foo }&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Thrown when the type check of a binding operation fails.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143817Z" creationid="explorer" creationdate="20180121T143817Z">
+        <seg>Lanza cuando falla la comprobación de tipos de una operación vinculada.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Thrown when trying to access a non dynamic variable through CALLER</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155614Z" creationid="explorer" creationdate="20161111T155614Z">
@@ -11256,6 +11325,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>class X::TypeCheck::Binding is X::TypeCheck { }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143730Z" creationid="explorer" creationdate="20180121T143730Z">
+        <seg>class X::TypeCheck::Binding is X::TypeCheck { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>class X::TypeCheck::Return is X::TypeCheck { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155412Z" creationid="explorer" creationdate="20161111T155412Z">
@@ -11810,6 +11887,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>method allowed(--&gt; Positional:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143034Z" creationid="explorer" creationdate="20180121T143034Z">
+        <seg>method allowed(--&gt; Positional:D)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method area() returns Int {</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20160528T130028Z" creationid="Ram" creationdate="20160528T130028Z">
@@ -11946,6 +12031,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>method level(--&gt; Int)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143103Z" creationid="explorer" creationdate="20180121T143103Z">
+        <seg>method level(--&gt; Int)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method name() returns Str:D</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170737Z" creationid="explorer" creationdate="20161106T170737Z">
@@ -11978,6 +12071,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>method os-error(--&gt; Str:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143229Z" creationid="explorer" creationdate="20180121T143229Z">
+        <seg>method os-error(--&gt; Str:D)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method path(IO::Spec:D:) returns Str</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T185931Z" creationid="explorer" creationdate="20161101T185931Z">
@@ -11990,6 +12091,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164656Z" creationid="ramiroencinas" creationdate="20160528T164656Z">
         <seg>method ejecutar() {</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method proc(X::Proc::Async:D --&gt; Proc::Async)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143351Z" creationid="explorer" creationdate="20180121T143351Z">
+        <seg>method proc(X::Proc::Async:D --&gt; Proc::Async)</seg>
       </tuv>
     </tu>
     <tu>
@@ -12014,6 +12123,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T154850Z" creationid="explorer" creationdate="20161111T154850Z">
         <seg>method radix() returns Int:D</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method radix(--&gt; Int:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143647Z" creationid="explorer" creationdate="20180121T143647Z">
+        <seg>method radix(--&gt; Int:D)</seg>
       </tuv>
     </tu>
     <tu>
@@ -12766,6 +12883,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201659Z" creationid="Ram" creationdate="20161201T201659Z">
         <seg>my @valores := CArray[num].new;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>my Int $x := "foo";</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143824Z" creationid="explorer" creationdate="20180121T143824Z">
+        <seg>my Int $x := "foo";</seg>
       </tuv>
     </tu>
     <tu>
@@ -13582,6 +13707,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115813Z" creationid="ramiroencinas" creationdate="20161126T115813Z">
         <seg>sub f() returns Pointer is native('lib') { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub f(--&gt; Int) { "foo" }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143917Z" creationid="explorer" creationdate="20180121T143917Z">
+        <seg>sub f(--&gt; Int) { "foo" }</seg>
       </tuv>
     </tu>
     <tu>
