@@ -246,14 +246,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg># OUTPUT: «X::TypeCheck::Binding: Type check failed in binding; expected Int but got Str ("foo")␤»</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143837Z" creationid="explorer" creationdate="20180121T143837Z">
-        <seg># OUTPUT: «X::TypeCheck::Binding: Type check failed in binding; expected Int but got Str ("foo")␤»</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg># OUTPUT: «X::TypeCheck::Return: Type check failed for return value; expected Int but got Str ("foo")␤»</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155503Z" creationid="explorer" creationdate="20161111T155503Z">
@@ -378,14 +370,6 @@
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T135657Z" creationid="explorer" creationdate="20161101T135657Z">
         <seg># vim: expandtab shiftwidth=4 ft=perl6</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg># vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T142549Z" creationid="explorer" creationdate="20180121T142549Z">
-        <seg># vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6</seg>
       </tuv>
     </tu>
     <tu>
@@ -1819,14 +1803,6 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>=SUBTITLE Error due to calling start on an already started Proc::Async object</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143421Z" creationid="explorer" creationdate="20180121T143421Z">
-        <seg>=SUBTITLE Error debido a llamar a start en un objeto Proc::Async que ya estaba arrancado</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>=SUBTITLE Error due to constructing a sequence from ineligible input</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T191608Z" creationid="explorer" creationdate="20161101T191608Z">
@@ -1975,22 +1951,6 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T212354Z" creationid="explorer" creationdate="20161101T212354Z">
         <seg>=SUBTITLE Excepción que se lanza por parte de L&lt;Proc::Async&gt;.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=SUBTITLE Exception thrown by Proc::Async</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143342Z" creationid="explorer" creationdate="20180121T143342Z">
-        <seg>=SUBTITLE Excepción que se lanza por parte de Proc::Async</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=SUBTITLE General rules of Perl 6 syntax</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144419Z" creationid="explorer" creationdate="20180121T144419Z">
-        <seg>=SUBTITLE Reglas generales de la sintaxis de Perl 6</seg>
       </tuv>
     </tu>
     <tu>
@@ -2207,14 +2167,6 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T113753Z" creationid="explorer" creationdate="20161113T113753Z">
         <seg>=TITLE Operadores</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=TITLE Syntax</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144132Z" creationid="explorer" creationdate="20180121T144132Z">
-        <seg>=TITLE Sintaxis</seg>
       </tuv>
     </tu>
     <tu>
@@ -2880,14 +2832,6 @@ circumfix:«( )»('a', 'b', 'c'); # lo mismo que ('a', 'b', 'c')
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>=begin pod :tag&lt;perl6&gt;</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144123Z" creationid="explorer" creationdate="20180121T144123Z">
-        <seg>=begin pod :tag&lt;perl6&gt;</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>=begin table</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T141540Z" creationid="explorer" creationdate="20161113T141540Z">
@@ -2948,26 +2892,6 @@ circumfix:«( )»('a', 'b', 'c'); # lo mismo que ('a', 'b', 'c')
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T145319Z" creationid="explorer" creationdate="20161113T145319Z">
         <seg>=end table</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=for code
-#`</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143542Z" creationid="explorer" creationdate="20180121T143542Z">
-        <seg>=for code
-#`</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=for code
-class X::Syntax::Confused does X::Syntax { }</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143612Z" creationid="explorer" creationdate="20180121T143612Z">
-        <seg>=for code
-class X::Syntax::Confused does X::Syntax { }</seg>
       </tuv>
     </tu>
     <tu>
@@ -3552,14 +3476,6 @@ unless 1 { } else { };</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>=head1 Lexical Conventions</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145556Z" creationid="explorer" creationdate="20180121T145556Z">
-        <seg>=head1 Convenciones léxicas</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>=head1 Library Paths and Names</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114416Z" creationid="Ram" creationdate="20161210T114416Z">
@@ -3789,14 +3705,6 @@ X&lt;|R,meta operador de reversión&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120831T235855Z">
         <seg>=head2 Variables obsoletas y eliminadas</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=head2 Free Form</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145936Z" creationid="explorer" creationdate="20180121T145936Z">
-        <seg>=head2 Formato libre</seg>
       </tuv>
     </tu>
     <tu>
@@ -7265,15 +7173,6 @@ refer to the type object of one of the Perl 6 built-in classes.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>For more information on what this means, see
-L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T142941Z" creationid="explorer" creationdate="20180121T142941Z">
-        <seg>Para más información sobre lo que significa esto, vea L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>For numeric conversions, you can specify the size to interpret the
 number as using C&lt;l&gt;, C&lt;h&gt;, C&lt;V&gt;, C&lt;q&gt;, C&lt;L&gt;, or C&lt;ll&gt;.</seg>
       </tuv>
@@ -7853,15 +7752,6 @@ which is fed by a C&lt;tap&gt; on the L&lt;Supply&gt;:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>It is also self-clocking, so that the parser can detect most of the common
-errors and give good error messages.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145541Z" creationid="explorer" creationdate="20180121T145541Z">
-        <seg>También tiene autoservicio, de modo que el intérprete puede detectar la mayoría de los errores comunes y dar buenos mensajes de error.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>It is constrained to work with machine-size
 integers, doubles and strings, sized numeric types, arrays of pointers, arrays of
 structs, and arrays of arrays.</seg>
@@ -7877,17 +7767,6 @@ in a concurrent or asynchronous manner.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160429T201804Z" creationid="ramiroencinas" creationdate="20160429T201804Z">
         <seg>Proporciona gran parte de la funcionalidad que el código necesita para operar de forma concurrente o asíncrona.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>It reuses common elements in different contexts, has the notion of nouns
-(terms) and verbs (operators), is context-sensitive (in the every day sense, not
-necessarily in the Computer Science interpretation), so a symbol can have a
-different meaning depending on whether a noun or a verb is expected.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145300Z" creationid="explorer" creationdate="20180121T145300Z">
-        <seg>Reutiliza elementos comunes de contextos diferentes; tiene la noción de sustantivos (términos) y verbos (operadores); es sensible al contexto (en el sentido que le damos a diario, no necesariamente en la interpretación de la Ciencia Informática), por lo que un símbolo puede tener un significado diferente dependiendo de si se espera un sustantivo o un verbo.</seg>
       </tuv>
     </tu>
     <tu>
@@ -8588,23 +8467,6 @@ in a radically different way to C arrays.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Perl 6 borrows many concepts from human language.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144514Z" creationid="explorer" creationdate="20180121T144514Z">
-        <seg>Perl 6 toma prestado muchos conceptos del lenguaje humano.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Perl 6 code is Unicode text, current implementations support UTF-8 as the
-input encoding.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145854Z" creationid="explorer" creationdate="20180121T145711Z">
-        <seg>El código Perl 6 es texto Unicode. Las implementaciones actuales soportan UTF-8 como codificación de entrada.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Perl 6 will generate the actual
 combined operator in the background, allowing the mechanism to be applied to
 user defined operators.</seg>
@@ -9026,14 +8888,6 @@ was provided.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192023Z" creationid="ramiroencinas" creationdate="20161202T192023Z">
         <seg>¿Asustado?</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>See also L&lt;Unicode versus ASCII symbols|/language/unicode_ascii&gt;.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T145922Z" creationid="explorer" creationdate="20180121T145922Z">
-        <seg>Vea también L&lt;Símbolos Unicode versus ASCII|/language/unicode_ascii&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -10286,14 +10140,6 @@ signature (for example C&lt;class A { $^foo }&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Thrown when the type check of a binding operation fails.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143817Z" creationid="explorer" creationdate="20180121T143817Z">
-        <seg>Lanza cuando falla la comprobación de tipos de una operación vinculada.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Thrown when trying to access a non dynamic variable through CALLER</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155614Z" creationid="explorer" creationdate="20161111T155614Z">
@@ -10552,15 +10398,6 @@ expanded for you as required.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T204959Z" creationid="Ram" creationdate="20161201T204959Z">
         <seg>Cuando creas un array puedes añadirle elementos y ampliarlo de esa forma todo lo que necesites.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Which is not surprising,
-considering it was designed by a linguist.</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T144708Z" creationid="explorer" creationdate="20180121T144708Z">
-        <seg>Lo cual no es sorprendente, considerando que lo diseñó un lingüista.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11419,14 +11256,6 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>class X::TypeCheck::Binding is X::TypeCheck { }</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143730Z" creationid="explorer" creationdate="20180121T143730Z">
-        <seg>class X::TypeCheck::Binding is X::TypeCheck { }</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>class X::TypeCheck::Return is X::TypeCheck { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155412Z" creationid="explorer" creationdate="20161111T155412Z">
@@ -11883,6 +11712,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>is equivalent to:</seg>
+      </tuv>
+      <tuv lang="ES-ES">
+        <seg>es equivalente a:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>it dies with an C&lt;X::Bind&gt; exception:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T164348Z" creationid="explorer" creationdate="20161106T164348Z">
@@ -11977,14 +11814,6 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T011325Z" creationid="explorer" creationdate="20161102T011258Z">
         <seg>method allowed() returns Positional:D</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>method allowed(--&gt; Positional:D)</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143034Z" creationid="explorer" creationdate="20180121T143034Z">
-        <seg>method allowed(--&gt; Positional:D)</seg>
       </tuv>
     </tu>
     <tu>
@@ -12125,14 +11954,6 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>method level(--&gt; Int)</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143103Z" creationid="explorer" creationdate="20180121T143103Z">
-        <seg>method level(--&gt; Int)</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>method name() returns Str:D</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170737Z" creationid="explorer" creationdate="20161106T170737Z">
@@ -12165,14 +11986,6 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>method os-error(--&gt; Str:D)</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143229Z" creationid="explorer" creationdate="20180121T143229Z">
-        <seg>method os-error(--&gt; Str:D)</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>method path(IO::Spec:D:) returns Str</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T185931Z" creationid="explorer" creationdate="20161101T185931Z">
@@ -12185,14 +11998,6 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T164656Z" creationid="ramiroencinas" creationdate="20160528T164656Z">
         <seg>method ejecutar() {</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>method proc(X::Proc::Async:D --&gt; Proc::Async)</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143351Z" creationid="explorer" creationdate="20180121T143351Z">
-        <seg>method proc(X::Proc::Async:D --&gt; Proc::Async)</seg>
       </tuv>
     </tu>
     <tu>
@@ -12217,14 +12022,6 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T154850Z" creationid="explorer" creationdate="20161111T154850Z">
         <seg>method radix() returns Int:D</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>method radix(--&gt; Int:D)</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143647Z" creationid="explorer" creationdate="20180121T143647Z">
-        <seg>method radix(--&gt; Int:D)</seg>
       </tuv>
     </tu>
     <tu>
@@ -12965,6 +12762,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>my @result;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20151218T061857Z" creationid="explorer" creationdate="20151218T061857Z">
+        <seg>my @result;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>my @titles := CArray[Str].new;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201603Z" creationid="Ram" creationdate="20161201T201603Z">
@@ -12977,14 +12782,6 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T201659Z" creationid="Ram" creationdate="20161201T201659Z">
         <seg>my @valores := CArray[num].new;</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>my Int $x := "foo";</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143824Z" creationid="explorer" creationdate="20180121T143824Z">
-        <seg>my Int $x := "foo";</seg>
       </tuv>
     </tu>
     <tu>
@@ -13201,6 +12998,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161117T142731Z" creationid="Ram" creationdate="20161117T142731Z">
         <seg>return $c.poll // do { start reponer-cache; $c.receive };</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>return $result;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="zipf" changedate="20110130T235528Z">
+        <seg>return $resultado;</seg>
       </tuv>
     </tu>
     <tu>
@@ -13801,14 +13606,6 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115813Z" creationid="ramiroencinas" creationdate="20161126T115813Z">
         <seg>sub f() returns Pointer is native('lib') { * }</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>sub f(--&gt; Int) { "foo" }</seg>
-      </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180121T143917Z" creationid="explorer" creationdate="20180121T143917Z">
-        <seg>sub f(--&gt; Int) { "foo" }</seg>
       </tuv>
     </tu>
     <tu>
