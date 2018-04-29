@@ -1643,6 +1643,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=SUBTITLE Comment in a Pod document</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215555Z" creationid="explorer" creationdate="20180429T215555Z">
+        <seg>=SUBTITLE Comentario en un documento Pod</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=SUBTITLE Common Perl 6 infixes, prefixes, postfixes, and more!</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T113848Z" creationid="explorer" creationdate="20161113T113848Z">
@@ -2343,6 +2351,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T011145Z" creationid="explorer" creationdate="20161102T011145Z">
         <seg>=TITLE clase Pod::Block::Code</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=TITLE class Pod::Block::Comment</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215542Z" creationid="explorer" creationdate="20180429T215531Z">
+        <seg>=TITLE clase Pod::Block::Comment</seg>
       </tuv>
     </tu>
     <tu>
@@ -6811,6 +6827,14 @@ C&lt;react&gt; block described earlier:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Class for a Pod comment.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215617Z" creationid="explorer" creationdate="20180429T215617Z">
+        <seg>Clase para un comentario Pod.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Class for a Pod paragraph.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T190818Z" creationid="explorer" creationdate="20161101T190818Z">
@@ -6854,6 +6878,14 @@ C&lt;react&gt; block described earlier:</seg>
         <seg>Coerces it's arguments to Stringy.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T162653Z" creationid="explorer" creationdate="20161106T162653Z">
+        <seg>Convierte sus argumentos a cadenas.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Coerces its arguments to Stringy.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215353Z" creationid="explorer" creationdate="20180429T215353Z">
         <seg>Convierte sus argumentos a cadenas.</seg>
       </tuv>
     </tu>
@@ -7972,6 +8004,15 @@ L«C&lt;IO::Path&gt;|/type/IO::Path», to do that.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205127Z" creationid="explorer" creationdate="20180429T205127Z">
         <seg>Ese es el trabajo de clases de alto nivel, como L«C&lt;IO::Path&gt;|/type/IO::Path».</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is used for type checks in operators that expect to find specific methods to
+call.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215234Z" creationid="explorer" creationdate="20180429T215234Z">
+        <seg>Se usa para comprobaciones de tipo en operadores que esperan encontrar métodos específicos que llamar.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9110,6 +9151,14 @@ was provided.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192023Z" creationid="ramiroencinas" creationdate="20161202T192023Z">
         <seg>¿Asustado?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>See L&lt;Subscripts|/language/subscripts#Methods_to_implement_for_associative_subscripting&gt; for details.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215245Z" creationid="explorer" creationdate="20180429T215245Z">
+        <seg>Vea L&lt;Subscripts|/language/subscripts#Methods_to_implement_for_associative_subscripting&gt; para más detalles.</seg>
       </tuv>
     </tu>
     <tu>
@@ -11272,6 +11321,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>class Pod::Block::Comment is Pod::Block { }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215558Z" creationid="explorer" creationdate="20180429T215558Z">
+        <seg>class Pod::Block::Comment is Pod::Block { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>class Pod::Block::Para is Pod::Block { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T190751Z" creationid="explorer" creationdate="20161101T190751Z">
@@ -12402,10 +12459,26 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>multi sub infix:&lt;cmp&gt;(\a, \b --&gt; Order:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215333Z" creationid="explorer" creationdate="20180429T215333Z">
+        <seg>multi sub infix:&lt;cmp&gt;(\a, \b --&gt; Order:D)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>multi sub infix:&lt;cmp&gt;(\a, \b) returns Order:D</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T162737Z" creationid="explorer" creationdate="20161106T162525Z">
         <seg>multi sub infix:&lt;cmp&gt;(\a, \b) devuelve Order:D</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>multi sub infix:«&lt;=&gt;»(Int:D \a, Int:D \b --&gt; Order:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T215357Z" creationid="explorer" creationdate="20180429T215357Z">
+        <seg>multi sub infix:«&lt;=&gt;»(Int:D \a, Int:D \b --&gt; Order:D)</seg>
       </tuv>
     </tu>
     <tu>
