@@ -1987,6 +1987,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=SUBTITLE Exception thrown by Proc::Async</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214455Z" creationid="explorer" creationdate="20180429T214455Z">
+        <seg>=SUBTITLE Excepción que se lanza por parte de L&lt;Proc::Async&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=SUBTITLE Human readable form for comparison operators.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T162430Z" creationid="explorer" creationdate="20161106T162430Z">
@@ -6025,6 +6033,31 @@ a TV broadcast: those who tune in don't get previously emitted values.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>A Codepoint string in Unicode Normalization Form C. It is created by Canonical Decomposition,
+followed by Canonical Composition.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213838Z" creationid="explorer" creationdate="20180429T213838Z">
+        <seg>Una cadena de caracteres de punto de código en formato Unicode I&lt;Normalization Form C&gt;. Se crea por descomposición canónica (I&lt;Canonical Decomposition&gt;), seguido por composición canónica (I&lt;Canonical Composition&gt;).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>A Codepoint string in Unicode Normalization Form KC.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214026Z" creationid="explorer" creationdate="20180429T214026Z">
+        <seg>Una cadena de caracteres Codepoint en formato Unicode I&lt;Normalization Form KC&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>A Codepoint string in Unicode Normalization Form KD.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214221Z" creationid="explorer" creationdate="20180429T214221Z">
+        <seg>Una cadena de caracteres Codepoint en formato Unicode I&lt;Normalization Form KD&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>A Codepoint string in the "C" L&lt;Unicode Normalization Form|http://www.unicode.org/reports/tr15/&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T192220Z" creationid="explorer" creationdate="20161101T192220Z">
@@ -6134,6 +6167,15 @@ C&lt;&lt; postcircumfix:&lt;{ }&gt; &gt;&gt;, for example L&lt;Hash&gt; and L&lt
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210337Z" creationid="explorer" creationdate="20161101T210337Z">
         <seg>Un rol común para tipos que soporta localizaciones basadas en nombres a partir de C&lt;&lt; postcircumfix:&lt;{ }&gt; &gt;&gt;, por ejemplo L&lt;Hash&gt; y L&lt;Map&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>A common role for types that support name-based lookup through
+L«postcircumfix:&lt;{ }&gt;|/language/operators#postcircumfix_{_}», for example L&lt;Hash&gt; and L&lt;Map&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214811Z" creationid="explorer" creationdate="20180429T214811Z">
+        <seg>Un rol común para tipos que soportan selección basados en nombre por medio de L«postcircumfix:&lt;{ }&gt;|/language/operators#postcircumfix_{_}», por ejemplo L&lt;Hash&gt; y L&lt;Map&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -7269,6 +7311,23 @@ refer to the type object of one of the Perl 6 built-in classes.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>For more information on what this means, see
+L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213909Z" creationid="explorer" creationdate="20180429T213909Z">
+        <seg>Para más información de lo que significa esto, vea L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>For more information on what this means, see L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214342Z" creationid="explorer" creationdate="20180429T214342Z">
+        <seg>Para más información de lo que significa esto, vea L&lt;Unicode TR15|http://www.unicode.org/reports/tr15/&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>For numeric conversions, you can specify the size to interpret the
 number as using C&lt;l&gt;, C&lt;h&gt;, C&lt;V&gt;, C&lt;q&gt;, C&lt;L&gt;, or C&lt;ll&gt;.</seg>
       </tuv>
@@ -7887,6 +7946,23 @@ structs, and arrays of arrays.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T200921Z" creationid="Ram" creationdate="20161201T200833Z">
         <seg>Y tienen que ajustarse al tamaño proporcionado por el sistema en los siguientes tipos: enteros, doubles and strings, tipos de tamaño numérico, arrays de punteros, arrays de estructuras y arrays de arrays.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is created by Compatibility Decomposition,
+followed by Canonical Composition.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214158Z" creationid="explorer" creationdate="20180429T214158Z">
+        <seg>Se crea por descomposición de compatibilidad (I&lt;Compatibility Decomposition&gt;), seguido por composición canónica (I&lt;Canonical Composition&gt;).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is created by Compatibility Decomposition.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214243Z" creationid="explorer" creationdate="20180429T214243Z">
+        <seg>Se crea por descomposición de compatibilidad (I&lt;Compatibility Decomposition&gt;).</seg>
       </tuv>
     </tu>
     <tu>
@@ -12206,6 +12282,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>method proc(X::Proc::Async:D --&gt; Proc::Async)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T214501Z" creationid="explorer" creationdate="20180429T214501Z">
+        <seg>method proc(X::Proc::Async:D --&gt; Proc::Async)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method proc(X::Proc::Async:D) returns Proc::Async</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T212456Z" creationid="explorer" creationdate="20161101T212456Z">
@@ -12226,6 +12310,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T154850Z" creationid="explorer" creationdate="20161111T154850Z">
         <seg>method radix() returns Int:D</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method radix(--&gt; Int:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213505Z" creationid="explorer" creationdate="20180429T213505Z">
+        <seg>method radix(--&gt; Int:D)</seg>
       </tuv>
     </tu>
     <tu>
@@ -13810,6 +13902,14 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161126T115813Z" creationid="ramiroencinas" creationdate="20161126T115813Z">
         <seg>sub f() returns Pointer is native('lib') { * }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>sub f(--&gt; Int) { "foo" }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213544Z" creationid="explorer" creationdate="20180429T213544Z">
+        <seg>sub f(--&gt; Int) { "foo" }</seg>
       </tuv>
     </tu>
     <tu>
