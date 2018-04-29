@@ -1827,6 +1827,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=SUBTITLE Error due to calling start on an already started Proc::Async object</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213259Z" creationid="explorer" creationdate="20180429T213259Z">
+        <seg>=SUBTITLE Error debido a llamar a C&lt;start&gt; en un objeto L&lt;Proc::Async&gt; que ya estaba arrancado</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=SUBTITLE Error due to constructing a sequence from ineligible input</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T191608Z" creationid="explorer" creationdate="20161101T191608Z">
@@ -2920,6 +2928,26 @@ circumfix:«( )»('a', 'b', 'c'); # lo mismo que ('a', 'b', 'c')
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=for code
+#`</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213418Z" creationid="explorer" creationdate="20180429T213418Z">
+        <seg>=for code
+#`</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=for code
+class X::Syntax::Confused does X::Syntax { }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213438Z" creationid="explorer" creationdate="20180429T213438Z">
+        <seg>=for code
+class X::Syntax::Confused does X::Syntax { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=for code :skip-test
 "unless" does not take "else", please rewrite using "if"</seg>
       </tuv>
@@ -3126,6 +3154,16 @@ Failed to create link called 'my-link' on target 'does-not exist': Failed to lin
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155748Z" creationid="explorer" creationdate="20161111T155748Z">
         <seg>=for code :skip-test
 Failed to create link called 'my-link' on target 'does-not exist': Failed to link file</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=for code :skip-test
+Failed to create symlink called 'euler' on target '/home/myhome/euler-1.p6': Failed to symlink file: file already exist</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213040Z" creationid="explorer" creationdate="20180429T213040Z">
+        <seg>=for code :skip-test
+Failed to create symlink called 'euler' on target '/home/myhome/euler-1.p6': Failed to symlink file: file already exist</seg>
       </tuv>
     </tu>
     <tu>
@@ -11944,6 +11982,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>method allowed(--&gt; Positional:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T212717Z" creationid="explorer" creationdate="20180429T212717Z">
+        <seg>method allowed(--&gt; Positional:D)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method area() returns Int {</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20160528T130028Z" creationid="Ram" creationdate="20160528T130028Z">
@@ -12088,10 +12134,26 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>method level(--&gt; Int)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T212855Z" creationid="explorer" creationdate="20180429T212855Z">
+        <seg>method level(--&gt; Int)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>method name() returns Str:D</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170737Z" creationid="explorer" creationdate="20161106T170737Z">
         <seg>method name() returns Str:D</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method name(--&gt; Str:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213347Z" creationid="explorer" creationdate="20180429T213347Z">
+        <seg>method name(--&gt; Str:D)</seg>
       </tuv>
     </tu>
     <tu>
@@ -12116,6 +12178,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T165223Z" creationid="explorer" creationdate="20161106T165223Z">
         <seg>method os-error() returns Str:D</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method os-error(--&gt; Str:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T213121Z" creationid="explorer" creationdate="20180429T213121Z">
+        <seg>method os-error(--&gt; Str:D)</seg>
       </tuv>
     </tu>
     <tu>
