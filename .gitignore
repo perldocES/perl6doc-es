@@ -8,3 +8,4 @@ target/*
 *.tmx
 source*zip
 informe*
+files.lst
