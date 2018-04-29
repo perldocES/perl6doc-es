@@ -254,6 +254,22 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg># OUTPUT: «ber␤»</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205524Z" creationid="explorer" creationdate="20180429T205524Z">
+        <seg># SALIDA: «ber␤»</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg># OUTPUT: «foo/../bar/../ber␤»</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205358Z" creationid="explorer" creationdate="20180429T205358Z">
+        <seg># SALIDA: «foo/../bar/../ber␤»</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg># Output:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160521T103311Z" creationid="ramiroencinas" creationdate="20160521T103311Z">
@@ -370,6 +386,14 @@
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T135657Z" creationid="explorer" creationdate="20161101T135657Z">
         <seg># vim: expandtab shiftwidth=4 ft=perl6</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg># vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T204657Z" creationid="explorer" creationdate="20180429T204657Z">
+        <seg># vim: expandtab softtabstop=4 shiftwidth=4 ft=perl6</seg>
       </tuv>
     </tu>
     <tu>
@@ -6419,6 +6443,32 @@ placed with C&lt;emit&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>B&lt;NOTE2:&gt; no special validation is done by these classes (e.g. check whether
+path contains a null character).</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205034Z" creationid="explorer" creationdate="20180429T204931Z">
+        <seg>B&lt;NOTA 2:&gt; estas clases no realizan una validación especial (p. e., comprobar si la ruta contiene un carácter nulo).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>B&lt;NOTE:&gt;
+the routine does not access the filesystem, so no symlinks are followed.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205347Z" creationid="explorer" creationdate="20180429T205347Z">
+        <seg>B&lt;NOTA:&gt; la rutina no accede al sistema de archivos, así que no se siguen los enlaces simbólicos.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>B&lt;NOTE:&gt; the C&lt;IO::Spec::*&gt; classes provide low-level path operations.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T204934Z" creationid="explorer" creationdate="20180429T204831Z">
+        <seg>B&lt;NOTA:&gt; las clases C&lt;IO::Spec::*&gt; proporcionan las operaciones de bajo nivel sobre las rutas.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>BE CAREFUL: the C&lt;native&gt; trait and C&lt;constant&gt; are evaluated at compile time.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161210T114903Z" creationid="Ram" creationdate="20161210T114903Z">
@@ -6830,6 +6880,14 @@ into the current package (just like a variable declared with C&lt;our&gt; scope)
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160528T165915Z" creationid="ramiroencinas" creationdate="20160528T165915Z">
         <seg>La declaración de una clase crea un I&lt;tipo objeto&gt; que, por defecto, se instala en el paquete actual (como una variable declarada con C&lt;our&gt;).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Defined as:</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205139Z" creationid="explorer" creationdate="20180429T205139Z">
+        <seg>Definido como:</seg>
       </tuv>
     </tu>
     <tu>
@@ -7413,6 +7471,39 @@ lists, returning the resulting list.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>IO::Spec::QNX.canonpath("foo//../bar/../ber").say;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205351Z" creationid="explorer" creationdate="20180429T205351Z">
+        <seg>IO::Spec::QNX.canonpath("foo//../bar/../ber").say;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>IO::Spec::QNX.canonpath("foo///./../bar/../ber").say;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205402Z" creationid="explorer" creationdate="20180429T205402Z">
+        <seg>IO::Spec::QNX.canonpath("foo///./../bar/../ber").say;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>IO::Spec::QNX.canonpath("foo///./../bar/../ber", :parent).say;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205517Z" creationid="explorer" creationdate="20180429T205517Z">
+        <seg>IO::Spec::QNX.canonpath("foo///./../bar/../ber", :parent).say;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>If C&lt;:$parent&gt;
+is set to true, will also clean up references to parent directories.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205516Z" creationid="explorer" creationdate="20180429T205243Z">
+        <seg>Si C&lt;:$parent&gt; se establece en verdadero, también limpiará las referencias de los directorios padre.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>If a field width obtained through C&lt;*&gt; is negative, it has the same
 effect as the C&lt;-&gt; flag: left-justification.</seg>
       </tuv>
@@ -7758,6 +7849,15 @@ structs, and arrays of arrays.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161201T200921Z" creationid="Ram" creationdate="20161201T200833Z">
         <seg>Y tienen que ajustarse al tamaño proporcionado por el sistema en los siguientes tipos: enteros, doubles and strings, tipos de tamaño numérico, arrays de punteros, arrays de estructuras y arrays de arrays.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is the job of higher-level classes, like
+L«C&lt;IO::Path&gt;|/type/IO::Path», to do that.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205127Z" creationid="explorer" creationdate="20180429T205127Z">
+        <seg>Ese es el trabajo de clases de alto nivel, como L«C&lt;IO::Path&gt;|/type/IO::Path».</seg>
       </tuv>
     </tu>
     <tu>
@@ -8679,6 +8779,14 @@ the program is started.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T011356Z" creationid="explorer" creationdate="20161102T011324Z">
         <seg>Devuelve una lista de códigos de formateo que se permiten dentro del bloque de código.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Returns a string that is a canonical representation of C&lt;$path&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205202Z" creationid="explorer" creationdate="20180429T205202Z">
+        <seg>Devuelve una cadena que es la representación canónica de C&lt;$path&gt;.</seg>
       </tuv>
     </tu>
     <tu>
@@ -10264,6 +10372,16 @@ call the C&lt;.defined&gt; method on them.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>Unless
+you're creating your own high-level path manipulation routines, you don't
+need to use C&lt;IO::Spec::*&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T204914Z" creationid="explorer" creationdate="20180429T204914Z">
+        <seg>A menos de que esté creando sus propias rutinas de manipulación de rutas de alto nivel, no necesita usar C&lt;IO::Spec::*&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Unlike C&lt;await&gt; however the results of the original kept promises are not
 available without referring to the original, so these are more useful
 when the completion or otherwise of the tasks is more important to the
@@ -10284,6 +10402,14 @@ by other means.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20160506T160447Z" creationid="ramiroencinas" creationdate="20160503T204036Z">
         <seg>Sin embargo, al utilizar C&lt;await&gt; de esta manera, los resultados de las dos promesas solo estarán disponibles al hacer referencia a la promesa original. Esto está bien cuando la consecución o no de las tareas es más importante que los resultados, o cuando los resultados vienen de otro lugar.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Use L«C&lt;IO::Path&gt;|/type/IO::Path» instead.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T204924Z" creationid="explorer" creationdate="20180429T204924Z">
+        <seg>Use en su lugar L«C&lt;IO::Path&gt;|/type/IO::Path».</seg>
       </tuv>
     </tu>
     <tu>
@@ -11838,6 +11964,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T142620Z" creationid="explorer" creationdate="20161101T142620Z">
         <seg>method canonpath(IO::Spec:D: Str $patharg, Str :$parent) returns Str</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method canonpath(Str() $path, :$parent --&gt; Str:D)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180429T205505Z" creationid="explorer" creationdate="20180429T205142Z">
+        <seg>method canonpath(Str() $ruta, :$parent --&gt; Str:D)</seg>
       </tuv>
     </tu>
     <tu>
