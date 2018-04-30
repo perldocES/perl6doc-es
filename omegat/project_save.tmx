@@ -1030,6 +1030,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>(term)          | circumfix</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190240Z" creationid="explorer" creationdate="20180430T190240Z">
+        <seg>(term)          | circunfijo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>)</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20111008T200612Z">
@@ -1571,6 +1579,22 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>===+=========+========================</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185817Z" creationid="explorer" creationdate="20180430T185817Z">
+        <seg>===+=========+========================</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>===+=========+==========================</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185925Z" creationid="explorer" creationdate="20180430T185925Z">
+        <seg>===+=========+==========================</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>===============================================================</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120621T023039Z">
@@ -1661,8 +1685,8 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       <tuv lang="EN-US">
         <seg>=SUBTITLE Common Perl 6 infixes, prefixes, postfixes, and more!</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184723Z" creationid="explorer" creationdate="20161113T113848Z">
-        <seg>=SUBTITLE Los infijos, prefijos, postfijos, ¡y más!, comunes de Perl 6</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190439Z" creationid="explorer" creationdate="20161113T113848Z">
+        <seg>=SUBTITLE Los infijos, prefijos, postfijos, ¡y más!, comunes de Perl 6</seg>
       </tuv>
     </tu>
     <tu>
@@ -3678,6 +3702,14 @@ unless 1 { } else { };</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T113901Z" creationid="explorer" creationdate="20161113T113901Z">
         <seg>=head1 Precedencia de operadores</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=head1 Operator classification</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190013Z" creationid="explorer" creationdate="20180430T190013Z">
+        <seg>=head1 Clasificación de operadores</seg>
       </tuv>
     </tu>
     <tu>
@@ -6072,6 +6104,22 @@ virtual machine and/or operating system.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>A  | Assoc   |  Meaning of !$a!</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185924Z" creationid="explorer" creationdate="20180430T185924Z">
+        <seg>A  | Asoc.   |  Significado de !$a!</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>A  | Assoc   | Meaning of $a !</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185815Z" creationid="explorer" creationdate="20180430T185815Z">
+        <seg>A  | Asoc.   | Significado de $a !</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>A C&lt;Buf&gt; is a mutable sequence of (usually unsigned) integers.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210625Z" creationid="explorer" creationdate="20161101T210625Z">
@@ -6792,6 +6840,14 @@ the calling location.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T144455Z" creationid="explorer" creationdate="20161113T144447Z">
         <seg>C  Encadenamiento infijo  != == &lt; &lt;= &gt; &gt;= eq ne lt le gt ge ~~ === eqv !eqv =~=</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>C  | chain   |  ($a !</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185858Z" creationid="explorer" creationdate="20180430T185858Z">
+        <seg>C  | cadena  |  ($a !</seg>
       </tuv>
     </tu>
     <tu>
@@ -8276,6 +8332,22 @@ and, at times, useful.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>L  | left    |  (!$a)!</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185937Z" creationid="explorer" creationdate="20180430T185937Z">
+        <seg>L  | izq.    |  (!$a)!</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L  | left    |  ($a !</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185833Z" creationid="explorer" creationdate="20180430T185833Z">
+        <seg>L  | izq.    |  ($a !</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>L | Additive         |   \+ - \+\| \+^ ~\| ~^ ?\| ?^</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185027Z" creationid="explorer" creationdate="20180430T185027Z">
@@ -8294,8 +8366,8 @@ and, at times, useful.</seg>
       <tuv lang="EN-US">
         <seg>L | Loose unary      |   so not</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185549Z" creationid="explorer" creationdate="20180430T185549Z">
-        <seg>L | Unario debíl     |   so not</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185726Z" creationid="explorer" creationdate="20180430T185549Z">
+        <seg>L | Unario débil     |   so not</seg>
       </tuv>
     </tu>
     <tu>
@@ -8524,10 +8596,18 @@ same way as functions can take functions as parameters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>N  | non     |  ILLEGAL</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185852Z" creationid="explorer" creationdate="20180430T185852Z">
+        <seg>N  | no      |  ILEGAL</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>N | Autoincrement    |   \+\+ --</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184912Z" creationid="explorer" creationdate="20180430T184851Z">
-        <seg>N | Autoincremento   |   ++ --</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190125Z" creationid="explorer" creationdate="20180430T184851Z">
+        <seg>N | Autoincremento   |   \+\+ --</seg>
       </tuv>
     </tu>
     <tu>
@@ -8536,6 +8616,14 @@ same way as functions can take functions as parameters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185354Z" creationid="explorer" creationdate="20180430T185354Z">
         <seg>N | Infijo estructural|  but does &lt;=&gt; leg cmp ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>N | Terminator       |   ; {...}, unless, extra ), ], }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185757Z" creationid="explorer" creationdate="20180430T185757Z">
+        <seg>N | Terminador       |   ; {...}, unless, extra ), ], }</seg>
       </tuv>
     </tu>
     <tu>
@@ -9112,6 +9200,22 @@ chaining:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>R  | right   |  !($a!)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185952Z" creationid="explorer" creationdate="20180430T185952Z">
+        <seg>R  | der.    |  !($a!)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>R  | right   |  $a !</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185843Z" creationid="explorer" creationdate="20180430T185843Z">
+        <seg>R  | der.    |  $a !</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>R | Conditional      |   ??</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185459Z" creationid="explorer" creationdate="20180430T185459Z">
@@ -9130,16 +9234,16 @@ chaining:</seg>
       <tuv lang="EN-US">
         <seg>R | Item assignment  |   = =&gt; \+= -= **= xx=</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185523Z" creationid="explorer" creationdate="20180430T185523Z">
-        <seg>R | Elem. asignación |   = =&gt; += -= **= xx= .=</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190147Z" creationid="explorer" creationdate="20180430T185523Z">
+        <seg>R | Elem. asignación |   = =&gt; \+= -= **= xx= .=</seg>
       </tuv>
     </tu>
     <tu>
       <tuv lang="EN-US">
         <seg>R | List prefix      |   print push say die map substr ... [\+] [*] any Z=</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185632Z" creationid="explorer" creationdate="20180430T185632Z">
-        <seg>R | Prefijo lista    |   print push say die map substr ... [+] [*] any Z=</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190207Z" creationid="explorer" creationdate="20180430T185632Z">
+        <seg>R | Prefijo lista    |   print push say die map substr ... [\+] [*] any Z=</seg>
       </tuv>
     </tu>
     <tu>
@@ -10727,6 +10831,15 @@ a parameter prefix it's name with a C&lt;&amp;&gt;.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>To use a subroutine as
+a parameter, prefix its name with a C&lt;&amp;&gt;.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190336Z" creationid="explorer" creationdate="20180430T190336Z">
+        <seg>Para usar una subrutina como un parámetro, prefije su nombre con un C&lt;&amp;&gt;.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Type objects are I&lt;undefined&gt;, in the sense that they return C&lt;False&gt; if you
 call the C&lt;.defined&gt; method on them.</seg>
       </tuv>
@@ -11077,6 +11190,14 @@ otherwise.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>X  | list    |  infix:&lt;!&gt;($a; $b; $c)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185908Z" creationid="explorer" creationdate="20180430T185908Z">
+        <seg>X  | lista   |  infix:&lt;!&gt;($a; $b; $c)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>X | Comma operator   |   , :</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185600Z" creationid="explorer" creationdate="20180430T185600Z">
@@ -11103,8 +11224,8 @@ otherwise.</seg>
       <tuv lang="EN-US">
         <seg>X | Junctive or      |   \| ^</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185217Z" creationid="explorer" creationdate="20180430T185217Z">
-        <seg>X | Or unionista     |   | ^</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190133Z" creationid="explorer" creationdate="20180430T185217Z">
+        <seg>X | Or unionista     |   \| ^</seg>
       </tuv>
     </tu>
     <tu>
@@ -11113,6 +11234,30 @@ otherwise.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185616Z" creationid="explorer" creationdate="20180430T185616Z">
         <seg>X | Infijo lista     |   Z minmax X X~ X* Xeqv ...</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Loose and        |   and andthen notandthen</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185659Z" creationid="explorer" creationdate="20180430T185659Z">
+        <seg>X | And débil        |   and andthen notandthen</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Loose or         |   or xor orelse</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185740Z" creationid="explorer" creationdate="20180430T185740Z">
+        <seg>X | Or débil         |   or xor orelse</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Sequencer        |   &lt;==, ==&gt;, &lt;&lt;==, ==&gt;&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185748Z" creationid="explorer" creationdate="20180430T185748Z">
+        <seg>X | Secuenciador     |   &lt;==, ==&gt;, &lt;&lt;==, ==&gt;&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -11127,8 +11272,8 @@ otherwise.</seg>
       <tuv lang="EN-US">
         <seg>X | Tight or         |   \|\| ^^ // min max</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185446Z" creationid="explorer" creationdate="20180430T185446Z">
-        <seg>X | Or fuerte        |   || ^^ // min max</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190141Z" creationid="explorer" creationdate="20180430T185446Z">
+        <seg>X | Or fuerte        |   \|\| ^^ // min max</seg>
       </tuv>
     </tu>
     <tu>
@@ -11167,6 +11312,27 @@ X&lt;|classes, encapsulation&gt;</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T091015Z" creationid="Ram" creationdate="20161120T091015Z">
         <seg>X&lt;|nativecall&gt;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X&lt;|prefix operator&gt;
+X&lt;|infix operator&gt;
+X&lt;|postfix operator&gt;
+X&lt;|circumfix operator&gt;
+X&lt;|postcircumfix operator&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190039Z" creationid="explorer" creationdate="20180430T190039Z">
+        <seg>X&lt;|prefix operator&gt;
+X&lt;|infix operator&gt;
+X&lt;|postfix operator&gt;
+X&lt;|circumfix operator&gt;
+X&lt;|postcircumfix operator&gt;
+X&lt;|operador prefijo&gt;
+X&lt;|operador infijo&gt;
+X&lt;|operador postfijo&gt;
+X&lt;|operador circunfijo&gt;
+X&lt;|operador postcircunfijo&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -11370,6 +11536,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>\+term          | prefix</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190059Z" creationid="explorer" creationdate="20180430T190059Z">
+        <seg>\+termino       | prefijo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>\| \|\| \+^ ~^ ?^ ^</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184942Z" creationid="explorer" creationdate="20180430T184942Z">
@@ -11494,6 +11668,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="zipf" changedate="20121230T131246Z">
         <seg>pero</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>circumfix:«[ ]»(&lt;a b c&gt;);       # same as [&lt;a b c&gt;]</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190313Z" creationid="explorer" creationdate="20180430T190313Z">
+        <seg>circumfix:«[ ]»(&lt;a b c&gt;);       # lo mismo que [&lt;a b c&gt;]</seg>
       </tuv>
     </tu>
     <tu>
@@ -12310,6 +12492,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161111T155119Z" creationid="explorer" creationdate="20161111T155119Z">
         <seg>en la línea principal se muere con</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>infix:&lt;+&gt;(1, 2);                # same as 1 + 2</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190301Z" creationid="explorer" creationdate="20180430T190301Z">
+        <seg>infix:&lt;+&gt;(1, 2);                # lo mismo que 1 + 2</seg>
       </tuv>
     </tu>
     <tu>
@@ -14468,10 +14658,34 @@ say $p2.result;         # muere con "oh no", porque la promesa se ha roto
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>term1 \+ term2  | infix</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190217Z" creationid="explorer" creationdate="20180430T190217Z">
+        <seg>term1 \+ term2  | infijo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>term1[term2]    postcircumfix</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T153515Z" creationid="explorer" creationdate="20161113T153515Z">
         <seg>term1[term2]    postcircunfijo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>term1[term2]    | postcircumfix</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190246Z" creationid="explorer" creationdate="20180430T190246Z">
+        <seg>term1[term2]    | postcircunfijo</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>term\+\+        | postfix</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T190229Z" creationid="explorer" creationdate="20180430T190229Z">
+        <seg>term\+\+        | postfijo</seg>
       </tuv>
     </tu>
     <tu>
