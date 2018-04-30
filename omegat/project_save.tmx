@@ -1563,6 +1563,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>==+==================+==========</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184811Z" creationid="explorer" creationdate="20180430T184811Z">
+        <seg>==+==================+==========</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>===============================================================</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20120621T023039Z">
@@ -1653,8 +1661,8 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       <tuv lang="EN-US">
         <seg>=SUBTITLE Common Perl 6 infixes, prefixes, postfixes, and more!</seg>
       </tuv>
-      <tuv lang="ES-ES" changeid="explorer" changedate="20161113T113848Z" creationid="explorer" creationdate="20161113T113848Z">
-        <seg>=SUBTITLE Los infijos, prefijos, postfijos, ¡y más!, comunes de Perl 6</seg>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184723Z" creationid="explorer" creationdate="20161113T113848Z">
+        <seg>=SUBTITLE Los infijos, prefijos, postfijos, ¡y más!, comunes de Perl 6</seg>
       </tuv>
     </tu>
     <tu>
@@ -1791,6 +1799,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="ram" changedate="20160429T175756Z" creationid="ram" creationdate="20160429T175756Z">
         <seg>=SUBTITLE Concurrencia y Programación Asíncrona</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=SUBTITLE Core modules that may be useful to module authors</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183537Z" creationid="explorer" creationdate="20180430T183537Z">
+        <seg>=SUBTITLE Módulos principales que pueden resultar útiles a los autores de módulos</seg>
       </tuv>
     </tu>
     <tu>
@@ -2003,6 +2019,22 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=SUBTITLE Exception thrown if a Proc object is sunk after the process it ran exited unsuccessfully</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183301Z" creationid="explorer" creationdate="20180430T183301Z">
+        <seg>=SUBTITLE Excepción que se lanza si un objeto Proc se hunde después de que el proceso que ejecuta sale sin éxito</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=SUBTITLE Heading in a Pod document</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184015Z" creationid="explorer" creationdate="20180430T184015Z">
+        <seg>=SUBTITLE Cabecera en un documento Pod</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=SUBTITLE Human readable form for comparison operators.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T162430Z" creationid="explorer" creationdate="20161106T162430Z">
@@ -2203,6 +2235,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=TITLE Core Modules</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183513Z" creationid="explorer" creationdate="20180430T183513Z">
+        <seg>=TITLE Módulos principales</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=TITLE Native Calling Interface</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T091358Z" creationid="Ram" creationdate="20161120T090407Z">
@@ -2371,6 +2411,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=TITLE class Pod::Heading</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184004Z" creationid="explorer" creationdate="20180430T184004Z">
+        <seg>=TITLE clase Pod::Heading</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=TITLE class Pod::Item</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210644Z" creationid="explorer" creationdate="20161101T210644Z">
@@ -2535,6 +2583,14 @@ completa documentación sobre Perl 6&lt;/a&gt;, incluyendo tutoriales, cómo-ha
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170123Z" creationid="explorer" creationdate="20161106T170123Z">
         <seg>=TITLE clase X::Proc::Async::AlreadyStarted</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=TITLE class X::Proc::Unsuccessful</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183158Z" creationid="explorer" creationdate="20180430T183158Z">
+        <seg>=TITLE class X::Proc::Unsuccessful</seg>
       </tuv>
     </tu>
     <tu>
@@ -2884,6 +2940,14 @@ circumfix:«( )»('a', 'b', 'c'); # lo mismo que ('a', 'b', 'c')
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T175547Z" creationid="explorer" creationdate="20160428T175547Z">
         <seg>=begin pod</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=begin pod :tag&lt;perl6&gt;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184715Z" creationid="explorer" creationdate="20180430T184715Z">
+        <seg>=begin pod :tag&lt;perl6&gt;</seg>
       </tuv>
     </tu>
     <tu>
@@ -4715,6 +4779,30 @@ X&lt;|R,meta operador de reversión&gt;</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>=item L«C&lt;CompUnit::Repository::Staging&gt;|https://github.com/rakudo/rakudo/blob/master/lib/CompUnit/Repository/Staging.pm»    Used by distribution build tools
+=item L«C&lt;NativeCall&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall.pm6»    Native Calling Interface (L&lt;docs|https://docs.perl6.org/language/nativecall.html&gt;)
+=item L«C&lt;NativeCall::Types&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall/Types.pm6»    Used by C&lt;NativeCall&gt;
+=item L«C&lt;NativeCall::Compiler::GNU&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall/Compiler/GNU.pm6»    Used by C&lt;NativeCall&gt;
+=item L«C&lt;NativeCall::Compiler::MSVC&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall/Compiler/MSVC.pm6»    Used by C&lt;NativeCall&gt;
+=item L«C&lt;Pod::To::Text&gt;|https://github.com/rakudo/rakudo/blob/master/lib/Pod/To/Text.pm6»    Used by several external modules
+=item L«C&lt;Test&gt;|https://github.com/rakudo/rakudo/blob/master/lib/Test.pm6»    Test routines (L&lt;docs|/language/testing&gt;)
+=item L«C&lt;experimental&gt;|https://github.com/rakudo/rakudo/blob/master/lib/experimental.pm6»
+=item L«C&lt;newline&gt;|https://github.com/rakudo/rakudo/blob/master/lib/newline.pm6»</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183854Z" creationid="explorer" creationdate="20180430T183702Z">
+        <seg>=item L«C&lt;CompUnit::Repository::Staging&gt;|https://github.com/rakudo/rakudo/blob/master/lib/CompUnit/Repository/Staging.pm»    Utilizado por las herramientas de distribución
+=item L«C&lt;NativeCall&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall.pm6»    Interfaz de llamada nativa (L&lt;docs|https://docs.perl6.org/language/nativecall.html&gt;)
+=item L«C&lt;NativeCall::Types&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall/Types.pm6»    Utilizado por C&lt;NativeCall&gt;
+=item L«C&lt;NativeCall::Compiler::GNU&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall/Compiler/GNU.pm6»    Utilizado por C&lt;NativeCall&gt;
+=item L«C&lt;NativeCall::Compiler::MSVC&gt;|https://github.com/rakudo/rakudo/blob/master/lib/NativeCall/Compiler/MSVC.pm6»    Utilizado por C&lt;NativeCall&gt;
+=item L«C&lt;Pod::To::Text&gt;|https://github.com/rakudo/rakudo/blob/master/lib/Pod/To/Text.pm6»    Utilizados por muchos módulos externos
+=item L«C&lt;Test&gt;|https://github.com/rakudo/rakudo/blob/master/lib/Test.pm6»    Rutinas de pruebas (L&lt;docs|/language/testing&gt;)
+=item L«C&lt;experimental&gt;|https://github.com/rakudo/rakudo/blob/master/lib/experimental.pm6»
+=item L«C&lt;newline&gt;|https://github.com/rakudo/rakudo/blob/master/lib/newline.pm6»</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>=item binmode FILEHANDLE</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20110718T004731Z">
@@ -6296,6 +6384,14 @@ promise once it returns successfully, or break it when the code dies.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>A | Level            |   Examples</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184808Z" creationid="explorer" creationdate="20180430T184808Z">
+        <seg>A | Nivel            |   Ejemplos</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>A.new(2, 3);</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T164619Z" creationid="explorer" creationdate="20161106T164619Z">
@@ -6709,6 +6805,14 @@ members of Structures like, e.g., structs and unions.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>C | Chaining infix   |   != == &lt; &lt;= &gt; &gt;= eq ne lt le gt ge ~~ === eqv !eqv =~=</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185414Z" creationid="explorer" creationdate="20180430T185414Z">
+        <seg>C | Encadenamiento inf|  != == &lt; &lt;= &gt; &gt;= eq ne lt le gt ge ~~ === eqv !eqv =~=</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>C&lt;Channel&gt; will return a different L&lt;Channel&gt; fed with the same data
 each time it is called.</seg>
       </tuv>
@@ -6847,6 +6951,14 @@ C&lt;react&gt; block described earlier:</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161102T011240Z" creationid="explorer" creationdate="20161102T011240Z">
         <seg>Clase para un bloque de código (literal) en Pod.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Class for headings in a Pod document.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184044Z" creationid="explorer" creationdate="20180430T184044Z">
+        <seg>Clase para las cabeceras en un documento Pod.</seg>
       </tuv>
     </tu>
     <tu>
@@ -8164,6 +8276,70 @@ and, at times, useful.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>L | Additive         |   \+ - \+\| \+^ ~\| ~^ ?\| ?^</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185027Z" creationid="explorer" creationdate="20180430T185027Z">
+        <seg>L | Aditivo          |   \+ - \+\| \+^ ~\| ~^ ?\| ?^</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Dotty infix      |   .= .</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185006Z" creationid="explorer" creationdate="20180430T185006Z">
+        <seg>L | Puntito infijo   |   .= .</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Loose unary      |   so not</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185549Z" creationid="explorer" creationdate="20180430T185549Z">
+        <seg>L | Unario debíl     |   so not</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Method postfix   |   .meth .\+ .?</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184857Z" creationid="explorer" creationdate="20180430T184848Z">
+        <seg>L | Método postfijo  |   .meth .\+ .?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Multiplicative   |   * / % %% \+&amp; \+&lt; \+&gt; ~&amp; ~&lt; ~&gt; ?&amp; div mod gcd lcm</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185016Z" creationid="explorer" creationdate="20180430T185016Z">
+        <seg>L | Multiplicativo   |   * / % %% \+&amp; \+&lt; \+&gt; ~&amp; ~&lt; ~&gt; ?&amp; div mod gcd lcm</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Named unary      |   temp let</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185305Z" creationid="explorer" creationdate="20180430T185305Z">
+        <seg>L | Nombre unario    |   temp let</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Replication      |   x xx</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185036Z" creationid="explorer" creationdate="20180430T185036Z">
+        <seg>L | Replicación      |   x xx</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>L | Symbolic unary   |   !</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184937Z" creationid="explorer" creationdate="20180430T184937Z">
+        <seg>L | Simbólico unario |   !</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>L&lt;Proc::Async&gt; builds on the facilities described to run and interact with
 an external program asynchronously:</seg>
       </tuv>
@@ -8344,6 +8520,30 @@ same way as functions can take functions as parameters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161113T150502Z" creationid="explorer" creationdate="20161113T142605Z">
         <seg>N  Términos               42 3.14 "eek" qq["foo"] $x :!verbose @$array</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>N | Autoincrement    |   \+\+ --</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184912Z" creationid="explorer" creationdate="20180430T184851Z">
+        <seg>N | Autoincremento   |   ++ --</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>N | Structural infix |   but does &lt;=&gt; leg cmp ..</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185354Z" creationid="explorer" creationdate="20180430T185354Z">
+        <seg>N | Infijo estructural|  but does &lt;=&gt; leg cmp ..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>N | Terms            |   42 3.14 "eek" qq["foo"] $x :!verbose @$array</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184827Z" creationid="explorer" creationdate="20180430T184827Z">
+        <seg>N | Términos         |   42 3.14 "eek" qq["foo"] $x :!verbose @$array</seg>
       </tuv>
     </tu>
     <tu>
@@ -8912,6 +9112,38 @@ chaining:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>R | Conditional      |   ??</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185459Z" creationid="explorer" creationdate="20180430T185459Z">
+        <seg>R | Condicional      |   ??</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>R | Exponentiation   |   **</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184924Z" creationid="explorer" creationdate="20180430T184924Z">
+        <seg>R | Exponenciación   |   **</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>R | Item assignment  |   = =&gt; \+= -= **= xx=</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185523Z" creationid="explorer" creationdate="20180430T185523Z">
+        <seg>R | Elem. asignación |   = =&gt; += -= **= xx= .=</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>R | List prefix      |   print push say die map substr ... [\+] [*] any Z=</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185632Z" creationid="explorer" creationdate="20180430T185632Z">
+        <seg>R | Prefijo lista    |   print push say die map substr ... [+] [*] any Z=</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Rakudo allows the maximum number of threads allowed in the default scheduler
 to be set by the environment variable C&lt;RAKUDO_MAX_THREADS&gt; at the time
 the program is started.</seg>
@@ -8991,6 +9223,14 @@ was provided.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T211153Z" creationid="explorer" creationdate="20161101T211153Z">
         <seg>Devuelve el nivel de la lista enumerada, empezando en 1.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Returns the level of the heading, starting at 1.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184133Z" creationid="explorer" creationdate="20180430T184133Z">
+        <seg>Devuelve el nivel de la cabecera, comenzando por 1.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9151,6 +9391,14 @@ was provided.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="ramiroencinas" changedate="20161202T192023Z" creationid="ramiroencinas" creationdate="20161202T192023Z">
         <seg>¿Asustado?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>See L&lt;Sub&gt; on how to define operators.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184750Z" creationid="explorer" creationdate="20180430T184750Z">
+        <seg>Vea L&lt;Sub&gt; sobre cómo definir operadores.</seg>
       </tuv>
     </tu>
     <tu>
@@ -9649,6 +9897,14 @@ for that:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>The Rakudo implementation has a few modules included you may want to use.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183614Z" creationid="explorer" creationdate="20180430T183614Z">
+        <seg>La implementación Rakudo incluye unos pocos módulos que puede querer usar.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>The actual L&lt;Exception&gt; object will then be available from
 C&lt;cause&gt;.</seg>
       </tuv>
@@ -9779,6 +10035,15 @@ loaded and the "some_argless_function" will be located in it.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="Ram" changedate="20161120T093026Z" creationid="Ram" creationdate="20161120T093026Z">
         <seg>Cuando llames por primera vez a "función_sin_argumentos", se cargará la librería "algo" y ésta quedará localizada en "función_sin_argumentos".</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>The following is a
+list of them, along with links to their source code.</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183645Z" creationid="explorer" creationdate="20180430T183645Z">
+        <seg>Lo siguiente es una lista de ellos, junto con enlaces a su código fuente.</seg>
       </tuv>
     </tu>
     <tu>
@@ -10812,6 +11077,62 @@ otherwise.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>X | Comma operator   |   , :</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185600Z" creationid="explorer" creationdate="20180430T185600Z">
+        <seg>X | Operador coma    |   , :</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Concatenation    |   ~</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185046Z" creationid="explorer" creationdate="20180430T185046Z">
+        <seg>X | Concatenación    |   ~</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Junctive and     |   &amp;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185221Z" creationid="explorer" creationdate="20180430T185152Z">
+        <seg>X | And unionista    |   &amp;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Junctive or      |   \| ^</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185217Z" creationid="explorer" creationdate="20180430T185217Z">
+        <seg>X | Or unionista     |   | ^</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | List infix       |   Z minmax X X~ X* Xeqv ...</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185616Z" creationid="explorer" creationdate="20180430T185616Z">
+        <seg>X | Infijo lista     |   Z minmax X X~ X* Xeqv ...</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Tight and        |   &amp;&amp;</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185430Z" creationid="explorer" creationdate="20180430T185430Z">
+        <seg>X | And fuerte       |   &amp;&amp;</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>X | Tight or         |   \|\| ^^ // min max</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T185446Z" creationid="explorer" creationdate="20180430T185446Z">
+        <seg>X | Or fuerte        |   || ^^ // min max</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>X&lt;|attributes&gt;
 X&lt;|classes, attributes&gt;</seg>
       </tuv>
@@ -11037,6 +11358,22 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20160428T193855Z" creationid="explorer" creationdate="20160428T193855Z">
         <seg>Zs          Space_Separator (separador de espacio)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>\+ - ~ ?</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184939Z" creationid="explorer" creationdate="20180430T184939Z">
+        <seg>\+ - ~ ?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>\| \|\| \+^ ~^ ?^ ^</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184942Z" creationid="explorer" creationdate="20180430T184942Z">
+        <seg>\| \|\| \+^ ~^ ?^ ^</seg>
       </tuv>
     </tu>
     <tu>
@@ -11337,6 +11674,14 @@ these in previous chapters.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>class Pod::Heading is Pod::Block { }</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T184020Z" creationid="explorer" creationdate="20180430T184020Z">
+        <seg>class Pod::Heading is Pod::Block { }</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>class Pod::Item is Pod::Block { }</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T210728Z" creationid="explorer" creationdate="20161101T210728Z">
@@ -11445,6 +11790,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161106T170233Z" creationid="explorer" creationdate="20161106T170233Z">
         <seg>class X::Proc::Async::AlreadyStarted is Exception {}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>class X::Proc::Unsuccessful is Exception {}</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183304Z" creationid="explorer" creationdate="20180430T183304Z">
+        <seg>class X::Proc::Unsuccessful is Exception {}</seg>
       </tuv>
     </tu>
     <tu>
@@ -12351,6 +12704,14 @@ these in previous chapters.</seg>
       </tuv>
       <tuv lang="ES-ES" changeid="explorer" changedate="20161101T212456Z" creationid="explorer" creationdate="20161101T212456Z">
         <seg>method proc(X::Proc::Async:D) returns Proc::Async</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>method proc(X::Proc::Unsuccessful:D --&gt; Proc)</seg>
+      </tuv>
+      <tuv lang="ES-ES" changeid="explorer" changedate="20180430T183308Z" creationid="explorer" creationdate="20180430T183308Z">
+        <seg>method proc(X::Proc::Unsuccessful:D --&gt; Proc)</seg>
       </tuv>
     </tu>
     <tu>
